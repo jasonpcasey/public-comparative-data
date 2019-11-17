@@ -8,7 +8,6 @@ class Institution(Base):
     """ map to a table name in db """
     __tablename__ = "test_institutions"
 
-    #Institutions (unitid, name, state_fips, public, for_profit)
     """ create columns """
     id = Column(Integer, primary_key = True)
     unitid = Column(Integer, nullable = False)
