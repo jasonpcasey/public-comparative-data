@@ -1,7 +1,7 @@
 # coding=utf-8
 
-from lib.base import Session, engine, Base
-from lib.test_institution import Institution
+from base import Session, engine, Base
+from test_institution import Institution
 
 # if the table exists in the db, drop it
 Base.metadata.drop_all(bind = engine, checkfirst = True, tables = [Institution.__table__])
