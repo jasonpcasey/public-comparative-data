@@ -3,7 +3,7 @@ import pickle
 import pandas as pd
 import numpy as np
 
-first_year = 2017
+first_year = 2010
 last_year = 2018
 
 for year in np.arange(first_year, last_year + 1):
