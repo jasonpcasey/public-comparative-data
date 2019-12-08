@@ -19,7 +19,7 @@ class NsfHerdAcademicField(Base):
     """ method for instantiating object """
     def __init__(self, academic_field_key, academic_broad_field_id, academic_field,
                  academic_broad_field, nu_division):
-        self.academic_field_key - academic_field_key
+        self.academic_field_key = academic_field_key
         self.academic_broad_field_id = academic_broad_field_id
         self.academic_field = academic_field
         self.academic_broad_field = academic_broad_field
@@ -27,10 +27,10 @@ class NsfHerdAcademicField(Base):
 
     """ method used to produce print-friendly output """
     def __repr__(self):
-        return ("<NsfHerdAcademicField(academic_field_key={}, "
-                "academic_broad_field_id={}, academic_field={}, "
-                "academic_broad_field={}, "
-                "nu_division={})").format(self.academic_field_key,
+        return ('<NsfHerdAcademicField(academic_field_key={}, '
+                'academic_broad_field_id={}, academic_field={}, '
+                'academic_broad_field={}, '
+                'nu_division={})').format(self.academic_field_key,
                                           self.academic_broad_field_id,
                                           self.academic_field,
                                           self.academic_broad_field,
