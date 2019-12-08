@@ -1,6 +1,6 @@
 # coding=utf-8
 
-from sqlalchemy import Column, String, Integer
+from sqlalchemy import Column, ForeignKey, Index, String, Integer, Numeric
 
 from base import Base
 
@@ -9,19 +9,28 @@ class County(Base):
     __tablename__ = "counties"
 
     """ create columns """
-    county_fips = Column(Integer, primary_key = True)
+    fips_code = Column(Numeric(5, 3), primary_key = True)
+    state_fips = Column(Integer, ForeignKey('states.fips'), nullable = False)
+    county_fips = Column(Integer, nullable = False)
     county_name = Column(String(255), nullable = False)
-    state = Column(String(2), nullable = False)
+ 
+    """ Unique index constraint """
+    __table_args__ = (Index('idx_fips_county_keys',
+                            'state_fips',
+                            'county_fips',
+                            unique = True), )
 
     """ method for instantiating object """
-    def __init__(self, county_fips, county_name, state):
-        self.county_fips - county_fips
+    def __init__(self, fips_code, state_fips, county_fips, county_name):
+        self.fips_code = fips_code
+        self.state_fips = state_fips
+        self.county_fips = county_fips
         self.county_name = county_name
-        self.state = state
-
+    
     """ method used to produce print-friendly output """
     def __repr__(self):
-        return ("<County(county_fips={}, county_name={}, "
-                "state={})").format(self.county_fips,
-                                    self.county_name,
-                                    self.state)
+        return ("<County(fips_code={}, state_fips={}, county_fips={}, "
+                "county_name={})").format(self.fips_code,
+                                          self.state_fips,
+                                          self.county_fips,
+                                          self.county_name)

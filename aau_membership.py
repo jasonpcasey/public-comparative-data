@@ -14,7 +14,7 @@ class AauMember(Base):
 
     """ method for instantiating object """
     def __init__(self, unitid, inst_name):
-        self.unitid
+        self.unitid = unitid
         self.inst_name = inst_name
 
     """ method used to produce print-friendly output """

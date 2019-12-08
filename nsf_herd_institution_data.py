@@ -30,9 +30,7 @@ class NsfHerdInstitution(Base):
     non_medical_rd = Column(BigInteger, nullable = False, default=0)
     arra_funds = Column(BigInteger, nullable = False, default=0)
     
-    # ForeignKeyConstraint(['date_key'], ['date_dimension.date_key']),
-    #                   ForeignKeyConstraint(['state_fips'], ['states.fips']),
-                      
+    """ Unique index constraint """                  
     __table_args__ = (Index('idx_nsf_institution_keys',
                             'inst_id',
                             'date_key',
