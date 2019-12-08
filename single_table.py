@@ -16,14 +16,14 @@ session = Session()
 
 # create some Institutions (unitid, name, state_fips, public, for_profit)
 fm = Institution(212577, "Franklin & Marshall College", 42, False, False)
-fit = Institution(191126, "Fashion Institute of Technology", 36, True, False)
+fi = Institution(191126, "Fashion Institute of Technology", 36, True, False)
 gu = Institution(131496, "Georgetown University", 11, False, False)
 nd = Institution(152080, "University of Notre Dame", 18, False, False)
 nu = Institution(181464, "University of Nebraska-Lincoln", 31, True, False)
 
 # add objects to table
 session.add(fm)
-session.add(fit)
+session.add(fi)
 session.add(gu)
 session.add(nd)
 session.add(nu)
