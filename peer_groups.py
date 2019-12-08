@@ -19,6 +19,6 @@ class PeerGroup(Base):
 
     """ method used to produce print-friendly output """
     def __repr__(self):
-        return ("<PeerGroup(unitid={}, "
-                "group_name={})").format(self.unitid,
+        return "<PeerGroup(unitid={}, \
+                group_name={})".format(self.unitid,
                                        self.group_name)
