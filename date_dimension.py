@@ -4,7 +4,7 @@ from sqlalchemy import Column, String, Integer, Boolean, Date
 
 from base import Base
 
-class DateDimension(Base):
+class DateRow(Base):
     """ map to a table name in db """
     __tablename__ = "date_dimension"
 
@@ -94,10 +94,10 @@ class DateDimension(Base):
 
     """ method used to produce print-friendly output """
     def __repr__(self):
-        return ("<DateDimension(date_key={}, calendar_year={}, "
-                "term_code={}, peoplesoft_term_code={}, "
-                "semester={}, fiscal_year={}, "
-                "academic_year_trailing_summer = {})").format(self.date_key,
+        return ('<DateRow(date_key={}, calendar_year={}, '
+                'term_code={}, peoplesoft_term_code={}, '
+                'semester={}, fiscal_year={}, '
+                'academic_year_trailing_summer = {})').format(self.date_key,
                                                               self.calendar_year,
                                                               self.term_code,
                                                               self.peoplesoft_term_code,
