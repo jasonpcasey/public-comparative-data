@@ -10,7 +10,7 @@ class NsfIpedsBridge(Base):
 
     """ create columns """
     id = Column(Integer, primary_key = True)
-    unitid = Column(Integer, nullable = False)
+    unitid_xwalk = Column(Integer, nullable = False)
     inst_id = Column(Integer, nullable = False)
     ncses_inst_id = Column(Integer, nullable = False)
     inst_name_long = Column(String(132), nullable = False)
@@ -19,9 +19,9 @@ class NsfIpedsBridge(Base):
     last_reported_year = Column(Integer, nullable = False)
 
     """ method for instantiating object """
-    def __init__(self, unitid, inst_id, ncses_inst_id, inst_name_long,
+    def __init__(self, unitid_xwalk, inst_id, ncses_inst_id, inst_name_long,
                  inst_state_code, med_sch_flag, last_reported_year):
-        self.unitid - unitid
+        self.unitid_xwalk - unitid_xwalk
         self.inst_id = inst_id
         self.ncses_inst_id = ncses_inst_id
         self.inst_name_long = inst_name_long
@@ -31,12 +31,12 @@ class NsfIpedsBridge(Base):
 
     """ method used to produce print-friendly output """
     def __repr__(self):
-        return ("<NsfIpedsBridge(unitid={}, inst_id={}, ncses_inst_id={}, "
-                "inst_name_long={} inst_state_code={}, med_sch_flag={}, "
-                "last_reported_year={})").format(self.unitid,
-                                                 self.inst_id,
-                                                 self.ncses_inst_id,
-                                                 self.inst_name_long,
-                                                 self.inst_state_code,
-                                                 self.med_sch_flag,
-                                                 self.last_reported_year)
+        return "<NsfIpedsBridge(unitid_xwalk={}, inst_id={}, ncses_inst_id={}, \
+                inst_name_long={} inst_state_code={}, med_sch_flag={}, \
+                last_reported_year={})".format(self.unitid_xwalk,
+                                               self.inst_id,
+                                               self.ncses_inst_id,
+                                               self.inst_name_long,
+                                               self.inst_state_code,
+                                               self.med_sch_flag,
+                                               self.last_reported_year)
