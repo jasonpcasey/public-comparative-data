@@ -11,8 +11,8 @@ class IpedsAdmissions(Base):
     """ create columns """
     id = Column(Integer, primary_key = True)
     unitid = Column(Integer, nullable = False)
-    date_key = Column(Date, ForeignKey('date_dimension.date_key'), primary_key = True)
-    demographic_key = Column(String(5), ForeignKey('ipeds_demographic_dimension.demographic_key'), primary_key = True)
+    date_key = Column(Date, ForeignKey('date_dimension.date_key'), nullable = False)
+    demographic_key = Column(String(5), ForeignKey('ipeds_demographic_dimension.demographic_key'), nullable = False)
     applications = Column(Numeric, nullable = False, default = 0)
     admissions = Column(Numeric, nullable = False, default = 0)
     enrolled = Column(Numeric, nullable = False, default = 0)

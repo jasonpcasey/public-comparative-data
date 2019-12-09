@@ -1,6 +1,6 @@
 # coding=utf-8
 
-from sqlalchemy import Column, String, Integer, Date, Numeric
+from sqlalchemy import Column, ForeignKey, Index, String, Integer, Date, Numeric
 
 from base import Base
 
@@ -9,31 +9,38 @@ class IpedsStudentAid(Base):
     __tablename__ = "ipeds_student_aid"
 
     """ create columns """
-    unitid = Column(Integer,primary_key = True)
-    date_key = Column(Date,primary_key = True)
-    total_undergraduates = Column(Integer,nullable = False, default = 0)
-    full_time_freshman_cohort = Column(Integer,nullable = False, default = 0)
-    total_number = Column(Integer,nullable = False, default = 0)
-    total_on_campus = Column(Integer,nullable = False, default = 0)
-    total_off_campus_with_family = Column(Integer,nullable = False, default = 0)
-    total_off_campus_not_with_family = Column(Integer,nullable = False, default = 0)
-    total_living_arrangement_unknown = Column(Integer,nullable = False, default = 0)
-    cohort_paying_indistrict = Column(Integer,nullable = False, default = 0)
-    cohort_paying_instate = Column(Integer,nullable = False, default = 0)
-    cohort_paying_outstate = Column(Integer,nullable = False, default = 0)
-    cohort_paying_unknown = Column(Integer,nullable = False, default = 0)
-    awarded_grant_aid = Column(Integer,nullable = False, default = 0)
-    total_grant_aid = Column(Numeric,nullable = False, default = 0)
-    awarded_federal_grants = Column(Integer,nullable = False, default = 0)
-    total_federal_grants = Column(Numeric,nullable = False, default = 0)
-    awarded_state_local_grants = Column(Integer,nullable = False, default = 0)
-    total_state_local_grants = Column(Numeric,nullable = False, default = 0)
-    awarded_institutional_grants = Column(Integer,nullable = False, default = 0)
-    total_institutional_grants = Column(Numeric,nullable = False, default = 0)
-    awarded_federal_student_loans = Column(Integer,nullable = False, default = 0)
-    total_federal_student_loans = Column(Numeric,nullable = False, default = 0)
-    awarded_other_student_loans = Column(Integer,nullable = False, default = 0)
-    total_other_student_loans = Column(Numeric,nullable = False, default = 0)
+    id = Column(Integer, primary_key = True)
+    unitid = Column(Integer, nullable = False)
+    date_key = Column(Date, ForeignKey('date_dimension.date_key'), nullable = False)
+    total_undergraduates = Column(Integer, nullable = False, default = 0)
+    full_time_freshman_cohort = Column(Integer, nullable = False, default = 0)
+    total_number = Column(Integer, nullable = False, default = 0)
+    total_on_campus = Column(Integer, nullable = False, default = 0)
+    total_off_campus_with_family = Column(Integer, nullable = False, default = 0)
+    total_off_campus_not_with_family = Column(Integer, nullable = False, default = 0)
+    total_living_arrangement_unknown = Column(Integer, nullable = False, default = 0)
+    cohort_paying_indistrict = Column(Integer, nullable = False, default = 0)
+    cohort_paying_instate = Column(Integer, nullable = False, default = 0)
+    cohort_paying_outstate = Column(Integer, nullable = False, default = 0)
+    cohort_paying_unknown = Column(Integer, nullable = False, default = 0)
+    awarded_grant_aid = Column(Integer, nullable = False, default = 0)
+    total_grant_aid = Column(Numeric, nullable = False, default = 0)
+    awarded_federal_grants = Column(Integer, nullable = False, default = 0)
+    total_federal_grants = Column(Numeric, nullable = False, default = 0)
+    awarded_state_local_grants = Column(Integer, nullable = False, default = 0)
+    total_state_local_grants = Column(Numeric, nullable = False, default = 0)
+    awarded_institutional_grants = Column(Integer, nullable = False, default = 0)
+    total_institutional_grants = Column(Numeric, nullable = False, default = 0)
+    awarded_federal_student_loans = Column(Integer, nullable = False, default = 0)
+    total_federal_student_loans = Column(Numeric, nullable = False, default = 0)
+    awarded_other_student_loans = Column(Integer, nullable = False, default = 0)
+    total_other_student_loans = Column(Numeric, nullable = False, default = 0)
+
+    """ Unique index constraint """
+    __table_args__ = (Index('idx_ipeds_student_aid_keys',
+                            'unitid',
+                            'date_key',
+                            unique = True), )
 
     """ method for instantiating object """
     def __init__(self, unitid, date_key, total_undergraduates, full_time_freshman_cohort,

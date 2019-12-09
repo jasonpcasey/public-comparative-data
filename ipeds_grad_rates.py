@@ -1,6 +1,6 @@
 # coding=utf-8
 
-from sqlalchemy import Column, String, Integer, Date, Numeric
+from sqlalchemy import Column, ForeignKey, Index, String, Integer, Date, Numeric
 
 from base import Base
 
@@ -9,19 +9,28 @@ class IpedsGraduationRate(Base):
     __tablename__ = "ipeds_grad_rates"
 
     """ create columns """
-    unitid = Column(Integer, primary_key = True)
-    date_key = Column(Date, primary_key = True)
-    cohort_date_key = Column(Date, primary_key = True)
-    demographic_key = Column(String(5), primary_key = True)
-    entering_cohort = Column(Integer, default = 0)
-    exclusions = Column(Integer, default = 0)
-    adjusted_cohort = Column(Integer, default = 0)
-    completers_4_years = Column(Integer, default = 0)
-    completers_5_years = Column(Integer, default = 0)
-    completers_6_years = Column(Integer, default = 0)
-    enrolled= Column(Integer, default = 0)
-    transfers = Column(Integer, default = 0)
-    no_longer_enrolled = Column(Integer, default = 0)
+    id = Column(Integer, primary_key = True)
+    unitid = Column(Integer, nullable = False)
+    date_key = Column(Date, ForeignKey('date_dimension.date_key'), nullable = False)
+    cohort_date_key = Column(Date, ForeignKey('date_dimension.date_key'), nullable = False)
+    demographic_key = Column(String(5), ForeignKey('ipeds_demographic_dimension.demographic_key'), nullable = False)
+    entering_cohort = Column(Integer, nullable = False, default = 0)
+    exclusions = Column(Integer, nullable = False, default = 0)
+    adjusted_cohort = Column(Integer, nullable = False, default = 0)
+    completers_4_years = Column(Integer, nullable = False, default = 0)
+    completers_5_years = Column(Integer, nullable = False, default = 0)
+    completers_6_years = Column(Integer, nullable = False, default = 0)
+    enrolled= Column(Integer, nullable = False, default = 0)
+    transfers = Column(Integer, nullable = False, default = 0)
+    no_longer_enrolled = Column(Integer, nullable = False, default = 0)
+
+    """ Unique index constraint """
+    __table_args__ = (Index('idx_ipeds_grade_rates_keys',
+                            'unitid',
+                            'date_key',
+                            'cohort_date_key',
+                            'demographic_key',
+                            unique = True), )
 
     """ method for instantiating object """
     def __init__(self, unitid, date_key, cohort_date_key, demographic_key, entering_cohort, exclusions,

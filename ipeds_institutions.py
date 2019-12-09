@@ -1,6 +1,6 @@
 # coding=utf-8
 
-from sqlalchemy import Column, ForeignKey, String, Integer, Date, Numeric
+from sqlalchemy import Column, ForeignKey, Index, String, Integer, Date, Numeric
 
 from base import Base
 
@@ -50,6 +50,12 @@ class IpedsInstitution(Base):
     confno3 = Column(Integer, default = -2)
     confno4 = Column(Integer, default = -2)
 
+
+    """ Unique index constraint """
+    __table_args__ = (Index('idx_ipeds_institutions_keys',
+                            'unitid',
+                            'date_key',
+                            unique = True), )
 
     """ method for instantiating object """
     def __init__(self, unitid, date_key, institution_name, address, city, zip, web_address, 

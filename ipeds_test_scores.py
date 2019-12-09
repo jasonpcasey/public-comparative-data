@@ -1,6 +1,6 @@
 # coding=utf-8
 
-from sqlalchemy import Column, String, Integer, Date, Numeric
+from sqlalchemy import Column, ForeignKey, Index, String, Integer, Date, Numeric
 
 from base import Base
 
@@ -9,14 +9,23 @@ class IpedsTestScore(Base):
     __tablename__ = "ipeds_test_scores"
 
     """ create columns """
-    unitid = Column(Integer, primary_key = True)
-    date_key = Column(Date, primary_key = True)
-    test_type = Column(String(32), primary_key = True)
-    subject = Column(String(64), primary_key = True)
-    count = Column(Integer, default = 0)
-    percentage = Column(Numeric, default = 0)
-    percentile_25 = Column(Integer, default = 0)
-    percentile_75 = Column(Integer, default = 0)
+    id = Column(Integer, primary_key = True)
+    unitid = Column(Integer, nullable = False)
+    date_key = Column(Date, ForeignKey('date_dimension.date_key'), nullable = False)
+    test_type = Column(String(32), nullable = False)
+    subject = Column(String(64), nullable = False)
+    count = Column(Integer, nullable = False, default = 0)
+    percentage = Column(Numeric, nullable = False, default = 0)
+    percentile_25 = Column(Integer, nullable = False, default = 0)
+    percentile_75 = Column(Integer, nullable = False, default = 0)
+
+    """ Unique index constraint """
+    __table_args__ = (Index('idx_ipeds_test_scores_keys',
+                            'unitid',
+                            'date_key',
+                            'test_type',
+                            'subject',
+                            unique = True), )
 
     """ method for instantiating object """
     def __init__(self, unitid, date_key, test_type, subject, count, percentage, percentile_25, percentile_75):

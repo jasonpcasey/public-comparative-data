@@ -1,6 +1,6 @@
 # coding=utf-8
 
-from sqlalchemy import Column, String, Integer, Date, Numeric
+from sqlalchemy import Column, ForeignKey, Index, String, Integer, Date, Numeric
 
 from base import Base
 
@@ -9,11 +9,20 @@ class IpedsFallEnrollmentByResidency(Base):
     __tablename__ = "ipeds_fall_enrollment_by_residency"
 
     """ create columns """
-    unitid = Column(Integer, primary_key = True)
-    date_key = Column(Date, primary_key = True)
-    state = Column(String(50), primary_key = True)
-    student_population = Column(String(50), primary_key = True)
-    headcount = Column(Integer, default = 0)
+    id = Column(Integer, primary_key = True)
+    unitid = Column(Integer, nullable = False)
+    date_key = Column(Date, ForeignKey('date_dimension.date_key'), nullable = False)
+    state = Column(String(50), nullable = False)
+    student_population = Column(String(50), nullable = False)
+    headcount = Column(Integer, nullable = False, default = 0)
+
+    """ Unique index constraint """
+    __table_args__ = (Index('idx_ipeds_fall_enrollment_by_residency_keys',
+                            'unitid',
+                            'date_key',
+                            'state',
+                            'student_population',
+                            unique = True), )
 
     """ method for instantiating object """
     def __init__(self, unitid, date_key, state, student_population, headcount):

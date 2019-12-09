@@ -1,6 +1,6 @@
 # coding=utf-8
 
-from sqlalchemy import Column, Integer, Date
+from sqlalchemy import Column, ForeignKey, Index, Integer, Date
 
 from base import Base
 
@@ -12,7 +12,14 @@ class IpedsCustomPeerList(Base):
     id = Column(Integer, primary_key = True)
     unitid = Column(Integer, nullable = False)
     peer_unitid = Column(Integer, nullable = False)
-    date_key = Column(Date, nullable = False)
+    date_key = Column(Date, ForeignKey('date_dimension.date_key'), nullable = False)
+
+    """ Unique index constraint """
+    __table_args__ = (Index('idx_ipeds_custom_peer_lists_keys',
+                            'unitid',
+                            'peer_unitid',
+                            'date_key',
+                            unique = True), )
 
     """ method for instantiating object """
     def __init__(self, unitid, peer_unitid, date_key):
