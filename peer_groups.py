@@ -1,6 +1,6 @@
 # coding=utf-8
 
-from sqlalchemy import Column, String, Integer
+from sqlalchemy import Column, Index, String, Integer
 
 from base import Base
 
@@ -12,6 +12,12 @@ class PeerGroup(Base):
     id = Column(Integer, primary_key = True)
     unitid = Column(Integer, nullable = False)
     group_name = Column(String(132), nullable = False)
+
+    """ Unique index constraint """
+    __table_args__ = (Index('idx_peer_groups_keys',
+                            'unitid',
+                            'group_name',
+                            unique = True), )
 
     """ method for instantiating object """
     def __init__(self, unitid, group_name):

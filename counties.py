@@ -14,12 +14,6 @@ class County(Base):
     county_fips = Column(Integer, nullable = False)
     county_name = Column(String(255), nullable = False)
  
-    """ Unique index constraint """
-    __table_args__ = (Index('idx_fips_county_keys',
-                            'state_fips',
-                            'county_fips',
-                            unique = True), )
-
     """ method for instantiating object """
     def __init__(self, fips_code, state_fips, county_fips, county_name):
         self.fips_code = fips_code

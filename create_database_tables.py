@@ -35,6 +35,7 @@ from ipeds_retention import IpedsRetention
 from ipeds_student_aid import IpedsStudentAid
 from ipeds_student_aid_by_income import IpedsStudentAidByIncome
 from ipeds_test_scores import IpedsTestScore
+from ipeds_athletic_conference_memberships import IpedsAthleticConferenceMembership
 
 import numpy as np
 import pandas as pd
@@ -57,6 +58,7 @@ table_names = [IpedsFallEnrollment.__tablename__,
                IpedsStudentAid.__tablename__,
                IpedsTestScore.__tablename__,
                IpedsInstitution.__tablename__,
+               IpedsAthleticConferenceMembership.__tablename__,
                NsfHerdDetail.__tablename__,
                NsfHerdInstitution.__tablename__,
                NsfHerdAcademicField.__tablename__,
@@ -79,6 +81,7 @@ table_names = [IpedsFallEnrollment.__tablename__,
 tables = [IpedsFallEnrollment.__table__,
           PeerGroup.__table__,
           IpedsInstitution.__table__,
+          IpedsAthleticConferenceMembership.__table__,
           NsfHerdDetail.__table__,
           NsfHerdInstitution.__table__,
           IpedsAdmissions.__table__,

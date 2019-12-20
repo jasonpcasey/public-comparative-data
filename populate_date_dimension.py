@@ -9,8 +9,8 @@ from pandas import DataFrame
 from sqlalchemy import sql
 
 print("Reading date dimension data.")
-dates = pd.read_csv('data/date_dimension.csv')
-dates = dates.fillna(sql.null())
+df = pd.read_csv('data/date_dimension.csv')
+df = df.fillna(sql.null())
 
 session = Session()
 
@@ -19,8 +19,9 @@ try:
     print('\nPopulating dimension tables.')
 
     # insert dates into dimension tables
-    date_inserts = session.bulk_insert_mappings(mapper = DateRow,
-                                                mappings = dates.to_dict(orient='records')),
+    record_deletes = session.query(DateRow).delete(synchronize_session=False)
+    df_inserts = session.bulk_insert_mappings(mapper = DateRow,
+                                              mappings = df.to_dict(orient='records')),
     print('\tFinished populating date_dimension.')
 except Exception as e:
     session.rollback()

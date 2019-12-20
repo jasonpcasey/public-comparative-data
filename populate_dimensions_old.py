@@ -14,6 +14,7 @@ from nsf_herd_institution_data import NsfHerdInstitution
 from nsf_herd_detail_data import NsfHerdDetail
 from ipeds_fall_enrollment import IpedsFallEnrollment
 from ipeds_institutions import IpedsInstitution
+from ipeds_custom_peer_lists import IpedsCustomPeerList
 
 import numpy as np
 import pandas as pd
@@ -101,6 +102,10 @@ print("Reading state data")
 states = pd.read_csv('data/states.csv',
                      encoding='utf-16')
 
+print("Reading custom peer list data")
+lists = pd.read_csv('data/ipeds_custom_peer_lists.csv',
+                     encoding='utf-8')
+
 session = Session()
 
 try:
@@ -124,6 +129,12 @@ try:
     peer_inserts = session.bulk_insert_mappings(mapper = PeerGroup,
                                                 mappings = peers.to_dict(orient='records')),
     print('\tFinished populating peer_groups table.')
+
+    # insert custom peer list data
+    peer_inserts = session.bulk_insert_mappings(mapper = IpedsCustomPeerList,
+                                                mappings = lists.to_dict(orient='records')),
+    print('\tFinished populating ipeds_custom_peer_lists table.')
+
 except Exception as e:
     session.rollback()
     print("\nAn error occurred and no data were changed in the database.\n\nError:\n{}".format(str(e)))
