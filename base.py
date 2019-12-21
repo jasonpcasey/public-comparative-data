@@ -7,8 +7,8 @@ from sqlalchemy.orm import sessionmaker
 import keyring
 import psycopg2
 
-engine = create_engine(r"postgres+psycopg2://{}:{}@localhost:5432/{}".format("jason",
-                                                                             keyring.get_password("localhost", "jason"),
+engine = create_engine(r"postgres+psycopg2://{}:{}@localhost:5432/{}".format("jasoncasey",
+                                                                             keyring.get_password("localhost", "jasoncasey"),
                                                                              "public_comparative_data"))
 Session = sessionmaker(bind=engine)
 
