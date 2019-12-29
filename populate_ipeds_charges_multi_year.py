@@ -18,7 +18,7 @@ from ipeds_charges import IpedsCharge
 pd.set_option('display.max_rows', 10)
 
 # set constants
-first_year = 2016
+first_year = 2002
 last_year = 2018
 
 # local functions

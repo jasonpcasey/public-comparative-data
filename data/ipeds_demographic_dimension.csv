@@ -1,0 +1,20 @@
+﻿demographic_key,sex,race_ethnicity
+2morm,Men,Two or More Races
+2morw,Women,Two or More Races
+aianm,Men,American Indian or Alaska Native
+aianw,Women,American Indian or Alaska Native
+asiam,Men,Asian
+asiaw,Women,Asian
+bkaam,Men,Black or African American
+bkaaw,Women,Black or African American
+hispm,Men,Hispanic
+hispw,Women,Hispanic
+nhpim,Men,Native Hawaiian or Other Pacific Islander
+nhpiw,Women,Native Hawaiian or Other Pacific Islander
+nralm,Men,Non-resident Alien
+nralw,Women,Non-resident Alien
+unknm,Men,Unknown
+unknu,Unknown,Unknown
+unknw,Women,Unknown
+whitm,Men,White
+whitw,Women,White

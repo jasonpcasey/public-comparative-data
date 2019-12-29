@@ -1,0 +1,23 @@
+﻿degree_key,award_level,major_number
+011,Award of less than 1 academic year,First Major
+021,Award of at least 1 but less than 2 academic years,First Major
+031,Associate's degree,First Major
+032,Associate's degree,Second Major
+041,Award of at least 2 but less than 4 academic years,First Major
+051,Bachelor's degree,First Major
+052,Bachelor's degree,Second Major
+061,Postbaccalaureate certificate,First Major
+071,Master's degree,First Major
+072,Master's degree,Second Major
+081,Post-master's certificate,First Major
+082,Post-master's certificate,Second Major
+091,Doctor's degree,First Major
+092,Doctor's degree,Second Major
+101,First-professional degree,First Major
+111,First-professional certificate,First Major
+171,Doctor's degree - research/scholarship,First Major
+172,Doctor's degree - research/scholarship,Second Major
+181,Doctor's degree - professional practice,First Major
+182,Doctor's degree - professional practice,Second Major
+191,Doctor's degree - other,First Major
+192,Doctor's degree - other,Second Major

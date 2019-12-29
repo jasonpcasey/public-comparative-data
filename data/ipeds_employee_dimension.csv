@@ -1,0 +1,46 @@
+﻿employee_key,occupational_category,time_status
+211FT,"Instructional staff, primarily instruction",Full-time
+211PT,"Instructional staff, primarily instruction",Part-time
+220FT,Research,Full-time
+220PT,Research,Part-time
+230FT,Public service,Full-time
+230PT,Public service,Part-time
+261FT,"Archivists, Curators, and Museum Technicians",Full-time
+261PT,"Archivists, Curators, and Museum Technicians",Part-time
+262FT,Librarians,Full-time
+262PT,Librarians,Part-time
+263FT,Library Technicians,Full-time
+263PT,Library Technicians,Part-time
+264FT,Detailed library occupations not available for non-degree-granting institutions,Full-time
+264PT,Detailed library occupations not available for non-degree-granting institutions,Part-time
+270FT,Other teaching and Instructional Support,Full-time
+270PT,Other teaching and Instructional Support,Part-time
+300FT,Management,Full-time
+300PT,Management,Part-time
+310FT,Business and Financial Operations,Full-time
+310PT,Business and Financial Operations,Part-time
+320FT,"Computer, Engineering, and Science",Full-time
+320PT,"Computer, Engineering, and Science",Part-time
+330FT,"Community Service, Legal, Arts, and Media",Full-time
+330PT,"Community Service, Legal, Arts, and Media",Part-time
+340FT,Healthcare Practioners and Technical,Full-time
+340PT,Healthcare Practioners and Technical,Part-time
+350FT,Service Occupations,Full-time
+350PT,Service Occupations,Part-time
+360FT,Sales and Related Occupations,Full-time
+360PT,Sales and Related Occupations,Part-time
+370FT,Office and Administrative Support,Full-time
+370PT,Office and Administrative Support,Part-time
+380FT,"Natural Resources, Construction, and Maintenance",Full-time
+380PT,"Natural Resources, Construction, and Maintenance",Part-time
+390FT,"Production, Transportation, and Material Moving",Full-time
+390PT,"Production, Transportation, and Material Moving",Part-time
+410PT,Graduate Assistants Teaching,Part-time
+420PT,Graduate Assistants Research,Part-time
+430PT,Graduate Assistants Management Occupations,Part-time
+440PT,Graduate Assistants Business and Financial Operations Occupations,Part-time
+450PT,"Graduate Assistants Computer, Engineering, and Science Occupations",Part-time
+460PT,"Graduate Assistants Community Service, Legal, Arts, and Media",Part-time
+470PT,Graduate Assistants Library and Instructional support,Part-time
+480PT,Graduate Assistants Healthcare Practioners and Technical,Part-time
+490PT,Unknown,Part-time
