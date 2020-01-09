@@ -1,7 +1,7 @@
 # coding=utf-8
 
-from base import Session, engine, Base
-from ipeds_employee_dimension import IpedsEmployeeDimension
+from database.base import Session, engine, Base
+from database.ipeds_employee_dimension import IpedsEmployeeDimension
 
 import numpy as np
 import pandas as pd

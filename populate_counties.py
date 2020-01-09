@@ -1,8 +1,8 @@
 # coding=utf-8
 
-from base import Session, engine, Base
-from counties import County
-from states import State
+from database.base import Session, engine, Base
+from database.counties import County
+from database.states import State
 
 import numpy as np
 import pandas as pd

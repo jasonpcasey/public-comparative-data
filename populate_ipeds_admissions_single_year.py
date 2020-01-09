@@ -8,10 +8,10 @@ import pickle
 
 from sqlalchemy import sql
 
-from base import engine, Session, Base
-from date_dimension import DateRow
-from ipeds_demographic_dimension import IpedsDemographicDimension
-from ipeds_admissions import IpedsAdmissions
+from database.base import engine, Session, Base
+from database.date_dimension import DateRow
+from database.ipeds_demographic_dimension import IpedsDemographicDimension
+from database.ipeds_admissions import IpedsAdmissions
 
 pd.set_option('display.max_rows', 10)
 

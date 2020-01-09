@@ -1,7 +1,7 @@
 # coding=utf-8
 
-from base import Session, engine, Base
-from aau_membership import AauMember
+from database.base import Session, engine, Base
+from database.aau_membership import AauMember
 
 import numpy as np
 import pandas as pd

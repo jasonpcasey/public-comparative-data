@@ -8,10 +8,10 @@ import pickle
 
 from sqlalchemy import sql
 
-from base import engine, Session, Base
-from date_dimension import DateRow
-from athletic_conferences import AthleticConference
-from ipeds_athletic_conference_memberships import IpedsAthleticConferenceMembership
+from database.base import engine, Session, Base
+from database.date_dimension import DateRow
+from database.athletic_conferences import AthleticConference
+from database.ipeds_athletic_conference_memberships import IpedsAthleticConferenceMembership
 
 pd.set_option('display.max_rows', 10)
 
@@ -39,7 +39,7 @@ def read_pickle(filespec):
 
 for year in np.arange(first_year, last_year + 1):
     try:
-        print('Reading files for {}...'.format(year), end='', flush=True)
+        print('\nReading files for {}...'.format(year), end='', flush=True)
         ic = read_pickle('data/ipeds_ic_{}.pickle'.format(year))
 
     except Exception as e:
@@ -101,8 +101,8 @@ for year in np.arange(first_year, last_year + 1):
         print('No data were altered due to error.')
     else:
         session.commit()
-        print('\n{:,} old records were deleted.'.format(record_deletes))
-        print('{:,} new records were inserted.'.format(conf.shape[0]))
+        print('\t{:,} old records were deleted.'.format(record_deletes))
+        print('\t{:,} new records were inserted.'.format(conf.shape[0]))
     finally:
         session.close()
         session = None

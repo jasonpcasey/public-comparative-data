@@ -1,7 +1,7 @@
 # coding=utf-8
 
-from base import Session, engine, Base
-from cbsa import Cbsa
+from database.base import Session, engine, Base
+from database.cbsa import Cbsa
 
 import numpy as np
 import pandas as pd

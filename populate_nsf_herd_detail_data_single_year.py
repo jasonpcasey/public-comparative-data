@@ -8,10 +8,10 @@ import pickle
 
 from sqlalchemy import sql
 
-from base import engine, Session, Base
-from nsf_herd_academic_fields import NsfHerdAcademicField
-from nsf_herd_federal_agencies import NsfHerdFederalAgency
-from nsf_herd_detail_data import NsfHerdDetail
+from database.base import engine, Session, Base
+from database.nsf_herd_academic_fields import NsfHerdAcademicField
+from database.nsf_herd_federal_agencies import NsfHerdFederalAgency
+from database.nsf_herd_detail_data import NsfHerdDetail
 
 pd.set_option('display.max_rows', 10)
 
@@ -29,14 +29,14 @@ def item_recode(col, codings, default_value = None):
 
 try:
     spec = 'data/nsf_{}.pickle'.format(year)
-    print('Reading data for fiscal year ending {}:\n\t{}... '.format(year, spec), end='', flush=True)
+    print('Reading data for fiscal year ending {}...'.format(year), end='', flush=True)
     with open(spec, 'rb') as f:
         herd = pickle.load(f)
 except Exception as e:
     print('ERROR.\nFile not downloaded properly.\n\n{}\n'.format(str(e)))
 else:
     print('DONE.')
-    herd.info()
+    # herd.info()
 
 # set date key
 date_key = '{}-06-30'.format(year)
@@ -136,11 +136,11 @@ try:
 except Exception as e:
     session.rollback()
     print(str(e))
-    print('No data were altered due to error.')
+    print('No data were altered due to error.\n')
 else:
     session.commit()
-    print('\n{:,} old records were deleted.'.format(record_deletes))
-    print('{:,} new records were inserted.'.format(herd.shape[0]))
+    print('\t{:,} old records were deleted.'.format(record_deletes))
+    print('\t{:,} new records were inserted.\n'.format(herd.shape[0]))
 finally:
     session.close()
     session = None

@@ -8,9 +8,9 @@ import pickle
 
 from sqlalchemy import sql
 
-from base import engine, Session, Base
-from date_dimension import DateRow
-from ipeds_average_tuition import IpedsAverageTuition
+from database.base import engine, Session, Base
+from database.date_dimension import DateRow
+from database.ipeds_average_tuition import IpedsAverageTuition
 
 pd.set_option('display.max_rows', 10)
 

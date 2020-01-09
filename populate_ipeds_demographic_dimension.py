@@ -1,7 +1,7 @@
 # coding=utf-8
 
-from base import Session, engine, Base
-from ipeds_demographic_dimension import IpedsDemographicDimension
+from database.base import Session, engine, Base
+from database.ipeds_demographic_dimension import IpedsDemographicDimension
 
 import numpy as np
 import pandas as pd

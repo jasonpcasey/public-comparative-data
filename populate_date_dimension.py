@@ -1,7 +1,7 @@
 # coding=utf-8
 
-from base import Session, engine, Base
-from date_dimension import DateRow
+from database.base import Session, engine, Base
+from database.date_dimension import DateRow
 
 import numpy as np
 import pandas as pd

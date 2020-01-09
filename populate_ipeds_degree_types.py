@@ -1,7 +1,7 @@
 # coding=utf-8
 
-from base import Session, engine, Base
-from ipeds_degree_types import IpedsDegreeType
+from database.base import Session, engine, Base
+from database.ipeds_degree_types import IpedsDegreeType
 
 import numpy as np
 import pandas as pd

@@ -8,10 +8,10 @@ import pickle
 
 from sqlalchemy import sql
 
-from base import engine, Session, Base
-from date_dimension import DateRow
-from ipeds_demographic_dimension import IpedsDemographicDimension
-from ipeds_admissions import IpedsAdmissions
+from database.base import engine, Session, Base
+from database.date_dimension import DateRow
+from database.ipeds_demographic_dimension import IpedsDemographicDimension
+from database.ipeds_admissions import IpedsAdmissions
 
 pd.set_option('display.max_rows', 10)
 
@@ -50,7 +50,7 @@ keepers = ['unitid',
 
 for year in np.arange(first_year, last_year + 1):
     try:
-        print('Reading files for {}...'.format(year), end='', flush=True)
+        print('\nReading files for {}...'.format(year), end='', flush=True)
         df = read_pickle('data/ipeds_adm_{}.pickle'.format(year))[keepers]
         df = df.fillna(0)
     except Exception as e:
@@ -60,7 +60,7 @@ for year in np.arange(first_year, last_year + 1):
 
     # check for problems
     # zero apps, non-zero admits
-    print(df.loc[(df['applcn'] == 0) & (df['admssn'] > 0), :])
+    # print(df.loc[(df['applcn'] == 0) & (df['admssn'] > 0), :])
 
     # set date key
     date_key = '{}-10-15'.format(year)
@@ -96,10 +96,10 @@ for year in np.arange(first_year, last_year + 1):
     adm['demographic_key'] = np.where(adm.sex == 'women', 'unknw', adm.demographic_key)
 
     adm = adm.pivot_table(index=['unitid', 'date_key', 'demographic_key'],
-                        columns='field',
-                        values='count',
-                        aggfunc = np.sum,
-                        fill_value = 0).reset_index()
+                          columns='field',
+                          values='count',
+                          aggfunc = np.sum,
+                          fill_value = 0).reset_index()
 
     # remove institutions with no applications
     adm = adm.fillna(0)
@@ -109,7 +109,7 @@ for year in np.arange(first_year, last_year + 1):
     session = Session()
 
     try:
-        print('\nAttempting to insert {:,} rows for {} into {}.'.format(adm.shape[0], year, IpedsAdmissions.__tablename__))
+        print('Attempting to insert {:,} rows for {} into {}.'.format(adm.shape[0], year, IpedsAdmissions.__tablename__))
         record_deletes = session.query(IpedsAdmissions).filter(IpedsAdmissions.date_key==date_key).delete(synchronize_session=False)
         session.bulk_insert_mappings(mapper = IpedsAdmissions,
                                     mappings = adm.to_dict(orient='records'),
@@ -120,10 +120,10 @@ for year in np.arange(first_year, last_year + 1):
         print('No data were altered due to error.')
     else:
         session.commit()
-        print('{:,} old records were deleted.'.format(record_deletes))
-        print('{:,} new records were inserted.'.format(adm.shape[0]))
+        print('\t{:,} old records were deleted.'.format(record_deletes))
+        print('\t{:,} new records were inserted.'.format(adm.shape[0]))
     finally:
         session.close()
         session = None
 
-print('All Done.')
+print('\nAll Done.')

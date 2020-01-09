@@ -8,11 +8,11 @@ import pickle
 
 from sqlalchemy import sql
 
-from base import engine, Session, Base
-from date_dimension import DateRow
-from states import State
-from nsf_herd_institution_data import NsfHerdInstitution
-from nsf_herd_detail_data import NsfHerdDetail
+from database.base import engine, Session, Base
+from database.date_dimension import DateRow
+from database.states import State
+from database.nsf_herd_institution_data import NsfHerdInstitution
+from database.nsf_herd_detail_data import NsfHerdDetail
 
 pd.set_option('display.max_rows', 10)
 
@@ -39,14 +39,14 @@ def item_recode(col, codings, default_value = None):
 for year in np.arange(first_year, last_year + 1):
     try:
         spec = 'data/nsf_{}.pickle'.format(year)
-        print('Reading data for fiscal year ending {}:\n\t{}... '.format(year, spec), end='', flush=True)
+        print('Reading data for fiscal year ending {}...'.format(year), end='', flush=True)
         with open(spec, 'rb') as f:
             herd = pickle.load(f)
     except Exception as e:
         print('ERROR.\nFile not downloaded properly.\n\n{}\n'.format(str(e)))
     else:
         print('DONE.')
-        herd.info()
+        # herd.info()
 
     # set date key
     date_key = '{}-06-30'.format(year)
@@ -77,10 +77,15 @@ for year in np.arange(first_year, last_year + 1):
     herd.unitid = herd.unitid.fillna(-1).astype(int)
 
     # select questionnaire_no's for institutional aggregate values
-    herd = herd[herd.questionnaire_no.isin(['01.a', '01.b', '01.c', '01.d', '01.e', '01.f', '01.g', '04', 'NA_01'])]
+    herd = herd[herd.questionnaire_no.isin(['01.a', '01.b', '01.c', '01.d', '01.e', '01.f', '01.g', '04', 'NA_01', '15'])]
 
     # data are reported in thousands of dollars - make explicit
-    herd['data'] = herd.data.fillna(0) * 1000
+    herd['data'] = np.where(herd.questionnaire_no == '15', herd.data, herd.data.fillna(0) * 1000)
+
+    # add labels for personnel variables
+    herd.loc[(herd['questionnaire_no'] == '15') & (herd['row'] == 'Principal investigators'), 'questionnaire_no'] = 'principal_investigators'  
+    herd.loc[(herd['questionnaire_no'] == '15') & (herd['row'] == 'Other personnel'), 'questionnaire_no'] = 'other_personnel'  
+    herd.loc[(herd['questionnaire_no'] == '15') & (herd['row'] == 'Total'), 'questionnaire_no'] = 'research_personnel'  
 
     keepers = ['inst_id',
             'date_key',
@@ -126,7 +131,7 @@ for year in np.arange(first_year, last_year + 1):
                                                 'NA_01': 'arra_funds'})
 
     # replace NaN with database-compliant nulls
-    institutions = institutions.fillna(sql.null())
+    institutions['research_personnel'] = np.where(institutions.research_personnel == 0, sql.null(), institutions.research_personnel)
 
     # insert data into dbo.survey_records
     session = Session()
@@ -140,13 +145,13 @@ for year in np.arange(first_year, last_year + 1):
     except Exception as e:
         session.rollback()
         print(str(e))
-        print('No data were altered due to error.')
+        print('No data were altered due to error.\n')
     else:
         session.commit()
-        print('\n{:,} old records were deleted.'.format(record_deletes))
-        print('{:,} new records were inserted.'.format(institutions.shape[0]))
+        print('\t{:,} old records were deleted.'.format(record_deletes))
+        print('\t{:,} new records were inserted.\n'.format(institutions.shape[0]))
     finally:
         session.close()
         session = None
 
-print('\nAll done!')
+print('All done!')

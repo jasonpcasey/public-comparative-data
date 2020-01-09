@@ -8,17 +8,16 @@ import pickle
 
 from sqlalchemy import sql
 
-from base import engine, Session, Base
-from date_dimension import DateRow
-from states import State
-from counties import County
-from ipeds_charges import IpedsCharge
-# from ipeds_average_tuition import IpedsAverageTuition
+from database.base import engine, Session, Base
+from database.date_dimension import DateRow
+from database.states import State
+from database.counties import County
+from database.ipeds_charges import IpedsCharge
 
 pd.set_option('display.max_rows', 10)
 
 # set constants
-first_year = 2002
+first_year = 2016
 last_year = 2018
 
 # local functions

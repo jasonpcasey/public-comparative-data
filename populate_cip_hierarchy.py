@@ -1,7 +1,7 @@
 # coding=utf-8
 
-from base import Session, engine, Base
-from cip_hierarchy import Cip
+from database.base import Session, engine, Base
+from database.cip_hierarchy import Cip
 
 import numpy as np
 import pandas as pd

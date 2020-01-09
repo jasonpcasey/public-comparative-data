@@ -1,7 +1,7 @@
 # coding=utf-8
 
-from base import Session, engine, Base
-from carnegie_classes import CarnegieClass
+from database.base import Session, engine, Base
+from database.carnegie_classes import CarnegieClass
 
 import numpy as np
 import pandas as pd

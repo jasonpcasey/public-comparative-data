@@ -1,7 +1,7 @@
 # coding=utf-8
 
-from base import Session, engine, Base
-from nsf_herd_academic_fields import NsfHerdAcademicField
+from database.base import Session, engine, Base
+from database.nsf_herd_academic_fields import NsfHerdAcademicField
 
 import numpy as np
 import pandas as pd
