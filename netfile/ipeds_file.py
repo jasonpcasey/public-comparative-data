@@ -6,7 +6,7 @@ from urllib.request import urlopen
 from database.base import Session, engine, Base
 
 class IpedsFile:
-    _url_base = 'https://nces.ed.gov/ipeds/datacenter/data/'
+    __url_base = 'https://nces.ed.gov/ipeds/datacenter/data/'
 
     def __init__(self, year):
         self.year = year
@@ -16,7 +16,7 @@ class IpedsFile:
     
     def get_uri(self, prefix):
         """get_uri() returns the appropriate URI for a given year's IPEDS survey archive"""
-        return '{}{}{}.zip'.format(IpedsFile._url_base, prefix, self.year)
+        return '{}{}{}.zip'.format(type(self).__url_base, prefix, self.year)
 
     def read(self, dtypes = 'object'):
         with urlopen(self.uri) as resp:
@@ -53,3 +53,6 @@ class IpedsFile:
 
     def populate_rows(self):
         pass
+
+    def __repr__(self):
+        return('IpedsFile(year={})'.format(self.year))

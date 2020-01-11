@@ -75,3 +75,12 @@ class AdmissionsFile(IpedsFile):
                                              row.applications,
                                              row.admissions,
                                              row.enrolled))
+
+    def __repr__(self):
+        return('AdmissionsFile(year={})'.format(self.year))
+
+if __name__ == '__main__':
+    adm = AdmissionsFile(2018)
+    print(adm.year)
+    print(adm.uri)
+    print(adm.rows[0])
