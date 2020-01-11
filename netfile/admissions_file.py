@@ -7,9 +7,9 @@ class AdmissionsFile(IpedsFile):
     def __init__(self, year):
         super().__init__(year)
         if self.year < 2014:
-            self.uri = self.get_uri('ic')
+            self.url = self.get_url('ic')
         else:
-            self.uri = self.get_uri('adm')
+            self.url = self.get_url('adm')
         self.populate_rows()
     
     def populate_rows(self):
@@ -82,5 +82,5 @@ class AdmissionsFile(IpedsFile):
 if __name__ == '__main__':
     adm = AdmissionsFile(2018)
     print(adm.year)
-    print(adm.uri)
+    print(adm.url)
     print(adm.rows[0])

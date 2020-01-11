@@ -11,15 +11,18 @@ class IpedsFile:
     def __init__(self, year):
         self.year = year
         self.date_key = '{}-10-15'.format(self.year)
-        self.uri = ''
+        self.url = ''
         self.rows = list()
     
-    def get_uri(self, prefix):
-        """get_uri() returns the appropriate URI for a given year's IPEDS survey archive"""
+    def get_url(self, prefix):
+        """get_url() returns the appropriate URI for a given year's IPEDS survey archive"""
         return '{}{}{}.zip'.format(type(self).__url_base, prefix, self.year)
 
+    def row_count(self):
+        return(len(self.rows))
+
     def read(self, dtypes = 'object'):
-        with urlopen(self.uri) as resp:
+        with urlopen(self.url) as resp:
             zipfile = ZipFile(BytesIO(resp.read()))
             file_name = zipfile.namelist()[0]
             revised_data = [s for s in zipfile.namelist() if "_rv" in s]
