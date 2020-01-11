@@ -33,7 +33,7 @@ class IpedsAdmissions(Base):
         self.admissions = admissions
         self.enrolled = enrolled
 
-    """ method used to produce print-friendly output """
+    """ repr output """
     def __repr__(self):
         return ("IpedsAdmissions(unitid={}, date_key='{}', demographic_key='{}', "
                 "applications = {}, admissions = {}, enrolled={})").format(self.unitid,
