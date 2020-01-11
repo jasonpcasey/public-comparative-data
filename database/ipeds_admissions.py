@@ -35,8 +35,8 @@ class IpedsAdmissions(Base):
 
     """ method used to produce print-friendly output """
     def __repr__(self):
-        return ("<IpedsAdmissions(unitid={}, date_key={}, demographic_key={}, "
-                "applications = {}, admissions = {}, enrolled={})>").format(self.unitid,
+        return ("IpedsAdmissions(unitid={}, date_key='{}', demographic_key='{}', "
+                "applications = {}, admissions = {}, enrolled={})").format(self.unitid,
                                                                            self.date_key,
                                                                            self.demographic_key,
                                                                            self.applications,
