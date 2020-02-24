@@ -3,6 +3,8 @@
 from database.base import Session, engine, Base
 from database.date_dimension import DateRow
 from database.states import State
+from database.ipeds_survey_dimension import IpedsSurveyDimension
+from database.ipeds_submission_status import IpedsSubmissionStatus
 from database.peer_groups import PeerGroup
 from database.ipeds_demographic_dimension import IpedsDemographicDimension
 from database.ipeds_employee_dimension import IpedsEmployeeDimension
@@ -76,7 +78,9 @@ table_names = [IpedsFallEnrollment.__tablename__,
                IpedsEmployeeDimension.__tablename__,
                PeerGroup.__tablename__,
                IpedsDegreeType.__tablename__,
-               Cip.__tablename__]
+               Cip.__tablename__,
+               IpedsSurveyDimension.__tablename__,
+               IpedsSubmissionStatus.__tablename__]
 
 tables = [IpedsFallEnrollment.__table__,
           PeerGroup.__table__,
@@ -112,7 +116,9 @@ tables = [IpedsFallEnrollment.__table__,
           IpedsDemographicDimension.__table__,
           IpedsEmployeeDimension.__table__,
           IpedsDegreeType.__table__,
-          Cip.__table__]
+          Cip.__table__,
+          IpedsSubmissionStatus.__table__,
+          IpedsSurveyDimension.__table__]
 
 print("\nDropping tables if they exist in the database:\n\t{}".format('\n\t'.join(table_names)))
 

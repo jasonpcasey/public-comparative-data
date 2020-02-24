@@ -16,6 +16,7 @@ scripts = [
     'populate_ipeds_degree_types.py',
     'populate_ipeds_demographic_dimension.py',
     'populate_ipeds_employee_dimension.py',
+    'populate_ipeds_survey_dimension.py',
     'populate_peer_groups.py',
     'populate_ipeds_custom_peer_lists.py'
     ]
