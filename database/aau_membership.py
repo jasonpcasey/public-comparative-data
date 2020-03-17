@@ -21,6 +21,6 @@ class AauMember(Base):
     def __repr__(self):
         return (
             f'{self.__class__.__name__}('
-            f'unitid={self.unitid}, '
-            f'inst_name={self.inst_name})'
+            f'unitid={self.unitid!r}, '
+            f'inst_name={self.inst_name!r})'
             )

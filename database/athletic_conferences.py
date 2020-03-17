@@ -19,6 +19,7 @@ class AthleticConference(Base):
 
     """ method used to produce print-friendly output """
     def __repr__(self):
-        return ("<AthleticConference(conference_id={}, "
-                "conference_name={})").format(self.conference_id,
-                                              self.conference_name)
+        return (
+            f'{self.__class__.__name__}('
+            f'conference_id={self.conference_id!r}, '
+            f'conference_name={self.conference_name!r})')

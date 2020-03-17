@@ -19,6 +19,8 @@ class Cbsa(Base):
 
     """ method used to produce print-friendly output """
     def __repr__(self):
-        return ("<Cbsa(cbsa_id={}, "
-                "cbsa_name={})").format(self.cbsa_id,
-                                        self.cbsa_name)
+        return (
+            f'{self.__class__.__name__}('
+            f'cbsa_id={self.cbsa_id!r}, '
+            f'cbsa_name={self.cbsa_name!r})'
+            )

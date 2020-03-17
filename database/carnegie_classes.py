@@ -21,7 +21,9 @@ class CarnegieClass(Base):
 
     """ method used to produce print-friendly output """
     def __repr__(self):
-        return ("<CarnegieClass(unitid={}, basic_code={}, "
-                "carnegie_class={})").format(self.unitid,
-                                     self.basic_code,
-                                     self.carnegie_class)
+        return (
+            f'{self.__class__.__name__}('
+            f'unitid={self.unitid!r}, '
+            f'basic_code={self.basic_code!r}, '
+            f'carnegie_class={self.carnegie_class!r})'
+            )
