@@ -19,6 +19,8 @@ class AauMember(Base):
 
     """ method used to produce print-friendly output """
     def __repr__(self):
-        return ("<AauMember(unitid={}, "
-                "inst_name={})").format(self.unitid,
-                                        self.inst_name)
+        return (
+            f'{self.__class__.__name__}('
+            f'unitid={self.unitid}, '
+            f'inst_name={self.inst_name})'
+            )
