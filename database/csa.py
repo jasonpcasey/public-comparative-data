@@ -19,6 +19,8 @@ class Csa(Base):
 
     """ method used to produce print-friendly output """
     def __repr__(self):
-        return ("<Csa(csa_id={}, "
-                "csa_name={})").format(self.csa_id,
-                                       self.csa_name)
+        return (
+            f'{self.__class__.__name__}('
+            f'csa_id={self.csa_id!r}, '
+            f'csa_name={self.csa_name!r})'
+        )

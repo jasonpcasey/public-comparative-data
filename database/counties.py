@@ -23,8 +23,10 @@ class County(Base):
     
     """ method used to produce print-friendly output """
     def __repr__(self):
-        return ("<County(fips_code={}, state_fips={}, county_fips={}, "
-                "county_name={})").format(self.fips_code,
-                                          self.state_fips,
-                                          self.county_fips,
-                                          self.county_name)
+        return (
+            f'{self.__class__.__name__}('
+            f'fips_code={self.fips_code!r}, '
+            f'state_fips={self.state_fips!r}, '
+            f'county_fips={self.county_fips!r}, '
+            f'county_name={self.county_name!r})'
+        )

@@ -29,13 +29,13 @@ class Cip(Base):
 
     """ method used to produce print-friendly output """
     def __repr__(self):
-        return ("<Cip(cipcode={}, cip6={}, "
-                "cip6_description={}, cip4={}, "
-                "cip4_description={}, cip2={}, "
-                "cip2_description={})").format(self.cipcode,
-                                               self.cip6,
-                                               self.cip6_description,
-                                               self.cip4,
-                                               self.cip4_description,
-                                               self.cip2,
-                                               self.cip2_description)
+        return (
+            f'{self.__class__.__name__}('
+            f'cipcode={self.cipcode!r}, '
+            f'cip6={self.cip6!r}, '
+            f'cip6_description={self.cip6_description!r}, '
+            f'cip4={self.cip4!r}, '
+            f'cip4_description={self.cip4_description!r}, '
+            f'cip2={self.cip2!r}, '
+            f'cip2_description={self.cip2_description!r})'
+            )
