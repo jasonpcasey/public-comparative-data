@@ -45,7 +45,7 @@ class DateRow(Base):
     first_day_of_next_year = Column(Date, nullable=False)
     yyyymmdd = Column(Integer, nullable=False)
 
-    """ method for instantiating object """
+    
     def __init__(self, date_key, day, day_suffix, weekday, weekday_name, is_weekend,
                  is_holiday, holiday_name, days_of_week_in_month,
                  day_of_year, week_of_month, week_of_year, iso_week_of_year,
@@ -56,6 +56,7 @@ class DateRow(Base):
                  first_day_of_quarter, last_day_of_quarter, first_day_of_year,
                  last_day_of_year, first_day_of_next_month, first_day_of_next_year,
                  yyyymmdd):
+        """ method for instantiating object """
         self.date_key = date_key
         self.day = day
         self.day_suffix = day_suffix
@@ -92,15 +93,16 @@ class DateRow(Base):
         self.first_day_of_next_year = first_day_of_next_year
         self.yyyymmdd = yyyymmdd
 
-    """ method used to produce print-friendly output """
+    
     def __repr__(self):
-        return ('<DateRow(date_key={}, calendar_year={}, '
-                'term_code={}, peoplesoft_term_code={}, '
-                'semester={}, fiscal_year={}, '
-                'academic_year_trailing_summer = {})').format(self.date_key,
-                                                              self.calendar_year,
-                                                              self.term_code,
-                                                              self.peoplesoft_term_code,
-                                                              self.semester,
-                                                              self.fiscal_year,
-                                                              self.academic_year_trailing_summer)
+        """ method used to produce print-friendly output """
+        return (
+            f'{self.__class__.__name__}('
+            f'date_key={self.date_key!r}, '
+            f'calendar_year={self.calendar_year!r}, '
+            f'term_code={self.term_code!r}, '
+            f'peoplesoft_term_code={self.peoplesoft_term_code!r}, '
+            f'semester={self.semester!r}, '
+            f'fiscal_year={self.fiscal_year!r}, '
+            f'academic_year_trailing_summer={self.academic_year_trailing_summer!r})'
+            )

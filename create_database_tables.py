@@ -38,6 +38,7 @@ from database.ipeds_student_aid import IpedsStudentAid
 from database.ipeds_student_aid_by_income import IpedsStudentAidByIncome
 from database.ipeds_test_scores import IpedsTestScore
 from database.ipeds_athletic_conference_memberships import IpedsAthleticConferenceMembership
+from database.ipeds_faculty_dimension import IpedsFacultyDimension
 
 import numpy as np
 import pandas as pd
@@ -79,6 +80,7 @@ table_names = [IpedsFallEnrollment.__tablename__,
                PeerGroup.__tablename__,
                IpedsDegreeType.__tablename__,
                Cip.__tablename__,
+               IpedsFacultyDimension.__tablename__,
                IpedsSurveyDimension.__tablename__,
                IpedsSubmissionStatus.__tablename__]
 
@@ -108,6 +110,7 @@ tables = [IpedsFallEnrollment.__table__,
           AthleticConference.__table__,
           CarnegieClass.__table__,
           IpedsCustomPeerList.__table__,
+          IpedsFacultyDimension.__table__,
           Cbsa.__table__,
           Csa.__table__,
           DateRow.__table__,

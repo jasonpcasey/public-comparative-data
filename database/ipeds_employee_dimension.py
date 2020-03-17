@@ -21,7 +21,9 @@ class IpedsEmployeeDimension(Base):
 
     """ method used to produce print-friendly output """
     def __repr__(self):
-        return ("<IpedsEmployeeDimension(employee_key={}, "
-                "occupational_category={}, time_status={})").format(self.employee_key,
-                                                                    self.occupational_category,
-                                                                    self.time_status)
+        return (
+            f'{self.__class__.__name__}('
+            f'employee_key={self.employee_key!r}, '
+            f'occupational_category={self.occupational_category}, '
+            f'time_status={self.time_status})'
+            )
