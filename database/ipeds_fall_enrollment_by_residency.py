@@ -24,20 +24,21 @@ class IpedsFallEnrollmentByResidency(Base):
                             'student_population',
                             unique = True), )
 
-    """ method for instantiating object """
     def __init__(self, unitid, date_key, state, student_population, headcount):
+        """ method for instantiating object """
         self.unitid = unitid
         self.date_key = date_key
         self.state = state
         self.student_population = student_population
         self.headcount = headcount
 
-    """ method used to produce print-friendly output """
     def __repr__(self):
-        return ("<IpedsFallEnrollmentByResidency(unitid={}, date_key={}, "
-                "state = {}, student_population={}, "
-                "headcount={})").format(self.unitid,
-                                        self.date_key,
-                                        self.state,
-                                        self.student_population,
-                                        self.headcount)
+        """ produces human-readable object call """
+        return (
+            f'{self.__class__.__name__}('
+            f'unitid={self.unitid!r}, '
+            f'date_key={self.date_key!r}, '
+            f'state={self.state!r}, '
+            f'student_population={self.student_population!r}, '
+            f'headcount={self.headcount!r})'
+        )

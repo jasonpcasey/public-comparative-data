@@ -24,20 +24,21 @@ class IpedsCharge(Base):
                             'charge_type',
                             unique = True), )
 
-    """ method for instantiating object """
     def __init__(self, unitid, date_key, student_residency, charge_type, charge):
+        """ method for instantiating object """
         self.unitid = unitid
         self.date_key = date_key
         self.student_residency = student_residency
         self.charge_type = charge_type
         self.charge = charge
 
-    """ method used to produce print-friendly output """
     def __repr__(self):
-        return ("<IpedsCharge(unitid={}, date_key={}, "
-               "student_residency={}, charge_type={}, "
-               "charge={})").format(self.unitid,
-                                    self.date_key,
-                                    self.student_residency,
-                                    self.charge_type,
-                                    self.charge)
+        """ produces human-readable object call """
+        return (
+            f'{self.__class__.__name__}('
+            f'unitid={self.unitid!r}, '
+            f'date_key={self.date_key!r}, '
+            f'student_residency={self.student_residency!r}, '
+            f'charge_type={self.charge_type!r}, '
+            f'charge={self.charge!r})'
+        )

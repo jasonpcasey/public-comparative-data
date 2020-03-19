@@ -13,15 +13,17 @@ class IpedsDegreeType(Base):
     award_level = Column(String(132), nullable = False)
     major_number = Column(String(20), nullable = False)
 
-    """ method for instantiating object """
     def __init__(self, degree_key, award_level, major_number):
+        """ method for instantiating object """
         self.degree_key = degree_key
         self.award_level = award_level
         self.major_number = major_number
 
-    """ method used to produce print-friendly output """
     def __repr__(self):
-        return ("<IpedsDegreeType(degree_key={}, "
-                "award_level={}, major_number={})").format(self.degree_key,
-                                                           self.award_level,
-                                                           self.major_number)
+        """ produces human-readable object call """
+        return (
+            f'{self.__class__.__name__}('
+            f'degree_key={self.degree_key!r}, '
+            f'award_level={self.award_level!r}, '
+            f'major_number={self.major_number!r})'
+        )

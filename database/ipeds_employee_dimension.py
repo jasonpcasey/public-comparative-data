@@ -13,14 +13,14 @@ class IpedsEmployeeDimension(Base):
     occupational_category = Column(String(255), nullable = False)
     time_status = Column(String(9), nullable = False)
 
-    """ method for instantiating object """
     def __init__(self, employee_key, occupational_category, time_status):
+        """ method for instantiating object """
         self.employee_key
         self.occupational_category = occupational_category
         self.time_status = time_status
 
-    """ method used to produce print-friendly output """
     def __repr__(self):
+        """ produces human-readable object call """
         return (
             f'{self.__class__.__name__}('
             f'employee_key={self.employee_key!r}, '

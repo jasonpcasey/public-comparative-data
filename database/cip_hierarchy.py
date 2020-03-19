@@ -6,7 +6,7 @@ from .base import Base
 
 class Cip(Base):
     """ map to a table name in db """
-    __tablename__ = "cip_hierarchy"
+    __tablename__ = "ref_cip_hierarchy"
 
     """ create columns """
     cipcode = Column(String(7), primary_key = True)
@@ -17,8 +17,8 @@ class Cip(Base):
     cip2 = Column(Integer, nullable = False)
     cip2_description = Column(String(132), nullable = False)
 
-    """ method for instantiating object """
     def __init__(self, cipcode, cip6, cip6_description, cip4, cip4_description, cip2, cip2_description):
+        """ method for instantiating object """
         self.cipcode = cipcode
         self.cip6 = cip6
         self.cip6_description = cip6_description
@@ -27,8 +27,8 @@ class Cip(Base):
         self.cip2 = cip2
         self.cip2_description = cip2_description
 
-    """ method used to produce print-friendly output """
     def __repr__(self):
+        """ produces human-readable object call """
         return (
             f'{self.__class__.__name__}('
             f'cipcode={self.cipcode!r}, '

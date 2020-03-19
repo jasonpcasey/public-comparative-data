@@ -24,8 +24,8 @@ class IpedsSubmissionStatus(Base):
                             'survey_key',
                             unique = True), )
 
-    """ method for instantiating object """
     def __init__(self, unitid, date_key, survey_key, parent_child, parent_unitid, allocation_factor):
+        """ method for instantiating object """
         self.unitid = unitid
         self.date_key = date_key
         self.survey_key = survey_key
@@ -33,13 +33,14 @@ class IpedsSubmissionStatus(Base):
         self.parent_unitid = parent_unitid
         self.allocation_factor = allocation_factor
 
-    """ method used to produce print-friendly output """
     def __repr__(self):
-        return ("IpedsSubmissionStatus(unitid={}, date_key={}, "
-                "survey_key={}, parent_child={}, parent_unitid={} "
-                "allocation_factor={})").format(self.unitid,
-                                                self.date_key,
-                                                self.survey_key,
-                                                self.parent_child,
-                                                self.parent_unitid,
-                                                self.allocation_factor)
+        """ produces human-readable object call """
+        return (
+            f'{self.__class__.__name__}('
+            f'unitid={self.unitid!r}, '
+            f'date_key={self.date_key!r}, '
+            f'survey_key={self.survey_key!r}, '
+            f'parent_child={self.parent_child!r}, '
+            f'parent_unitid={self.parent_unitid!r}, '
+            f'allocation_factor={self.allocation_factor!r})'
+        )

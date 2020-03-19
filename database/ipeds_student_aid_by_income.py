@@ -27,10 +27,10 @@ class IpedsStudentAidByIncome(Base):
                             'income_band',
                             unique = True), )
 
-    """ method for instantiating object """
     def __init__(self, unitid, date_key, income_band, count,
                  grant_recipients, total_amount, average_amount, 
                  average_net_price):
+        """ method for instantiating object """
         self.unitid = unitid
         self.date_key = date_key
         self.income_band = income_band
@@ -41,16 +41,16 @@ class IpedsStudentAidByIncome(Base):
         self.average_net_price = average_net_price
 
 
-    """ method used to produce print-friendly output """
     def __repr__(self):
-        return ("<IpedsStudentAidByIncome(unitid={}, date_key={}, "
-                "income_band={}, count={}, "
-                "grant_recipients={}, total_amount={}, average_amount={}, "
-                "average_net_price={})").format(self.unitid,
-                                                self.date_key,
-                                                self.income_band,
-                                                self.count,
-                                                self.grant_recipients,
-                                                self.total_amount,
-                                                self.average_amount,
-                                                self.average_net_price)
+        """ produces human-readable object call """
+        return (
+            f'{self.__class__.__name__}('
+            f'unitid={self.unitid!r}, '
+            f'date_key={self.date_key!r}, '
+            f'income_band={self.income_band!r}, '
+            f'count={self.count!r}, '
+            f'grant_recipients={self.grant_recipients!r}, '
+            f'total_amount={self.total_amount!r}, '
+            f'average_amount={self.average_amount!r}, '
+            f'average_net_price={self.average_net_price!r})'
+        )

@@ -32,10 +32,10 @@ class IpedsGraduationRate(Base):
                             'demographic_key',
                             unique = True), )
 
-    """ method for instantiating object """
     def __init__(self, unitid, date_key, cohort_date_key, demographic_key, entering_cohort, exclusions,
                  adjusted_cohort, completers_4_years, completers_5_years, completers_6_years,
                  enrolled, transfers, no_longer_enrolled):
+        """ method for instantiating object """
         self.unitid = unitid
         self.date_key = date_key
         self.cohort_date_key = cohort_date_key
@@ -50,24 +50,21 @@ class IpedsGraduationRate(Base):
         self.transfers = transfers
         self.no_longer_enrolled = no_longer_enrolled
 
-    """ method used to produce print-friendly output """
     def __repr__(self):
-        return ("<IpedsGraduationRate(unitid={}, date_key={}, "
-                "cohort_date_key = {}, demographic_key={}, "
-                "entering_cohort ={ }, exclusions = {}, "
-                "adjusted_cohort = {}, completers_4_years = {}, "
-                "completers_5_years = {}, completers_6_years = {}, "
-                "enrolled = {}, transfers = {}, "
-                "no_longer_enrolled = {})").format(self.unitid,
-                                                   self.date_key,
-                                                   self.cohort_date_key,
-                                                   self.demographic_key,
-                                                   self.entering_cohort,
-                                                   self.exclusions,
-                                                   self.adjusted_cohort,
-                                                   self.completers_4_years,
-                                                   self.completers_5_years,
-                                                   self.completers_6_years,
-                                                   self.enrolled,
-                                                   self.transfers,
-                                                   self.no_longer_enrolled)
+        """ produces human-readable object call """
+        return (
+            f'{self.__class__.__name__}('
+            f'unitid={self.unitid!r}, '
+            f'date_key={self.date_key!r}, '
+            f'cohort_date_key={self.cohort_date_key!r}, '
+            f'demographic_key={self.demographic_key!r}, '
+            f'entering_cohort={self.entering_cohort!r}, '
+            f'exclusions={self.exclusions!r}, '
+            f'adjusted_cohort={self.adjusted_cohort!r}, '
+            f'completers_4_years={self.completers_4_years!r}, '
+            f'completers_5_years={self.completers_5_years!r}, '
+            f'completers_6_years={self.completers_6_years!r}, '
+            f'enrolled={self.enrolled!r}, '
+            f'transfers={self.transfers!r}, '
+            f'no_longer_enrolled={self.no_longer_enrolled!r})'
+        )

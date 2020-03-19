@@ -14,15 +14,15 @@ class IpedsFacultyDimension(Base):
     tenure_status = Column(String(64), nullable = False)
     contract_type = Column(String(255), nullable = False)
 
-    """ method for instantiating object """
     def __init__(self, faculty_key, faculty_status, tenure_status, contract_type):
+        """ method for instantiating object """
         self.faculty_key
         self.faculty_status = faculty_status
         self.tenure_status = tenure_status
         self.contract_type = contract_type
 
-    """ method used to produce print-friendly output """
     def __repr__(self):
+        """ produces human-readable object call """
         return (
             f'{self.__class__.__name__}('
             f'faculty_key={self.faculty_key!r}, '

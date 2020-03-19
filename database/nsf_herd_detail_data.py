@@ -31,10 +31,10 @@ class NsfHerdDetail(Base):
                             unique = True), )
 
 
-    """ method for instantiating object """
     def __init__(self, inst_id, date_key, funding_type,
                  agency_key, academic_field_key,
                  ncses_inst_id, unitid, expenditure):
+        """ method for instantiating object """
         self.inst_id = inst_id,
         self.date_key = date_key,
         self.funding_type = funding_type,
@@ -44,16 +44,16 @@ class NsfHerdDetail(Base):
         self.unitid = unitid
         self.expenditure = expenditure
 
-    """ method used to produce print-friendly output """
     def __repr__(self):
-        return ('<NsfHerdDetail(inst_id={}, date_key={}, funding_type={}, '
-                'agency_key={}, academic_field_key={}, '
-                'ncses_inst_id={}, unitid={}, '
-                'expenditure={})').format(self.inst_id,
-                                        self.date_key,
-                                        self.funding_type,
-                                        self.agency_key,
-                                        self.academic_field_key,
-                                        self.ncses_inst_id,
-                                        self.unitid,
-                                        self.expenditure)
+        """ produces human-readable object call """
+        return (
+            f'{self.__class__.__name__}('
+            f'inst_id={self.inst_id!r}, '
+            f'date_key={self.date_key!r}, '
+            f'funding_type={self.funding_type!r}, '
+            f'agency_key={self.agency_key!r}, '
+            f'academic_field_key={self.academic_field_key!r}, '
+            f'ncses_inst_id={self.ncses_inst_id!r}, '
+            f'unitid={self.unitid!r}, '
+            f'expenditure={self.expenditure!r})'
+        )

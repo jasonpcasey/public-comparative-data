@@ -23,17 +23,19 @@ class IpedsAthleticConferenceMembership(Base):
                             'sport_name',
                             unique = True), )
 
-    """ method for instantiating object """
     def __init__(self, unitid, date_key, conference_id, sport_name):
+        """ method for instantiating object """
         self.unitid = unitid
         self.conference_id = conference_id
         self.date_key = date_key
         self.sport_name = sport_name
 
-    """ method used to produce print-friendly output """
     def __repr__(self):
-        return ("<IpedsAthleticConferenceMembership(unitid={}, date_key={}, conference_id={}, "
-                "sport_name={})").format(self.unitid,
-                                         self.date_key,
-                                         self.conference_id,
-                                         self.sport_name)
+        """ produces human-readable object call """
+        return (
+            f'{self.__class__.__name__}('
+            f'unitid={self.unitid!r}, '
+            f'conference_id={self.conference_id!r}, '
+            f'date_key={self.date_key!r}, '
+            f'sport_name={self.sport_name!r})'
+        )

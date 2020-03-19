@@ -27,8 +27,8 @@ class IpedsTestScore(Base):
                             'subject',
                             unique = True), )
 
-    """ method for instantiating object """
     def __init__(self, unitid, date_key, test_type, subject, count, percentage, percentile_25, percentile_75):
+        """ method for instantiating object """
         self.unitid = unitid
         self.date_key = date_key
         self.test_type = test_type
@@ -38,16 +38,16 @@ class IpedsTestScore(Base):
         self.percentile_25 = percentile_25
         self.percentile_75 = percentile_75
 
-    """ method used to produce print-friendly output """
     def __repr__(self):
-        return ("<IpedsTestScore(unitid={}, date_key={}, "
-                "test_type={}, subject={}, count={}, "
-                "percentage={}, percentile_25={}, "
-                "percentile_75={})").format(self.unitid,
-                                            self.date_key,
-                                            self.test_type,
-                                            self.subject,
-                                            self.count,
-                                            self.percentage,
-                                            self.percentile_25,
-                                            self.percentile_75)
+        """ produces human-readable object call """
+        return (
+            f'{self.__class__.__name__}('
+            f'unitid={self.unitid!r}, '
+            f'date_key={self.date_key!r}, '
+            f'test_type={self.test_type!r}, '
+            f'subject={self.subject!r}, '
+            f'count={self.count!r}, '
+            f'percentage={self.percentage!r}, '
+            f'percentile_25={self.percentile_25!r}, '
+            f'percentile_75={self.percentile_75!r})'
+        )

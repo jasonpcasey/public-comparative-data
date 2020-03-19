@@ -57,13 +57,13 @@ class IpedsInstitution(Base):
                             'date_key',
                             unique = True), )
 
-    """ method for instantiating object """
     def __init__(self, unitid, date_key, institution_name, address, city, zip, web_address, 
                  fips, county_fips, service_academy, institution_level, control, highest_level_offering,
                  highest_degree_offering, undergraduate_offering, graduate_offering, degree_granting,
                  locale, parent_id, year_closed, active, cbsa_id, cbsa_type, csa_id, longitude,
                  latitude, system_member, system_name, open_to_public, landgrant, hbcu, hospital,
                  medical, tribal, rotc, confno1, confno2, confno3, confno4):
+        """ method for instantiating object """
         self.unitid = unitid 
         self.date_key = date_key 
         self.institution_name = institution_name 
@@ -105,11 +105,47 @@ class IpedsInstitution(Base):
         self.confno4 = confno4 
 
 
-    """ method used to produce print-friendly output """
     def __repr__(self):
-        return ("<IpedsInstitution(unitid={}, date_key={}, "
-                "institution_name={}, control={}, fips={})").format(self.unitid,
-                                                                    self.date_key,
-                                                                    self.institution_name,
-                                                                    self.control,
-                                                                    self.fips)
+        """ produces human-readable object call """
+        return (
+            f'{self.__class__.__name__}('
+            f'unitid={self.unitid!r}, '
+            f'date_key={self.date_key!r}, '
+            f'institution_name={self.institution_name!r}, '
+            f'address={self.address!r}, '
+            f'city={self.city!r}, '
+            f'zip={self.zip!r}, '
+            f'web_address={self.web_address!r}, '
+            f'fips={self.fips!r}, '
+            f'county_fips={self.county_fips!r}, '
+            f'service_academy={self.service_academy!r}, '
+            f'institution_level={self.institution_level!r}, '
+            f'control={self.control!r}, '
+            f'highest_level_offering={self.highest_level_offering!r}, '
+            f'highest_degree_offering={self.highest_degree_offering!r}, '
+            f'undergraduate_offering={self.undergraduate_offering!r}, '
+            f'graduate_offering={self.graduate_offering!r}, '
+            f'degree_granting={self.degree_granting!r}, '
+            f'locale={self.locale!r}, '
+            f'parent_id={self.parent_id!r}, '
+            f'year_closed={self.year_closed!r}, '
+            f'active={self.active!r}, '
+            f'cbsa_id={self.cbsa_id!r}, '
+            f'cbsa_type={self.cbsa_type!r}, '
+            f'csa_id={self.csa_id!r}, '
+            f'longitude={self.longitude!r}, '
+            f'latitude={self.latitude!r}, '
+            f'system_member={self.system_member!r}, '
+            f'system_name={self.system_name!r}, '
+            f'open_to_public={self.open_to_public!r}, '
+            f'landgrant={self.landgrant!r}, '
+            f'hbcu={self.hbcu!r}, '
+            f'hospital={self.hospital!r}, '
+            f'medical={self.medical!r}, '
+            f'tribal={self.tribal!r}, '
+            f'rotc={self.rotc!r}, '
+            f'confno1={self.confno1!r}, '
+            f'confno2={self.confno2!r}, '
+            f'confno3={self.confno3!r}, '
+            f'confno4={self.confno4!r})'
+        )

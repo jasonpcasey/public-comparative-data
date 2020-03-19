@@ -21,16 +21,18 @@ class IpedsCustomPeerList(Base):
                             'date_key',
                             unique = True), )
 
-    """ method for instantiating object """
     def __init__(self, unitid, peer_unitid, date_key):
+        """ method for instantiating object """
         self.unitid = unitid
         self.peer_unitid = peer_unitid
         self.date_key = date_key
     
 
-    """ method used to produce print-friendly output """
     def __repr__(self):
-        return ("<IpedsCustomPeerList(unitid={}, "
-                "peer_unitid = {}, date_key={})").format(self.unitid,
-                                                         self.peer_unitid,
-                                                         self.date_key)
+        """ produces human-readable object call """
+        return (
+            f'{self.__class__.__name__}('
+            f'unitid={self.unitid!r}, '
+            f'peer_unitid={self.peer_unitid!r}, '
+            f'date_key={self.date_key!r})'
+        )

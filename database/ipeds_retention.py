@@ -25,8 +25,8 @@ class IpedsRetention(Base):
                             'time_status',
                             unique = True), )
 
-    """ method for instantiating object """
     def __init__(self, unitid, date_key, cohort_date_key, time_status, aid_type, adjusted_cohort, enrolled):
+        """ method for instantiating object """
         self.unitid = unitid
         self.date_key = date_key
         self.cohort_date_key = cohort_date_key
@@ -34,14 +34,14 @@ class IpedsRetention(Base):
         self.adjusted_cohort = adjusted_cohort
         self.enrolled = enrolled
 
-    """ method used to produce print-friendly output """
     def __repr__(self):
-        return ("<IpedsRetention(unitid={}, date_key={}, "
-                "cohort_date_key={}, time_status={}, "
-                "adjusted_cohort={}, "
-                "enrolled={})").format(self.unitid,
-                                       self.date_key,
-                                       self.cohort_date_key,
-                                       self.time_status,
-                                       self.adjusted_cohort,
-                                       self.enrolled)
+        """ produces human-readable object call """
+        return (
+            f'{self.__class__.__name__}('
+            f'untitid={self.unitid!r}, '
+            f'date_key={self.date_key!r}, '
+            f'cohort_date_key={self.cohort_date_key!r}, '
+            f'time_status={self.time_status!r}, '
+            f'adjusted_cohort={self.adjusted_cohort!r}, '
+            f'enrolled={self.enrolled!r})'
+        )

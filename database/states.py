@@ -14,23 +14,19 @@ class State(Base):
     state = Column(String(32), nullable = False)
     region = Column(String(32), nullable=False)
 
-    """ method for instantiating object """
     def __init__(self, fips, state_abbreviation, state, region):
+        """ method for instantiating object """
         self.fips = fips
         self.state_abbreviation = state_abbreviation
         self.state = state
         self.region = region
 
-    """ method used to produce print-friendly output """
     def __repr__(self):
-        return repr({'fips': self.fips,
-                     'state_abbreviation': self.state_abbreviation,
-                     'state': self.state,
-                     'region': self.region})
-    # def __repr__(self):
-    #     return ('<State(fips={}, '
-    #             'state_abbreviation={}. state={}, '
-    #             'region = {})').format(self.fips,
-    #                                    self.state_abbreviation,
-    #                                    self.state,
-    #                                    self.region)
+        """ produces human-readable object call """
+        return (
+            f'{self.__class__.__name__}('
+            f'fips={self.fips!r}, '
+            f'state_abbreviation={self.state_abbreviation!r}, '
+            f'state={self.state!r}, '
+            f'region={self.region!r})'
+            )

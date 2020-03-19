@@ -19,13 +19,15 @@ class PeerGroup(Base):
                             'group_name',
                             unique = True), )
 
-    """ method for instantiating object """
     def __init__(self, unitid, group_name):
+        """ method for instantiating object """
         self.unitid = unitid
         self.group_name = group_name
 
-    """ method used to produce print-friendly output """
     def __repr__(self):
-        return "<PeerGroup(unitid={}, \
-                group_name={})".format(self.unitid,
-                                       self.group_name)
+        """ produces human-readable object call """
+        return (
+            f'{self.__class__.__name__}('
+            f'unitid={self.unitid!r}, '
+            f'group_name={self.group_name!r})'
+        )

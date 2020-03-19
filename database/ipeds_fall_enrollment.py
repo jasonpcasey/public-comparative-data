@@ -30,8 +30,8 @@ class IpedsFallEnrollment(Base):
                             'demographic_key',
                             unique = True), )
 
-    """ method for instantiating object """
     def __init__(self, unitid, date_key, time_status, career_level, degree_seeking, continuation_type, demographic_key, headcount):
+        """ method for instantiating object """
         self.unitid = unitid
         self.date_key = date_key
         self.time_status = time_status
@@ -41,16 +41,16 @@ class IpedsFallEnrollment(Base):
         self.demographic_key = demographic_key
         self.headcount = headcount
 
-    """ method used to produce print-friendly output """
     def __repr__(self):
-        return ("<IpedsFallEnrollment(unitid={}, date_key={}, "
-                "time_status={}, career_level={}, degree_seeking = {}, "
-                "continuation_type = {}, demographic_key={}, "
-                "headcount={})").format(self.unitid,
-                                        self.date_key,
-                                        self.time_status,
-                                        self.career_level,
-                                        self.degree_seeking,
-                                        self.continuation_type,
-                                        self.demographic_key,
-                                        self.headcount)
+        """ produces human-readable object call """
+        return (
+            f'{self.__class__.__name__}('
+            f'unitid={self.unitid!r}, '
+            f'date_key={self.date_key!r}, '
+            f'time_status={self.time_status!r}, '
+            f'career_level={self.career_level!r}, '
+            f'degree_seeking={self.degree_seeking!r}, '
+            f'continuation_type={self.continuation_type!r}, '
+            f'demographic_key={self.demographic_key!r}, '
+            f'headcount={self.headcount!r})'
+        )

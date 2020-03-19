@@ -24,16 +24,16 @@ class IpedsFallStaff(Base):
                             'demographic_key',
                             unique = True), )
 
-    """ method for instantiating object """
     def __init__(self, unitid, date_key, employee_key, demographic_key, headcount):
+        """ method for instantiating object """
         self.unitid = unitid
         self.date_key = date_key
         self.employee_key = employee_key
         self.demographic_key = demographic_key
         self.headcount = headcount
 
-    """ method used to produce print-friendly output """
     def __repr__(self):
+        """ produces human-readable object call """
         return (
             f'{self.__class__.__name__}('
             f'unitid={self.unitid!r}, '

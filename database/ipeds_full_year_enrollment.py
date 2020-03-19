@@ -24,19 +24,21 @@ class IpedsFullYearEnrollment(Base):
                             'demographic_key',
                             unique = True), )
 
-    """ method for instantiating object """
     def __init__(self, unitid, date_key, career_level, demographic_key, headcount):
+        """ method for instantiating object """
         self.unitid = unitid
         self.date_key = date_key
         self.career_level = career_level
         self.demographic_key = demographic_key
         self.headcount = headcount
 
-    """ method used to produce print-friendly output """
     def __repr__(self):
-        return ("<IpedsFullYearEnrollment(unitid={}, date_key={}, "
-                "career_level={}, demographic_key={}, headcount={})").format(self.unitid,
-                                                                             self.date_key,
-                                                                             self.career_level,
-                                                                             self.demographic_key,
-                                                                             self.headcount)
+        """ produces human-readable object call """
+        return (
+            f'{self.__class__.__name__}('
+            f'unitid={self.unitid!r}, '
+            f'date_key={self.date_key!r}, '
+            f'career_level={self.career_level!r}, '
+            f'demographic_key={self.demographic_key!r}, '
+            f'headcount={self.headcount!r})'
+        )

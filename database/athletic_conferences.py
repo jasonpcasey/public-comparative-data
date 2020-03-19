@@ -12,13 +12,13 @@ class AthleticConference(Base):
     conference_id = Column(Integer, primary_key = True)
     conference_name = Column(String(255), nullable = False)
 
-    """ method for instantiating object """
     def __init__(self, conference_id, conference_name):
+        """ method for instantiating object """
         self.conference_id = conference_id
         self.conference_name = conference_name
 
-    """ method used to produce print-friendly output """
     def __repr__(self):
+        """ produces human-readable object call """
         return (
             f'{self.__class__.__name__}('
             f'conference_id={self.conference_id!r}, '

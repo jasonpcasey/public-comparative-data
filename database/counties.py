@@ -14,15 +14,15 @@ class County(Base):
     county_fips = Column(Integer, nullable = False)
     county_name = Column(String(255), nullable = False)
  
-    """ method for instantiating object """
     def __init__(self, fips_code, state_fips, county_fips, county_name):
+        """ method for instantiating object """
         self.fips_code = fips_code
         self.state_fips = state_fips
         self.county_fips = county_fips
         self.county_name = county_name
     
-    """ method used to produce print-friendly output """
     def __repr__(self):
+        """ produces human-readable object call """
         return (
             f'{self.__class__.__name__}('
             f'fips_code={self.fips_code!r}, '

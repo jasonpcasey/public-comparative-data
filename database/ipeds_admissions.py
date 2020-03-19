@@ -24,8 +24,8 @@ class IpedsAdmissions(Base):
                             'demographic_key',
                             unique = True), )
 
-    """ method for instantiating object """
     def __init__(self, unitid, date_key, demographic_key, applications, admissions, enrolled):
+        """ method for instantiating object """
         self.unitid = unitid
         self.date_key = date_key
         self.demographic_key = demographic_key
@@ -34,7 +34,7 @@ class IpedsAdmissions(Base):
         self.enrolled = enrolled
 
     def __repr__(self):
-        """ method used to produce print-friendly output """
+        """ produces human-readable object call """
         return (
             f'{self.__class__.__name__}('
             f'unitid={self.unitid!r}, '

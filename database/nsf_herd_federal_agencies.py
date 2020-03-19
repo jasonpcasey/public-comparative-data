@@ -15,19 +15,20 @@ class NsfHerdFederalAgency(Base):
     agency_type = Column(String(16), nullable = False)
 
 
-    """ method for instantiating object """
     def __init__(self, agency_key, agency_name, agency_short_name,
                  agency_type):
+        """ method for instantiating object """
         self.agency_key = agency_key
         self.agency_name = agency_name
         self.agency_short_name = agency_short_name
         self.agency_type = agency_type
 
-    """ method used to produce print-friendly output """
     def __repr__(self):
-        return ('<NsfHerdFederalAgency(agency_key={}, '
-                'agency_name={}, agency_short_name={}, '
-                'agency_type={})').format(self.agency_key,
-                                          self.agency_name,
-                                          self.agency_short_name,
-                                          self.agency_type)
+        """ produces human-readable object call """
+        return (
+            f'{self.__class__.__name__}('
+            f'agency_key={self.agency_key!r}, '
+            f'agency_name={self.agency_name!r}, '
+            f'agency_short_name={self.agency_short_name!r}, '
+            f'agency_type={self.agency_type!r})'
+        )

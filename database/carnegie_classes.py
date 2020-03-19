@@ -13,14 +13,14 @@ class CarnegieClass(Base):
     basic_code = Column(Integer, nullable = False)
     carnegie_class = Column(String(255), nullable = False)
 
-    """ method for instantiating object """
     def __init__(self, unitid, basic_code, carnegie_class):
+        """ method for instantiating object """
         self.unitid = unitid
         self.basic_code = basic_code
         self.carnegie_class = carnegie_class
 
-    """ method used to produce print-friendly output """
     def __repr__(self):
+        """ produces human-readable object call """
         return (
             f'{self.__class__.__name__}('
             f'unitid={self.unitid!r}, '

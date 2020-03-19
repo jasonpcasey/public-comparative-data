@@ -42,7 +42,6 @@ class IpedsStudentAid(Base):
                             'date_key',
                             unique = True), )
 
-    """ method for instantiating object """
     def __init__(self, unitid, date_key, total_undergraduates, full_time_freshman_cohort,
                  total_number, total_on_campus, total_off_campus_with_family, 
                  total_off_campus_not_with_family, total_living_arrangement_unknown,
@@ -52,6 +51,7 @@ class IpedsStudentAid(Base):
                  awarded_institutional_grants, total_institutional_grants, 
                  awarded_federal_student_loans, total_federal_student_loans, 
                  awarded_other_student_loans, total_other_student_loans):
+        """ method for instantiating object """
         self.unitid = unitid
         self.date_key = date_key
         self.total_undergraduates = total_undergraduates
@@ -79,15 +79,33 @@ class IpedsStudentAid(Base):
         self.total_other_student_loans = total_other_student_loans
 
 
-    """ method used to produce print-friendly output """
     def __repr__(self):
-        return ("<IpedsStudentAid(unitid={}, date_key={}, "
-                "total_undergraduates={}, full_time_freshman_cohort={}, "
-                "total_number={}, awarded_grant_aid={}, "
-                "total_grant_aid={})").format(self.unitid,
-                                              self.date_key,
-                                              self.total_undergraduates,
-                                              self.full_time_freshman_cohort,
-                                              self.total_number,
-                                              self.awarded_grant_aid,
-                                              self.total_grant_aid)
+        """ produces human-readable object call """
+        return (
+            f'{self.__class__.__name__}('
+            f'unitid={self.unitid!r}, '
+            f'date_key={self.date_key!r}, '
+            f'total_undergraduates={self.total_undergraduates!r}, '
+            f'full_time_freshman_cohort={self.full_time_freshman_cohort!r}, '
+            f'total_number={self.total_number!r}, '
+            f'total_on_campus={self.total_on_campus!r}, '
+            f'total_off_campus_with_family={self.total_off_campus_with_family!r}, '
+            f'total_off_campus_not_with_family={self.total_off_campus_not_with_family!r}, '
+            f'total_living_arrangement_unknown={self.total_living_arrangement_unknown!r}, '
+            f'cohort_paying_indistrict={self.cohort_paying_indistrict!r}, '
+            f'cohort_paying_instate={self.cohort_paying_instate!r}, '
+            f'cohort_paying_outstate={self.cohort_paying_outstate!r}, '
+            f'cohort_paying_unknown={self.cohort_paying_unknown!r}, '
+            f'awarded_grant_aid={self.awarded_grant_aid!r}, '
+            f'total_grant_aid={self.total_grant_aid!r}, '
+            f'awarded_federal_grants={self.awarded_federal_grants!r}, '
+            f'total_federal_grants={self.total_federal_grants!r}, '
+            f'awarded_state_local_grants={self.awarded_state_local_grants!r}, '
+            f'total_state_local_grants={self.total_state_local_grants!r}, '
+            f'awarded_institutional_grants={self.awarded_institutional_grants!r}, '
+            f'total_institutional_grants={self.total_institutional_grants!r}, '
+            f'awarded_federal_student_loans={self.awarded_federal_student_loans!r}, '
+            f'total_federal_student_loans={self.total_federal_student_loans!r}, '
+            f'awarded_other_student_loans={self.awarded_other_student_loans!r}, '
+            f'total_other_student_loans={self.total_other_student_loans!r})'
+        )

@@ -13,15 +13,17 @@ class IpedsDemographicDimension(Base):
     sex = Column(String(7), nullable = False)
     race_ethnicity = Column(String(64), nullable = False)
 
-    """ method for instantiating object """
     def __init__(self, demographic_key, sex, race_ethnicity):
+        """ method for instantiating object """
         self.demographic_key
         self.sex = sex
         self.race_ethnicity = race_ethnicity
 
-    """ method used to produce print-friendly output """
     def __repr__(self):
-        return ("<IpedsDemographicDimension(demographic_key={}, "
-                "sex={}, race_ethnicity={})").format(self.demographic_key,
-                                                     self.sex,
-                                                     self.race_ethnicity)
+        """ produces human-readable object call """
+        return (
+            f'{self.__class__.__name__}('
+            f'demographic_key={self.demographic_key!r}, '
+            f'sex={self.sex!r}, '
+            f'race_ethnicity={self.race_ethnicity!r})'
+        )

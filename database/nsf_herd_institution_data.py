@@ -41,12 +41,12 @@ class NsfHerdInstitution(Base):
 
 
 
-    """ method for instantiating object """
     def __init__(self, inst_id, date_key, unitid, ncses_inst_id, institution_name, state_fips,
                  control, academic_institution, medical_school_flag, federal_government,
                  state_and_local_government, business, nonprofit_organizations, institutional_funds,
                  other_sources, total_rd_expenses, medical_school_expenses, non_medical_rd, arra_funds,
                  principal_investigators, other_personnel, research_personnel):
+        """ method for instantiating object """
         self.inst_id = inst_id
         self.date_key = date_key
         self.unitid = unitid
@@ -71,34 +71,30 @@ class NsfHerdInstitution(Base):
         self.research_personnel = research_personnel
 
 
-    """ method used to produce print-friendly output """
     def __repr__(self):
-        return ('<NsfHerdInstitution(inst_id={}, date_key={}, unitid={}, ncses_inst_id={}, '
-                'institution_name={}, state_fips={}, control={}, academic_institution={}, '
-                'medical_school_flag={}, federal_government={}, state_and_local_government={}, '
-                'business={}, nonprofit_organizations={}, institutional_funds={}, '
-                'other_sources={}, total_rd_expenses={}, medical_school_expenses={}, '
-                'non_medical_rd={}, arra_funds={}, '
-                'principal_investigators={}, other_personnel={}, '
-                'research_personnel={})').format(self.inst_id,
-                                             self.date_key,
-                                             self.unitid,
-                                             self.ncses_inst_id,
-                                             self.institution_name,
-                                             self.state_fips,
-                                             self.control,
-                                             self.academic_institution,
-                                             self.medical_school_flag,
-                                             self.federal_government,
-                                             self.state_and_local_government,
-                                             self.business,
-                                             self.nonprofit_organizations,
-                                             self.institutional_funds,
-                                             self.other_sources,
-                                             self.total_rd_expenses,
-                                             self.medical_school_expenses,
-                                             self.non_medical_rd,
-                                             self.arra_funds,
-                                             self.principal_investigators,
-                                             self.other_personnel,
-                                             self.research_personnel)
+        """ produces human-readable object call """
+        return (
+            f'{self.__class__.__name__}('
+             f'inst_id={self.inst_id!r}, '
+            f'date_key={self.date_key!r}, '
+            f'unitid={self.unitid!r}, '
+            f'ncses_inst_id={self.ncses_inst_id!r}, '
+            f'institution_name={self.institution_name!r}, '
+            f'state_fips={self.state_fips!r}, '
+            f'control={self.control!r}, '
+            f'academic_institution={self.academic_institution!r}, '
+            f'medical_school_flag={self.medical_school_flag!r}, '
+            f'federal_government={self.federal_government!r}, '
+            f'state_and_local_government={self.state_and_local_government!r}, '
+            f'business={self.business!r}, '
+            f'nonprofit_organizations={self.nonprofit_organizations!r}, '
+            f'institutional_funds={self.institutional_funds!r}, '
+            f'other_sources={self.other_sources!r}, '
+            f'total_rd_expenses={self.total_rd_expenses!r}, '
+            f'medical_school_expenses={self.medical_school_expenses!r}, '
+            f'non_medical_rd={self.non_medical_rd!r}, '
+            f'arra_funds={self.arra_funds!r}, '
+            f'principal_investigators={self.principal_investigators!r}, '
+            f'other_personnel={self.other_personnel!r}, '
+            f'research_personnel={self.research_personnel!r})'
+       )

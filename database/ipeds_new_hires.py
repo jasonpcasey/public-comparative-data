@@ -37,7 +37,7 @@ class IpedsNewHire(Base):
         self.headcount = headcount
 
     def __repr__(self):
-        """ method used to produce print-friendly output """
+        """ produces human-readable object call """
         return (
             f'{self.__class__.__name__}('
             f'unitid={self.unitid!r}, '

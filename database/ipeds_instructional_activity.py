@@ -27,8 +27,8 @@ class IpedsInstructionalActivity(Base):
                             'activity_type',
                             unique = True), )
 
-    """ method for instantiating object """
     def __init__(self, unitid, date_key, career_level, activity_type, credit_hours, clock_hours, estimated_fte, reported_fte):
+        """ method for instantiating object """
         self.unitid = unitid
         self.date_key = date_key
         self.career_level = career_level
@@ -38,15 +38,16 @@ class IpedsInstructionalActivity(Base):
         self.estimated_fte = estimated_fte
         self.reported_fte = reported_fte
 
-    """ method used to produce print-friendly output """
     def __repr__(self):
-        return ("<IpedsInstructionalActivity(unitid={}, date_key={}, "
-                "career_level={}, activity_type={}, credit_hours={}, "
-                "clock_hours={}, estimated_fte={}, reported_fte={})").format(self.unitid,
-                                                                             self.date_key,
-                                                                             self.career_level,
-                                                                             self.activity_type,
-                                                                             self.credit_hours,
-                                                                             self.clock_hours,
-                                                                             self.estimated_fte,
-                                                                             self.reported_fte)
+        """ produces human-readable object call """
+        return (
+            f'{self.__class__.__name__}('
+            f'unitid={self.unitid!r}, '
+            f'date_key={self.date_key!r}, '
+            f'career_level={self.career_level!r}, '
+            f'activity_type={self.activity_type!r}, '
+            f'credit_hours={self.credit_hours!r}, '
+            f'clock_hours={self.clock_hours!r}, '
+            f'estimated_fte={self.estimated_fte!r}, '
+            f'reported_fte={self.reported_fte!r})'
+        )

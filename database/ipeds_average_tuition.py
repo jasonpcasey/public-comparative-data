@@ -26,8 +26,8 @@ class IpedsAverageTuition(Base):
                             'student_residency',
                             unique = True), )
 
-    """ method for instantiating object """
     def __init__(self, unitid, date_key, student_career, student_residency, average_tuition, per_credit_hour_charge, required_fees):
+        """ method for instantiating object """
         self.unitid = unitid
         self.date_key = date_key
         self.student_career = student_career
@@ -36,15 +36,15 @@ class IpedsAverageTuition(Base):
         self.per_credit_hour_charge = per_credit_hour_charge
         self.required_fees= required_fees
 
-    """ method used to produce print-friendly output """
     def __repr__(self):
-        return ("<IpedsAverageTuition(unitid={}, date_key={}, "
-               "student_career={}, student_residency={}, "
-               "average_tuition={}, per_credit_hour_charge={}, "
-               "required_fees={})").format(self.unitid,
-                                           self.date_key,
-                                           self.student_career,
-                                           self.student_residency,
-                                           self.average_tuition,
-                                           self.per_credit_hour_charge,
-                                           self.required_fees)
+        """ produces human-readable object call """
+        return (
+            f'{self.__class__.__name__}('
+            f'unitid={self.unitid!r}, '
+            f'date_key={self.date_key!r}, '
+            f'student_career={self.student_career!r}, '
+            f'student_residency={self.student_residency!r}, '
+            f'average_tuition={self.average_tuition!r}, '
+            f'per_credit_hour_charge={self.per_credit_hour_charge!r}, '
+            f'required_fees={self.required_fees!r})'
+        )

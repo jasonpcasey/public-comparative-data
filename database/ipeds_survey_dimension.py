@@ -12,13 +12,15 @@ class IpedsSurveyDimension(Base):
     survey_key = Column(String(3), primary_key = True)
     survey_name = Column(String(255), nullable = False)
 
-    """ method for instantiating object """
     def __init__(self, survey_key, survey_name):
+        """ method for instantiating object """
         self.survey_key = survey_key
         self.survey_name = survey_name
 
-    """ method used to produce print-friendly output """
     def __repr__(self):
-        return ("IpedsSurveyDimension(survey_key={}, "
-                "survey_name={})").format(self.survey_key,
-                                          self.survey_name)
+        """ produces human-readable object call """
+        return (
+            f'{self.__class__.__name__}('
+            f'survey_key={self.survey_key!r}, '
+            f'survey_name={self.survey_name!r})'
+        )

@@ -16,22 +16,22 @@ class NsfHerdAcademicField(Base):
     nu_division = Column(String(255), nullable = False)
 
 
-    """ method for instantiating object """
     def __init__(self, academic_field_key, academic_broad_field_id, academic_field,
                  academic_broad_field, nu_division):
+        """ method for instantiating object """
         self.academic_field_key = academic_field_key
         self.academic_broad_field_id = academic_broad_field_id
         self.academic_field = academic_field
         self.academic_broad_field = academic_broad_field
         self.nu_division = nu_division
 
-    """ method used to produce print-friendly output """
     def __repr__(self):
-        return ('<NsfHerdAcademicField(academic_field_key={}, '
-                'academic_broad_field_id={}, academic_field={}, '
-                'academic_broad_field={}, '
-                'nu_division={})').format(self.academic_field_key,
-                                          self.academic_broad_field_id,
-                                          self.academic_field,
-                                          self.academic_broad_field,
-                                          self.nu_division)
+        """ produces human-readable object call """
+        return (
+            f'{self.__class__.__name__}('
+            f'academic_field_key={self.academic_field_key!r}, '
+            f'academic_broad_field_id={self.academic_broad_field_id!r}, '
+            f'academic_field={self.academic_field!r}, '
+            f'academic_broad_field={self.academic_broad_field!r}, '
+            f'nu_division={self.nu_division!r})'
+        )

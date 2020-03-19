@@ -12,13 +12,13 @@ class Cbsa(Base):
     cbsa_id = Column(Integer, primary_key = True)
     cbsa_name = Column(String(255), nullable = False)
 
-    """ method for instantiating object """
     def __init__(self, cbsa_id, cbsa_name):
+        """ method for instantiating object """
         self.cbsa_id = cbsa_id
         self.cbsa_name = cbsa_name
 
-    """ method used to produce print-friendly output """
     def __repr__(self):
+        """ produces human-readable object call """
         return (
             f'{self.__class__.__name__}('
             f'cbsa_id={self.cbsa_id!r}, '

@@ -27,8 +27,8 @@ class IpedsPellGradRate(Base):
                             'aid_type',
                             unique = True), )
 
-    """ method for instantiating object """
     def __init__(self, unitid, date_key, cohort_date_key, cohort_type, aid_type, adjusted_cohort, completers_6_years):
+        """ method for instantiating object """
         self.unitid = unitid
         self.date_key = date_key
         self.cohort_date_key = cohort_date_key
@@ -37,15 +37,15 @@ class IpedsPellGradRate(Base):
         self.adjusted_cohort = adjusted_cohort
         self.completers_6_years = completers_6_years
 
-    """ method used to produce print-friendly output """
     def __repr__(self):
-        return ("<IpedsPellGradRate(unitid={}, date_key={}, "
-                "cohort_date_key={}, cohort_type={}, aid_type = {}, "
-                "adjusted_cohort={}, "
-                "completers_6_years={})").format(self.unitid,
-                                                 self.date_key,
-                                                 self.cohort_date_key,
-                                                 self.cohort_type,
-                                                 self.aid_type,
-                                                 self.adjusted_cohort,
-                                                 self.completers_6_years)
+        """ produces human-readable object call """
+        return (
+            f'{self.__class__.__name__}('
+            f'unitid={self.unitid!r}, '
+            f'date_key={self.date_key!r}, '
+            f'cohort_date_key={self.cohort_date_key!r}, '
+            f'cohort_type={self.cohort_type!r}, '
+            f'aid_type={self.aid_type!r}, '
+            f'adjusted_cohort={self.adjusted_cohort!r}, '
+            f'completers_6_years={self.completers_6_years!r})'
+        )
