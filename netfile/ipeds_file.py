@@ -4,7 +4,7 @@ from io import BytesIO #, StringIO
 from zipfile import ZipFile
 from urllib.request import urlopen
 from database.base import Session, engine, Base
-
+#
 class IpedsFile:
     __url_base = 'https://nces.ed.gov/ipeds/datacenter/data/'
 
@@ -44,6 +44,7 @@ class IpedsFile:
 
         if len(self.rows) > 0:
             try:
+                _ = session.query(__class__).filter(__class__.date_key==date_key).delete(synchronize_session=False)
                 session.bulk_save_objects(self.rows)
                 session.commit()
             except:
@@ -58,4 +59,4 @@ class IpedsFile:
         pass
 
     def __repr__(self):
-        return('IpedsFile(year={})'.format(self.year))
+        return f'{__class__.__name__}(year={self.year!r})'
