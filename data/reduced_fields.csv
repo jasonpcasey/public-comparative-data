@@ -1,0 +1,316 @@
+field_code,field_label
+f1a01,Total current assets
+f1a04,Other noncurrent assets
+f1a05,Total noncurrent assets
+f1a06,Total assets
+f1a07,"Long-term debt, current portion"
+f1a08,Other current liabilities
+f1a09,Total current liabilities
+f1a10,Long-term debt
+f1a11,Other noncurrent liabilities
+f1a12,Total noncurrent liabilities
+f1a13,Total liabilities
+f1a14,"Invested in capital assets, net of related debt"
+f1a15,Restricted-expendable
+f1a16,Restricted-nonexpendable
+f1a17,Unrestricted
+f1a18,Net position
+f1a19,Deferred outflows of resources
+f1a20,Deferred inflows of resources
+f1a214,Land  improvements - Ending balance
+f1a224,Infrastructure - Ending balance
+f1a234,Buildings - Ending balance
+f1a274,Construction in progress - Ending balance
+f1a27t4,"Total for plant, property and equipment - Ending balance"
+f1a284,Accumulated depreciation - Ending balance
+f1a31,"Depreciable capital assets, net of depreciation"
+f1a324,"Equipment, including art and library collections - Ending balance"
+f1a334,"Intangible assets , net of accumulated amortization - Ending balance"
+f1a344,Other capital assets - Ending balance (New Aligned)
+f1b01,"Tuition and fees, after deducting discounts and allowances"
+f1b02,Federal operating grants and contracts
+f1b03,State operating grants and contracts
+f1b04,Local/private operating grants and contracts
+f1b04a,Local operating grants and contracts
+f1b04b,Private operating grants and contracts
+f1b05,Sales and services of auxiliary enterprises
+f1b06,Sales and services of hospitals
+f1b07,Independent operations
+f1b08,Other sources - operating
+f1b09,Total operating revenues
+f1b10,Federal appropriations
+f1b11,State appropriations
+f1b12,"Local appropriations, education district taxes, and similar support"
+f1b13,Federal nonoperating grants
+f1b14,State nonoperating grants
+f1b15,Local nonoperating grants
+f1b16,"Gifts, including contributions from affiliated organizations"
+f1b17,Investment income
+f1b18,Other nonoperating revenues
+f1b19,Total nonoperating revenues
+f1b20,Capital appropriations
+f1b21,Capital grants and gifts
+f1b22,Additions to permanent endowments
+f1b23,Other revenues and additions
+f1b24,Total other revenues and additions
+f1b25,Total all revenues and other additions
+f1b26,Sales and services of educational activities
+f1b27,Total operating and nonoperating revenues
+f1c011,Instruction - Current year total
+f1c012,Instruction - Salaries and wages
+f1c021,Research - Current year total
+f1c022,Research - Salaries and wages
+f1c031,Public service - Current year total
+f1c032,Public service - Salaries and wages
+f1c051,Academic support - Current year total
+f1c052,Academic support - Salaries and wages
+f1c061,Student services - Current year total
+f1c062,Student services - Salaries and wages
+f1c071,Institutional support - Current year total
+f1c072,Institutional support - Salaries and wages
+f1c101,Scholarships and fellowships expenses -- Current year total
+f1c111,Auxiliary enterprises -- Current year total
+f1c112,Auxiliary enterprises -- Salaries and wages
+f1c121,Hospital services - Current year total
+f1c122,Hospital services - Salaries and wages
+f1c131,Independent operations - Current year total
+f1c132,Independent operations - Salaries and wages
+f1c141,Other expenses  deductions - Current year total
+f1c142,Other expenses  deductions - Salaries and wages
+f1c191,Total expenses and deductions - Current year total
+f1c192,Total expenses  expenses and deductions - Salaries and wages
+f1c193,Total expenses and deductions - Employee fringe benefits
+f1c19dp,Total expenses  and deductions - Depreciation
+f1c19in,Total expenses deductions - Interest
+f1c19om,Total expenses and deductions - Operations and maintenance of plant
+f1c19ot,Total expenses and deductions - Other Natural Expenses and Deductions
+f1d01,Total revenues and other additions
+f1d02,Total expenses and other deductions
+f1d03,Change in net position during the year
+f1d04,Net position beginning of year
+f1d05,Adjustments to beginning net position
+f1d06,Net position end of year
+f1e01,Pell grants (federal)
+f1e02,Other federal grants
+f1e03,Grants by state government
+f1e04,Grants by local government
+f1e05,Institutional grants from restricted resources
+f1e06,Institutional grants from unrestricted resources
+f1e07,Total gross scholarships and fellowships
+f1e08,Discounts and allowances applied to tuition and fees
+f1e09,Discounts and allowances applied to sales & services of auxiliary enterprises
+f1e10,Total discounts and allowances
+f1e11,Net scholarships and fellowship expenses
+f1fha,Does this institution or any of its foundations or other affiliated organizations own endowment assets (GASB institutions) ?
+f1h01,Value of endowment assets at the beginning of the fiscal year
+f1h02,Value of endowment assets at the end of the fiscal year
+f1m01,Pension expense
+f1m02,Net pension liability
+f1m03,Deferred inflows of resources for pension
+f1m04,Deferred outflows of resources for pension
+f1mhp,Pension information reported  (GASB institutions)
+f2a01,Long-term investments
+f2a02,Total assets
+f2a03,Total liabilities
+f2a03a,"Debt related to Property, Plant, and Equipment"
+f2a04,Total unrestricted net assets
+f2a05,Total restricted net assets
+f2a05a,Permanently restricted net assets included in total restricted net assets
+f2a05b,Temporarily restricted net assets
+f2a06,Total net assets
+f2a11,Land  improvements - End of year
+f2a12,Buildings - End of year
+f2a13,"Equipment, including art and library collections - End of year"
+f2a14,Property obtained under capital leases - End of year
+f2a15,Construction in Progress
+f2a16,"Other plant, property and equipment"
+f2a17,"Total Plant, Property, and Equipment"
+f2a18,Accumulated depreciation
+f2a19,"Property, Plant, and Equipment, net of accumulated depreciation"
+f2a20,"Intangible Assets, net of accumulated amortization"
+f2b01,Total revenues and investment return
+f2b02,Total expenses
+f2b03,Other specific changes in net assets
+f2b04,Total change in net assets
+f2b05,"Net assets, beginning of the year"
+f2b06,Adjustments to beginning of year net assets
+f2b07,"Net assets, end of the year"
+f2c01,Pell grants
+f2c02,Other federal grants
+f2c03,State grants
+f2c04,Local grants
+f2c05,Institutional grants (funded)
+f2c06,Institutional grants (unfunded)
+f2c07,Total student grants
+f2c08,Allowances applied to tuition and fees
+f2c09,Allowances applied to auxiliary enterprise revenues
+f2c10,Total discounts and allowances
+f2d01,Tuition and fees - Total
+f2d012,Tuition and fees - Unrestricted
+f2d013,Tuition and fees - Temporarily restricted
+f2d014,Tuition and fees - Permanently restricted
+f2d02,Federal appropriations - Total
+f2d022,Federal appropriations - Unrestricted
+f2d023,Federal appropriations - Temporarily restricted
+f2d024,Federal appropriations - Permanently restricted
+f2d03,State appropriations - Total
+f2d032,State appropriations - Unrestricted
+f2d033,State appropriations - Temporarily restricted
+f2d034,State appropriations - Permanently restricted
+f2d04,Local appropriations - Total
+f2d042,Local appropriations - Unrestricted
+f2d043,Local appropriations -  Temporarily restricted
+f2d044,Local appropriations - Permanently restricted
+f2d05,Federal grants and contracts - Total
+f2d052,Federal grants and contracts - Unrestricted
+f2d053,Federal grants and contracts  - Temporarily restricted
+f2d054,Federal grants and contracts - Pemanently restricted
+f2d06,State grants and contracts - Total
+f2d062,State grants and contracts - Unrestricted
+f2d063,State grants and contracts - Temporarily restricted
+f2d064,State grants and contracts - Permanently restricted
+f2d07,Local grants and contracts - Total
+f2d072,Local grants and contracts - Unrestricted
+f2d073,Local grants and contracts - Temporarily restricted
+f2d074,Local grants and contracts  - Permanently restricted
+f2d08,"Private gifts, grants, and contracts - Total"
+f2d082,"Private gifts, grants, and contracts - Unrestricted"
+f2d082a,Private gifts - Unrestricted
+f2d082b,Private grants and contracts - Unrestricted
+f2d083,"Private gifts, grants and contracts - Temporarily restricted"
+f2d083a,Private gifts - Temporarily restricted
+f2d083b,Private grants and contracts - Temporarily restricted
+f2d084,"Private gifts, grants, and contracts - Permanently restricted"
+f2d084a,Private gifts - Permanentlly restricted
+f2d084b,"Private grants, and contracts - Permanently restricted"
+f2d08a,Private gifts - Total
+f2d08b,Private grants and contrants - Total
+f2d09,Contributions from affiliated entities - Total
+f2d092,Contributions from affiliated entities - Unrestricted
+f2d093,Contributions from affiliated entities - Temporarily restricted
+f2d094,Contributions from affiliated entities - Permanently restricted
+f2d10,Investment return - Total
+f2d102,Investment return - Unrestricted
+f2d103,Investment return - Temporarily restricted
+f2d104,Investment return - Permanently restricted
+f2d11,Sales and services of educational activities - Total
+f2d112,Sales and services of educational activities - Unrestricted
+f2d12,Sales and services of auxiliary enterprises - Total
+f2d122,Sales and services of auxiliary enterprises - Unrestricted
+f2d13,Hospital revenue - Total
+f2d132,Hospital revenue - Unrestricted
+f2d14,Independent operations revenue - Total
+f2d142,Independent operations revenue - Unrestricted
+f2d143,Independent operations revenue - Temporarily restricted
+f2d144,Independent operations revenue - Permanently restricted
+f2d15,Other revenue - Total
+f2d152,Other revenue - Unrestricted
+f2d153,Other revenue - Temporarily restricted
+f2d154,Other revenue - Permanently restricted
+f2d16,Total revenues and investment return - Total
+f2d162,Total revenues and investment return - Unrestricted
+f2d163,Total revenues and investment return - Temporarily restricted
+f2d164,Total revenues and investment return - Permanently restricted
+f2d17,Net assets released from restriction - Total
+f2d172,Net assets released from restriction - Unrestricted
+f2d173,Net assets released from restriction - Temporarily restricted
+f2d174,Net assets released from restriction - Permanently restricted
+f2d18,"Net total revenues, after assets released from restriction - Total"
+f2d182,"Net total revenues, after assets released from restriction - Unrestricted"
+f2d183,"Net total revenues, after assets released from restriction - Temporarily restricted"
+f2d184,"Net total revenues, after assets released from restriction - Permanently restricted"
+f2e011,Instruction-Total amount
+f2e012,Instruction-Salaries and wages
+f2e013,Instruction-Benefits
+f2e014,Instruction-Operation and maintenance of plant
+f2e015,Instruction-Depreciation
+f2e016,Instruction-Interest
+f2e017,Instruction-All other
+f2e021,Research-Total amount
+f2e022,Research-Salaries and wages
+f2e023,Research-Benefits
+f2e024,Research-Operation and maintenance of plant
+f2e025,Research-Depreciation
+f2e026,Research-Interest
+f2e027,Research-All other
+f2e031,Public service-Total amount
+f2e032,Public service-Salaries and wages
+f2e033,Public service-Benefits
+f2e034,Public service-Operation and maintenance of plant
+f2e035,Public service-Depreciation
+f2e036,Public service-Interest
+f2e037,Public service-All other
+f2e041,Academic support-Total amount
+f2e042,Academic support-Salaries and wages
+f2e043,Academic support-Benefits
+f2e044,Academic support-Operation and maintenance of plant
+f2e045,Academic support-Depreciation
+f2e046,Academic support-Interest
+f2e047,Academic support-All other
+f2e051,Student service-Total amount
+f2e052,Student service-Salaries and wages
+f2e053,Student service-Benefits
+f2e054,Student service-Operation and maintenance of plant
+f2e055,Student service-Depreciation
+f2e056,Student service-Interest
+f2e057,Student service-All other
+f2e061,Institutional support-Total amount
+f2e062,Institutional support-Salaries and wages
+f2e063,Institutional support-Benefits
+f2e064,Institutional support-Operation and maintenance of plant
+f2e065,Institutional support-Depreciation
+f2e066,Institutional support-Interest
+f2e067,Institutional support-All other
+f2e071,Auxiliary enterprises-Total amount
+f2e072,Auxiliary enterprises-Salaries and wages
+f2e073,Auxiliary enterprises-Benefits
+f2e074,Auxiliary enterprises-Operation and maintenance of plant
+f2e075,Auxiliary enterprises-Depreciation
+f2e076,Auxiliary enterprises-Interest
+f2e077,Auxiliary enterprises-All other
+f2e081,Net grant aid to students-Total amount
+f2e082,Net grant aid to students-Salaries and wages
+f2e083,Net grant aid to students-Benefits
+f2e084,Net grant aid to students-Operation and maintenance of plant
+f2e085,Net grant aid to students-Depreciation
+f2e086,Net grant aid to students-Interest
+f2e087,Net grant aid to students-All other
+f2e091,Hospital services-Total amount
+f2e092,Hospital services-Salaries and wages
+f2e093,Hospital services-Benefits
+f2e094,Hospital services-Operation and maintenance of plant
+f2e095,Hospital services-Depreciation
+f2e096,Hospital services-Interest
+f2e097,Hospital services-All other
+f2e101,Independent operations-Total Amount
+f2e102,Independent operations-Salaries and wages
+f2e103,Independent operations-Benefits
+f2e104,Independent operations-Operation and maintenance of plant
+f2e105,Independent operations-Depreciation
+f2e106,Independent operations-Interest
+f2e107,Independent operations-All other
+f2e111,Operation and maintenance of plant-Total amount
+f2e112,Operation and maintenance of plant-Salaries and wages
+f2e113,Operation and maintenance of plant-Benefits
+f2e114,Operation and maintenance of plant-Operation and maintenance of plant
+f2e115,Operation and maintenance of plant-Depreciation
+f2e116,Operation and maintenance of plant-Interest
+f2e117,Operation and maintenance of plant-All other
+f2e121,Other expenses-Total amount
+f2e122,Other expenses-Salaries and wages
+f2e123,Other expenses-Benefits
+f2e124,Other expenses-Operation and maintenance of plant
+f2e125,Other expenses-Depreciation
+f2e126,Other expenses-Interest
+f2e127,Other expenses-All other
+f2e131,Total expenses-Total amount
+f2e132,Total expenses-Salaries and wages
+f2e133,Total expenses-Benefits
+f2e134,Total expenses-Operation and maintenance of plant
+f2e135,Total expenses-Depreciation
+f2e136,Total expenses-Interest
+f2e137,Total expenses-All other natural classification
+f2fha,Does this institution or any of its foundations or other affiliated organizations own endowment assets ?
+f2h01,Value of endowment assets at the beginning of the fiscal year
+f2h02,Value of endowment assets at the end of the fiscal year
+unitid,Unique identification number of the institution

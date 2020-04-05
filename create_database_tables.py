@@ -39,13 +39,17 @@ from database.ipeds_student_aid_by_income import IpedsStudentAidByIncome
 from database.ipeds_test_scores import IpedsTestScore
 from database.ipeds_athletic_conference_memberships import IpedsAthleticConferenceMembership
 from database.ipeds_faculty_dimension import IpedsFacultyDimension
+from database.ipeds_finance_field_dimension import IpedsFinanceFieldDimension
+from database.ipeds_finance import IpedsFinance
 
 import numpy as np
 import pandas as pd
 from pandas import DataFrame
 from sqlalchemy import sql
 
-table_names = [IpedsFallEnrollment.__tablename__,
+table_names = [IpedsFinance.__tablename__,
+               IpedsFinanceFieldDimension.__tablename__,
+               IpedsFallEnrollment.__tablename__,
                IpedsAdmissions.__tablename__,
                IpedsAverageTuition.__tablename__,
                IpedsCharge.__tablename__,
@@ -85,6 +89,8 @@ table_names = [IpedsFallEnrollment.__tablename__,
                IpedsSubmissionStatus.__tablename__]
 
 tables = [IpedsFallEnrollment.__table__,
+          IpedsFinance.__table__,
+          IpedsFinanceFieldDimension.__table__,
           PeerGroup.__table__,
           IpedsInstitution.__table__,
           IpedsAthleticConferenceMembership.__table__,
