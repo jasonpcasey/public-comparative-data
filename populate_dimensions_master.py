@@ -18,7 +18,8 @@ scripts = [
     'populate_ipeds_employee_dimension.py',
     'populate_ipeds_survey_dimension.py',
     'populate_peer_groups.py',
-    'populate_ipeds_custom_peer_lists.py'
+    'populate_ipeds_custom_peer_lists.py',
+    'populate_ipeds_fasb_finance_dimension.py'
     ]
 
 errors = 0
