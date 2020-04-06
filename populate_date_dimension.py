@@ -16,7 +16,7 @@ session = Session()
 
 try:
     # bulk insert objects for federal agencies and academic fields (NSF)
-    print('\nPopulating dimension tables.')
+    print('Populating dimension tables.')
 
     # insert dates into dimension tables
     record_deletes = session.query(DateRow).delete(synchronize_session=False)
@@ -25,11 +25,11 @@ try:
     print('\tFinished populating date_dimension.')
 except Exception as e:
     session.rollback()
-    print("\nAn error occurred and no data were changed in the database.\n\nError:\n{}".format(str(e)))
+    print("\tAn error occurred and no data were changed in the database.\n\nError:\n{}".format(str(e)))
 else:
     session.commit()
-    print('\nChanges committed to database.')
+    print('\tChanges committed to database.\n')
 
 session.close()
 
-print("\nAll Done.")
+print("All Done.")

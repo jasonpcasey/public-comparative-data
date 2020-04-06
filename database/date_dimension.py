@@ -24,10 +24,8 @@ class DateRow(Base):
     iso_week_of_year = Column(Integer, nullable=False)
     month = Column(Integer, nullable=False)
     month_name = Column(String(10), nullable=False)
-    quarter = Column(Integer, nullable=False)
-    quarter_name = Column(String(6), nullable=False)
     calendar_year = Column(Integer, nullable=False)
-    term_code = Column(String(5), nullable=False)
+    amis_term = Column(String(5), nullable=False)
     peoplesoft_term_code = Column(String(4), nullable=False)
     semester = Column(String(6), nullable=False)
     fiscal_year = Column(String(9), nullable=False)
@@ -47,10 +45,10 @@ class DateRow(Base):
 
     
     def __init__(self, date_key, day, day_suffix, weekday, weekday_name, is_weekend,
-                 is_holiday, holiday_name, days_of_week_in_month,
+                 is_holiday, days_of_week_in_month,
                  day_of_year, week_of_month, week_of_year, iso_week_of_year,
-                 month, month_name, quarter, quarter_name, calendar_year,
-                 term_code, peoplesoft_term_code, semester, fiscal_year, 
+                 month, month_name, calendar_year,
+                 amis_term, peoplesoft_term_code, semester, fiscal_year, 
                  academic_year_leading_summer, academic_year_trailing_summer,
                  mmyyyy, month_year, first_day_of_month, last_day_of_month,
                  first_day_of_quarter, last_day_of_quarter, first_day_of_year,
@@ -64,7 +62,6 @@ class DateRow(Base):
         self.weekday_name = weekday_name
         self.is_weekend = is_weekend
         self.is_holiday = is_holiday
-        self.holiday_name = holiday_name
         self.days_of_week_in_month = days_of_week_in_month
         self.day_of_year = day_of_year
         self.week_of_month = week_of_month
@@ -72,10 +69,8 @@ class DateRow(Base):
         self.iso_week_of_year = iso_week_of_year
         self.month = month
         self.month_name = month_name
-        self.quarter = quarter
-        self.quarter_name = quarter_name
         self.calendar_year = calendar_year
-        self.term_code = term_code
+        self.amis_term = amis_term
         self.peoplesoft_term_code = peoplesoft_term_code
         self.semester = semester
         self.fiscal_year = fiscal_year
@@ -105,7 +100,6 @@ class DateRow(Base):
             f'weekday_name={self.weekday_name!r}, '
             f'is_weekend={self.is_weekend!r}, '
             f'is_holiday={self.is_holiday!r}, '
-            f'holiday_name={self.holiday_name!r}, '
             f'days_of_week_in_month={self.days_of_week_in_month!r}, '
             f'day_of_year={self.day_of_year!r}, '
             f'week_of_month={self.week_of_month!r}, '
@@ -113,10 +107,8 @@ class DateRow(Base):
             f'iso_week_of_year={self.iso_week_of_year!r}, '
             f'month={self.month!r}, '
             f'month_name={self.month_name!r}, '
-            f'quarter={self.quarter!r}, '
-            f'quarter_name={self.quarter_name!r}, '
             f'calendar_year={self.calendar_year!r}, '
-            f'term_code={self.term_code!r}, '
+            f'amis_term={self.amis_term!r}, '
             f'peoplesoft_term_code={self.peoplesoft_term_code!r}, '
             f'semester={self.semester!r}, '
             f'fiscal_year={self.fiscal_year!r}, '

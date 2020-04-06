@@ -16,8 +16,7 @@ from database.ipeds_fall_enrollment_by_age import IpedsFallEnrollmentByAge
 pd.set_option('display.max_rows', 10)
 
 # set constants
-year = 2017
-
+year = 2018
 
 def item_recode(col, codings, default_value = None):
     if default_value == None:
@@ -119,7 +118,7 @@ studt = studt.groupby(["unitid", "date_key", "age_range",
 studt = studt.query('headcount > 0')
 
 # remove institutions with no data
-studt = studt.fillna(sql.null())
+# studt = studt.fillna(sql.null())
 
 # insert data into db table
 session = Session()

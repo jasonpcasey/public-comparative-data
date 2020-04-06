@@ -143,7 +143,7 @@ for year in np.arange(first_year, last_year + 1):
     scores['percentage'] = scores.percentage / 100
 
     # remove institutions with no applications
-    scores = scores.fillna(sql.null())
+    scores = scores.fillna(0)
 
     # insert data into db table
     session = Session()

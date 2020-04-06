@@ -103,7 +103,7 @@ for year in np.arange(first_year, last_year + 1):
     tuition = tuition[['unitid', 'date_key', 'student_career', 'student_residency',
                         'average_tuition', 'per_credit_hour_charge', 'required_fees']] 
 
-    tuition = tuition.fillna(sql.null())
+    # tuition = tuition.fillna(sql.null())
 
     # insert data into dbo.survey_records
     session = Session()

@@ -16,7 +16,7 @@ class IpedsAthleticConferenceMembership(Base):
     sport_name = Column(String(255), nullable = False)
 
     """ Unique index constraint """
-    __table_args__ = (Index('idx_ipeds_average_tuition_keys',
+    __table_args__ = (Index('idx_ipeds_athletic_conference_membership_keys',
                             'unitid',
                             'date_key',
                             'conference_id',

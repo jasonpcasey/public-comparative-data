@@ -220,7 +220,9 @@ for year in np.arange(first_year, last_year + 1):
 
     # replace NaN with database-compliant nulls
     ic.confno4 = ic.confno4.fillna(-2)
-    ic = ic.fillna(sql.null())
+    ic.csa_id = ic.csa_id.fillna(-2)
+    ic.cbsa_id = ic.cbsa_id.fillna(-2)
+    ic.system_name = ic.system_name.fillna('No system')
     
     # insert data into dbo.survey_records
     session = Session()

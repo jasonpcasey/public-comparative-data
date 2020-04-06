@@ -84,7 +84,7 @@ for year in np.arange(first_year, last_year + 1):
                                     'Not applicable')
 
     # replace NaN with database-compliant nulls
-    conf = conf.fillna(sql.null())
+    # conf = conf.fillna(sql.null())
 
     # insert data into dbo.survey_records
     session = Session()
