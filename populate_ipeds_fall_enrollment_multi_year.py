@@ -19,7 +19,6 @@ pd.set_option('display.max_rows', 10)
 first_year = 2010
 last_year = 2018
 
-
 def item_recode(col, codings, default_value = None):
     if default_value == None:
         answer = col.map(codings, na_action = 'ignore')
@@ -50,9 +49,9 @@ for year in np.arange(first_year, last_year + 1):
         df = read_pickle('data/ipeds_ef_{}.pickle'.format(year))
         df = df.fillna(0)
     except Exception as e:
-        print('ERROR.\n\n{}\n'.format(str(e)))
+        print('ERROR.\n\n{}'.format(str(e)))
     else:
-        print('DONE.\n')
+        print('DONE.')
 
     # add back missing variables
     for col in keepers:
@@ -133,7 +132,7 @@ for year in np.arange(first_year, last_year + 1):
     enroll = enroll.query('headcount > 0')
 
     # remove institutions with no data
-    enroll = enroll.fillna(sql.null())
+    # enroll = enroll.fillna(sql.null())
 
     # insert data into db table
     session = Session()

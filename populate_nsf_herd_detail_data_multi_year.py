@@ -123,7 +123,7 @@ for year in np.arange(first_year, last_year + 1):
                                   'unitid']).sum().reset_index()
 
     herd['expenditure'] = herd.expenditure.fillna(0)
-    herd = herd.fillna(sql.null())
+    # herd = herd.fillna(sql.null())
 
     # insert data into dbo.survey_records
     session = Session()

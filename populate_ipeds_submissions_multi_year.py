@@ -110,7 +110,7 @@ for year in np.arange(first_year, last_year + 1):
     # submits = submits.dropna()
 
     # replace NaN with database-compliant nulls
-    submits = submits.fillna(sql.null())
+    # submits = submits.fillna(sql.null())
 
     # insert data into dbo.survey_records
     session = Session()

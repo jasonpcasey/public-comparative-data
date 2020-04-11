@@ -16,7 +16,7 @@ from database.ipeds_submission_status import IpedsSubmissionStatus
 pd.set_option('display.max_rows', 10)
 
 # constants
-year = 2016
+year = 2004
 
 # local functions
 def item_recode(col, codings, default_value = None):
@@ -108,7 +108,7 @@ submits['allocation_factor'] = submits.allocation_factor / 100
 # submits = submits.dropna()
 
 # replace NaN with database-compliant nulls
-submits = submits.fillna(sql.null())
+# submits = submits.fillna(sql.null())
 
 # insert data into dbo.survey_records
 session = Session()

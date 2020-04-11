@@ -131,7 +131,7 @@ for year in np.arange(first_year, last_year + 1):
                                                 'NA_01': 'arra_funds'})
 
     # replace NaN with database-compliant nulls
-    institutions['research_personnel'] = np.where(institutions.research_personnel == 0, sql.null(), institutions.research_personnel)
+    institutions['research_personnel'] = np.where(institutions.research_personnel == 0, None, institutions.research_personnel)
 
     # insert data into dbo.survey_records
     session = Session()

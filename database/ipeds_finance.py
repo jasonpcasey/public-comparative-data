@@ -13,7 +13,7 @@ class IpedsFinance(Base):
     unitid = Column(Integer, nullable = False)
     date_key = Column(Date, ForeignKey('date_dimension.date_key'), nullable = False)
     finance_field_key = Column(String(16), ForeignKey('ipeds_finance_field_dimension.finance_field_key'), nullable = False)
-    amount = Column(Numeric(12, 0), nullable = False, default = 0)
+    amount = Column(Numeric(18, 0), nullable = False, default = 0)
 
     """ Unique index constraint """
     __table_args__ = (Index('idx_ipeds_finance_keys',

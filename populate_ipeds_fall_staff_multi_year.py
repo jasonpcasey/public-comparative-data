@@ -104,7 +104,7 @@ for year in np.arange(first_year, last_year + 1):
     staff = staff.query('headcount > 0')
 
     # remove institutions with no data
-    staff = staff.fillna(sql.null())
+    # staff = staff.fillna(sql.null())
 
     # insert data into db table
     session = Session()
