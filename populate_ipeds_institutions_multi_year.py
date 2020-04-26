@@ -34,21 +34,21 @@ def read_pickle(filespec):
         with open(filespec, 'rb') as f:
             answer = pickle.load(f)
     except Exception as e:
-        print('File not loaded properly.\n\n{}'.format(str(e)))
+        print(f'\tFile not loaded properly.\n\n{str(e)}')
         raise
 
     return answer
 
 for year in np.arange(first_year, last_year + 1):
     try:
-        print('Reading files for {}...'.format(year), end='', flush=True)
-        ic = read_pickle('data/ipeds_hd_{}.pickle'.format(year))
-        ic = ic.merge(read_pickle('data/ipeds_ic_{}.pickle'.format(year)),
+        print(f'Reading files for {year}...', end='', flush=True)
+        ic = read_pickle(f'data/ipeds_hd_{year}.pickle')
+        ic = ic.merge(read_pickle(f'data/ipeds_ic_{year}.pickle'),
                     how = 'inner',
                     on = 'unitid')
 
     except Exception as e:
-        print('ERROR.\n\n{}\n'.format(str(e)))
+        print(f'ERROR.\n\n{str(e)}\n')
     else:
         print('DONE.')
 
@@ -125,7 +125,7 @@ for year in np.arange(first_year, last_year + 1):
                             'landgrnt': 'landgrant'})
 
     # set date key
-    date_key = '{}-10-15'.format(year)
+    date_key = f'{year}-10-15'
 
     # modify data frame to apply needed fixes
     ic['date_key'] = date_key
@@ -228,7 +228,7 @@ for year in np.arange(first_year, last_year + 1):
     session = Session()
 
     try:
-        print('Attempting to insert {:,} rows for {} into {}.'.format(ic.shape[0], year, IpedsInstitution.__tablename__))
+        print(f'Attempting to insert {ic.shape[0]:,} rows for {year} into {IpedsInstitution.__tablename__}.')
         record_deletes = session.query(IpedsInstitution).filter(IpedsInstitution.date_key==date_key).delete(synchronize_session=False)
         session.bulk_insert_mappings(mapper = IpedsInstitution,
                                     mappings = ic.to_dict(orient='records'),
@@ -236,13 +236,13 @@ for year in np.arange(first_year, last_year + 1):
     except Exception as e:
         session.rollback()
         print(str(e))
-        print('No data were altered due to error.')
+        print('\tNo data were altered due to error.')
     else:
         session.commit()
-        print('\n{:,} old records were deleted.'.format(record_deletes))
-        print('{:,} new records were inserted.'.format(ic.shape[0]))
+        print(f'\t{record_deletes:,} old records were deleted.')
+        print(f'\t{ic.shape[0]:,} new records were inserted.')
     finally:
         session.close()
         session = None
 
-print('\nAll done!')
+print('All done!')
