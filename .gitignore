@@ -125,3 +125,5 @@ dmypy.json
 .pyre/
 *.pickle
 .DS_Store
+scraps.*
+logfile.txt
