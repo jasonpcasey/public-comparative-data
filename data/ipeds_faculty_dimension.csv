@@ -1,0 +1,7 @@
+faculty_key,faculty_status,tenure_status,contract_type
+1011,Faculty Status,Tenured,Multi-year or indefinite contract
+2021,Faculty Status,On Tenure Track,Multi-year or indefinite contract
+3031,Faculty Status,Not on Tenure Track,Multi-year or indefinite contract
+3032,Faculty Status,Not on Tenure Track,Annual contract
+3033,Faculty Status,Not on Tenure Track,Less than annual contract
+4039,No Faculty Status,Not on Tenure Track,Unknown/Not Applicable
