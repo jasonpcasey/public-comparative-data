@@ -18,7 +18,7 @@ class IpedsNewHire(Base):
     headcount = Column(Integer, nullable = False, default = 0)
 
     """ Unique index constraint """
-    __table_args__ = (Index('idx_ipeds_fall_staff_keys',
+    __table_args__ = (Index('idx_ipeds_new_hires_keys',
                             'unitid',
                             'date_key',
                             'employee_key',
