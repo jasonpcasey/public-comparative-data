@@ -19,7 +19,7 @@ pd.set_option('display.max_rows', 10)
 
 # set constants
 first_year = 2012
-last_year = 2017
+last_year = 2018
 
 
 def item_recode(col, codings, default_value = None):
@@ -48,13 +48,13 @@ keepers = ['unitid',
 
 for year in np.arange(first_year, last_year + 1):
     try:
-        print('Reading data for {}...'.format(year), end='', flush=True)
+        print(f'Reading data for {year}...', end='', flush=True)
         df = read_pickle('data/ipeds_new_hires_{}.pickle'.format(year))
         df = df.fillna(0)
     except Exception as e:
-        print('ERROR.\n\n{}\n'.format(str(e)))
+        print(f'ERROR.\n\n{str(e)}')
     else:
-        print('DONE.\n')
+        print('DONE.')
 
     # add back missing variables
     for col in keepers:
@@ -65,7 +65,7 @@ for year in np.arange(first_year, last_year + 1):
     df = df[keepers]
 
     # set date key
-    date_key = '{}-11-01'.format(year)
+    date_key = f'{year}-11-01'
 
     # modify data frame to apply needed fixes
     df['date_key'] = date_key
@@ -150,7 +150,7 @@ for year in np.arange(first_year, last_year + 1):
     session = Session()
 
     try:
-        print('Attempting to insert {:,} rows for {} into {}.'.format(staff.shape[0], year, IpedsNewHire.__tablename__))
+        print(f'Attempting to insert {staff.shape[0]:,} rows for {year} into {IpedsNewHire.__tablename__}.')
         record_deletes = session.query(IpedsNewHire).filter(IpedsNewHire.date_key==date_key).delete(synchronize_session=False)
         session.bulk_insert_mappings(mapper = IpedsNewHire,
                                     mappings = staff.to_dict(orient='records'),
@@ -161,8 +161,8 @@ for year in np.arange(first_year, last_year + 1):
         print('No data were altered due to error.\n')
     else:
         session.commit()
-        print('\t{:,} old records were deleted.'.format(record_deletes))
-        print('\t{:,} new records were inserted.\n'.format(staff.shape[0]))
+        print(f'\t{record_deletes:,} old records were deleted.')
+        print(f'\t{staff.shape[0]:,} new records were inserted.\n')
     finally:
         session.close()
         session = None
