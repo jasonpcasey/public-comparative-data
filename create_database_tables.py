@@ -41,13 +41,15 @@ from database.ipeds_athletic_conference_memberships import IpedsAthleticConferen
 from database.ipeds_faculty_dimension import IpedsFacultyDimension
 from database.ipeds_finance_field_dimension import IpedsFinanceFieldDimension
 from database.ipeds_finance import IpedsFinance
+from database.ipeds_new_hires import IpedsNewHire
 
 import numpy as np
 import pandas as pd
 from pandas import DataFrame
 from sqlalchemy import sql
 
-table_names = [IpedsFinance.__tablename__,
+table_names = [IpedsNewHire.__tablename__,
+               IpedsFinance.__tablename__,
                IpedsFinanceFieldDimension.__tablename__,
                IpedsFallEnrollment.__tablename__,
                IpedsAdmissions.__tablename__,
@@ -90,6 +92,7 @@ table_names = [IpedsFinance.__tablename__,
 
 tables = [IpedsFallEnrollment.__table__,
           IpedsFinance.__table__,
+          IpedsNewHire.__table__,
           IpedsFinanceFieldDimension.__table__,
           PeerGroup.__table__,
           IpedsInstitution.__table__,
@@ -129,14 +132,14 @@ tables = [IpedsFallEnrollment.__table__,
           IpedsSubmissionStatus.__table__,
           IpedsSurveyDimension.__table__]
 
-print("\nDropping tables if they exist in the database:\n\t{}".format('\n\t'.join(table_names)))
+print("Dropping tables if they exist in the database:\n\t{}".format('\n\t'.join(table_names)))
 
 Base.metadata.drop_all(bind = engine,
                        checkfirst = True,
                        tables = tables)
 
-print("\nCreating tables in the database:\n\t{}".format('\n\t'.join(table_names)))
+print("Creating tables in the database:\n\t{}".format('\n\t'.join(table_names)))
 
 Base.metadata.create_all(engine)
 
-print("\nAll Done.")
+print("All Done.")
