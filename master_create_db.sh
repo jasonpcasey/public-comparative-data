@@ -1,3 +1,13 @@
+#!/bin/bash
+
+# master_create_db.sh - A script to build database tables and populate them with initial data
+
+# if [ "$1" != "" ]; then
+#     ###
+# else
+#     echo "Positional parameter 1 is empty"
+# fi
+
 echo 'CREATE DB TABLES'
 python create_database_tables.py
 
@@ -71,11 +81,7 @@ python populate_nsf_herd_federal_agencies.py
 
 echo
 echo 'POPULATE IPEDS ATHLETIC CONFERENCES'
-python populate_ipeds_athletic_conferences_multi_year.py
-
-echo
-echo 'POPULATE IPEDS INSTITUTIONS'
-python populate_ipeds_institutions_multi_year.py
+python populate_ipeds_athletic_conferences.py --last=$1
 
 echo
 echo 'POPULATE LOCAL PEER GROUPS DIMENSION TABLE'
@@ -86,45 +92,54 @@ echo 'POPULATE IPEDS CUSTOM PEER LISTS TABLE'
 python populate_ipeds_custom_peer_lists.py
 
 echo
-echo 'POPULATE NSF HERD INSTITUTIONAL DATA'
-python populate_nsf_herd_institutional_data_multi_year.py
-
-echo
-echo 'POPULATE NSF HERD DETAIL DATA'
-python populate_nsf_herd_detail_data_multi_year.py
+echo 'POPULATE IPEDS INSTITUTIONS'
+python populate_ipeds_institutions.py --last=$1
 
 echo
 echo 'POPULATE IPEDS ADMISSIONS'
-python populate_ipeds_admissions_multi_year.py
+python populate_ipeds_admissions.py --last=$1
 
 echo
 echo 'POPULATE IPEDS ADMISSIONS TEST SCORES'
-python populate_ipeds_admissions_test_scores_multi_year.py
+python populate_ipeds_admissions_test_scores.py --last=$1
 
 echo
 echo 'POPULATE IPEDS AVERAGE TUITION'
-python populate_ipeds_average_tuition_multi_year.py
+python populate_ipeds_average_tuition.py --last=$1
 
 echo
 echo 'POPULATE IPEDS CHARGES'
-python populate_ipeds_charges_multi_year.py
+python populate_ipeds_charges.py --last=$1
 
 echo
 echo 'POPULATE IPEDS FALL ENROLLMENT'
-python populate_ipeds_fall_enrollment_multi_year.py
+python populate_ipeds_fall_enrollment.py --last=$1
 
 echo
 echo 'POPULATE IPEDS FALL ENROLLMENT BY AGE'
-python populate_ipeds_fall_enrollment_by_age_multi_year.py
+python populate_ipeds_fall_enrollment_by_age.py --last=$1
 
-echo
-echo 'POPULATE IPEDS FALL STAFF'
-python populate_ipeds_fall_staff_multi_year.py
+# echo
+# echo 'POPULATE IPEDS FALL STAFF'
+# python populate_ipeds_fall_staff_multi_year.py
 
-echo
-echo 'POPULATE IPEDS FASB FINANCE'
-python populate_ipeds_fasb_finance_multi_year.py
+# echo
+# echo 'POPULATE IPEDS NEW HIRES'
+# python populate_ipeds_new_hires_multi_year.py
 
-echo
-echo 'POPULATE IPEDS SUBMISSIONS'
-python populate_ipeds_submissions_multi_year.py
+# echo
+# echo 'POPULATE IPEDS FASB FINANCE'
+# python populate_ipeds_fasb_finance_multi_year.py
+
+# echo
+# echo 'POPULATE IPEDS SUBMISSIONS'
+# python populate_ipeds_submissions_multi_year.py
+
+# echo
+# echo 'POPULATE NSF HERD INSTITUTIONAL DATA'
+# python populate_nsf_herd_institutional_data_multi_year.py
+
+# echo
+# echo 'POPULATE NSF HERD DETAIL DATA'
+# python populate_nsf_herd_detail_data_multi_year.py
+
