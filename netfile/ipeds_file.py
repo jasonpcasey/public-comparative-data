@@ -10,13 +10,13 @@ class IpedsFile:
 
     def __init__(self, year):
         self.year = year
-        self.date_key = '{}-10-15'.format(self.year)
+        self.date_key = f'{self.year}-10-15'
         self.url = ''
         self.rows = list()
     
     def get_url(self, prefix):
         """get_url() returns the appropriate URI for a given year's IPEDS survey archive"""
-        return '{}{}{}.zip'.format(type(self).__url_base, prefix, self.year)
+        return f'{type(self).__url_base}{prefix}{self.year}.zip'
 
     def row_count(self):
         return(len(self.rows))
