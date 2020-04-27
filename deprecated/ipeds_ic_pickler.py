@@ -27,8 +27,8 @@ for year in range(first_year, last_year + 1):
     print('Downloading data for {}:'.format(year))
     try:
         # read hd
-        ipeds_pickle('https://nces.ed.gov/ipeds/datacenter/data/hd{}.zip'.format(year),
-                        pathlib.Path.cwd() / 'data/ipeds_hd_{}.pickle'.format(year),
+        ipeds_pickle(f'https://nces.ed.gov/ipeds/datacenter/data/hd{year}.zip',
+                        f'{pathlib.Path.cwd()}/data/ipeds_hd_{year}.pickle',
                         dtypes = {'unitid': np.int32,
                                   'countycd': np.float32,
                                   'obereg': np.float32,
@@ -38,6 +38,7 @@ for year in range(first_year, last_year + 1):
                                   'hdegofr1': np.float32,
                                   'ugoffer': np.float32,
                                   'groffer': np.float32,
+                                  'opeflag': np.float32,
                                   'deggrant': np.float32,
                                   'locale': np.float32,
                                   'newid': np.float32,
@@ -55,18 +56,19 @@ for year in range(first_year, last_year + 1):
                                   'tribal': np.float32})
 
         # read ic
-        ipeds_pickle('https://nces.ed.gov/ipeds/datacenter/data/ic{}.zip'.format(year),
-                        pathlib.Path.cwd() / 'data/ipeds_ic_{}.pickle'.format(year),
+        ipeds_pickle(f'https://nces.ed.gov/ipeds/datacenter/data/ic{year}.zip',
+                        f'{pathlib.Path.cwd()}/data/ipeds_ic_{year}.pickle',
                         dtypes = {'unitid': np.int32,
                                   'slo5': np.float32,
+                                  'distnced': np.float32,
                                   'confno1': np.float32,
                                   'confno2': np.float32,
                                   'confno3': np.float32,
                                   'confno4': np.float32})
 
         # read ay charges
-        ipeds_pickle('https://nces.ed.gov/ipeds/datacenter/data/ic{}_ay.zip'.format(year),
-                        pathlib.Path.cwd() / 'data/ipeds_ic_{}_ay.pickle'.format(year))
+        ipeds_pickle(f'https://nces.ed.gov/ipeds/datacenter/data/ic{year}_ay.zip',
+                        f'{pathlib.Path.cwd()}/data/ipeds_ic_{year}_ay.pickle')
     except Exception as e:
         print('ERROR.\nFile not downloaded properly.\n\n{}\n'.format(str(e)))
         break

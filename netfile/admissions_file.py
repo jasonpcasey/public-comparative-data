@@ -1,40 +1,63 @@
-from netfile.ipeds_file import IpedsFile
-from database.ipeds_admissions import IpedsAdmissions
+#!/usr/bin/env python3
+# coding=utf-8
+
 import numpy as np
 import pandas as pd
+
+from netfile.ipeds_file import IpedsFile
+from database.ipeds_admissions import IpedsAdmissions
 
 class AdmissionsFile(IpedsFile):
     def __init__(self, year):
         super().__init__(year)
-        if self.year < 2014:
-            self.url = self.get_url('ic')
-        else:
-            self.url = self.get_url('adm')
         self.populate_rows()
     
     def populate_rows(self):
-        df = self.read({'UNITID': np.int32,
-                        'APPLCN': np.float32,
-                        'APPLCNM': np.float32,
-                        'APPLCNW': np.float32,
-                        'ADMSSN': np.float32,
-                        'ADMSSNM': np.float32,
-                        'ADMSSNW': np.float32,
-                        'ENRLT': np.float32,
-                        'ENRLM': np.float32,
-                        'ENRLW': np.float32})[['unitid',
-                                               'applcn',
-                                               'applcnm',
-                                               'applcnw',
-                                               'admssn',
-                                               'admssnm',
-                                               'admssnw',
-                                               'enrlt',
-                                               'enrlm',
-                                               'enrlw']].fillna(0)
+        if self.year < 2014:
+            url = self.get_url(f'ic{self.year}.zip')
+        else:
+            url = self.get_url(f'adm{self.year}.zip')
+
+        print(f'Reading data from {url}')
+        df = self.read(url,
+        {
+            'UNITID': np.int32,
+            'APPLCN': np.float32,
+            'APPLCNM': np.float32,
+            'APPLCNW': np.float32,
+            'ADMSSN': np.float32,
+            'ADMSSNM': np.float32,
+            'ADMSSNW': np.float32,
+            'ENRLT': np.float32,
+            'ENRLM': np.float32,
+            'ENRLW': np.float32
+        })
         
         # add date key
         df['date_key'] = self.date_key
+
+        # columns to keep
+        keepers = [
+            'unitid',
+            'date_key',
+            'applcn',
+            'applcnm',
+            'applcnw',
+            'admssn',
+            'admssnm',
+            'admssnw',
+            'enrlt',
+            'enrlm',
+            'enrlw'
+        ]
+        
+        # add back missing variables
+        for col in keepers:
+            if col not in list(df.columns):
+                df[col] = None
+        
+        # reduce file
+        df = df[keepers].fillna(0)
         
         # calculate unknowns
         df['applcnu'] = df.applcn - (df.applcnm + df.applcnw)
@@ -77,7 +100,11 @@ class AdmissionsFile(IpedsFile):
                                              row.enrolled))
 
     def __repr__(self):
-        return('AdmissionsFile(year={})'.format(self.year))
+        return('{self.__class__.__name__}={})'.format(self.year))
+
+    def write(self):
+        print(f'Writing {len(self.rows):,} rows to {IpedsAdmissions.__tablename__} table in database.')
+        super().write()
 
 if __name__ == '__main__':
     adm = AdmissionsFile(2018)

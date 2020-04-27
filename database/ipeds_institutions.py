@@ -24,8 +24,8 @@ class IpedsInstitution(Base):
     control = Column(String(50), nullable = False, default='Unknown')
     highest_level_offering = Column(String(132), nullable = False, default='Unknown')
     highest_degree_offering = Column(String(132), nullable = False, default='Unknown')
-    undergraduate_offering = Column(Boolean, nullable = False, default = 0)
-    graduate_offering = Column(Boolean, nullable = False, default = 0)
+    undergraduate_offering = Column(Boolean, nullable = False, default = 1)
+    graduate_offering = Column(Boolean, nullable = False, default = 1)
     degree_granting = Column(Boolean, nullable = False, default = 0)
     locale = Column(String(64), nullable = False, default='Unknown')
     parent_id = Column(Integer, nullable = False)
@@ -45,10 +45,9 @@ class IpedsInstitution(Base):
     medical = Column(Boolean, nullable = False, default = 0)
     tribal = Column(Boolean, nullable = False, default = 0)
     rotc = Column(Boolean, nullable = False, default = 0)
-    confno1 = Column(Integer, nullable = False, default = -2)
-    confno2 = Column(Integer, nullable = False, default = -2)
-    confno3 = Column(Integer, nullable = False, default = -2)
-    confno4 = Column(Integer, nullable = False, default = -2)
+    title_iv_eligible = Column(Boolean, nullable = False, default = 1)
+    distance_only = Column(Boolean, nullable = False, default = 0)
+    academic_institution = Column(Boolean, nullable = False, default = 1)
 
 
     """ Unique index constraint """
@@ -57,21 +56,21 @@ class IpedsInstitution(Base):
                             'date_key',
                             unique = True), )
 
-    def __init__(self, unitid, date_key, institution_name, address, city, zip, web_address, 
-                 fips, county_fips, service_academy, institution_level, control, highest_level_offering,
+    def __init__(self, unitid, date_key, institution_name, address, city, zip_code, web_address, 
+                 state_fips, county_fips, service_academy, institution_level, control, highest_level_offering,
                  highest_degree_offering, undergraduate_offering, graduate_offering, degree_granting,
                  locale, parent_id, year_closed, active, cbsa_id, cbsa_type, csa_id, longitude,
                  latitude, system_member, system_name, open_to_public, landgrant, hbcu, hospital,
-                 medical, tribal, rotc, confno1, confno2, confno3, confno4):
+                 medical, tribal, rotc, title_iv_eligible, distance_only):
         """ method for instantiating object """
         self.unitid = unitid 
         self.date_key = date_key 
         self.institution_name = institution_name 
         self.address = address 
         self.city = city 
-        self.zip = zip 
+        self.zip_code = zip_code
         self.web_address = web_address 
-        self.fips = fips 
+        self.state_fips = state_fips 
         self.county_fips = county_fips 
         self.service_academy = service_academy 
         self.institution_level = institution_level 
@@ -98,11 +97,9 @@ class IpedsInstitution(Base):
         self.hospital = hospital 
         self.medical = medical 
         self.tribal = tribal 
-        self.rotc = rotc 
-        self.confno1 = confno1 
-        self.confno2 = confno2 
-        self.confno3 = confno3 
-        self.confno4 = confno4 
+        self.rotc = rotc
+        self.title_iv_eligible = title_iv_eligible
+        self.distance_only = distance_only
 
 
     def __repr__(self):
@@ -114,9 +111,9 @@ class IpedsInstitution(Base):
             f'institution_name={self.institution_name!r}, '
             f'address={self.address!r}, '
             f'city={self.city!r}, '
-            f'zip={self.zip!r}, '
+            f'zip_code={self.zip!r}, '
             f'web_address={self.web_address!r}, '
-            f'fips={self.fips!r}, '
+            f'state_fips={self.fips!r}, '
             f'county_fips={self.county_fips!r}, '
             f'service_academy={self.service_academy!r}, '
             f'institution_level={self.institution_level!r}, '
@@ -144,8 +141,6 @@ class IpedsInstitution(Base):
             f'medical={self.medical!r}, '
             f'tribal={self.tribal!r}, '
             f'rotc={self.rotc!r}, '
-            f'confno1={self.confno1!r}, '
-            f'confno2={self.confno2!r}, '
-            f'confno3={self.confno3!r}, '
-            f'confno4={self.confno4!r})'
+            f'title_iv_eligible={self.title_iv_eligible!r}, '
+            f'distance_only={self.distance_only!r})'
         )

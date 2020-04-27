@@ -1,3 +1,7 @@
+#!/bin/bash
+
+# setup_tables.sh - This script creates the base tables and populates the dimensions
+
 echo 'CREATE DB TABLES'
 python create_database_tables.py
 
@@ -70,61 +74,9 @@ echo 'POPULATE HERD FEDERAL AGENCIES DIMENSION'
 python populate_nsf_herd_federal_agencies.py
 
 echo
-echo 'POPULATE IPEDS ATHLETIC CONFERENCES'
-python populate_ipeds_athletic_conferences_multi_year.py
-
-echo
-echo 'POPULATE IPEDS INSTITUTIONS'
-python populate_ipeds_institutions_multi_year.py
-
-echo
 echo 'POPULATE LOCAL PEER GROUPS DIMENSION TABLE'
 python populate_peer_groups.py
 
 echo
 echo 'POPULATE IPEDS CUSTOM PEER LISTS TABLE'
 python populate_ipeds_custom_peer_lists.py
-
-echo
-echo 'POPULATE NSF HERD INSTITUTIONAL DATA'
-python populate_nsf_herd_institutional_data_multi_year.py
-
-echo
-echo 'POPULATE NSF HERD DETAIL DATA'
-python populate_nsf_herd_detail_data_multi_year.py
-
-echo
-echo 'POPULATE IPEDS ADMISSIONS'
-python populate_ipeds_admissions_multi_year.py
-
-echo
-echo 'POPULATE IPEDS ADMISSIONS TEST SCORES'
-python populate_ipeds_admissions_test_scores_multi_year.py
-
-echo
-echo 'POPULATE IPEDS AVERAGE TUITION'
-python populate_ipeds_average_tuition_multi_year.py
-
-echo
-echo 'POPULATE IPEDS CHARGES'
-python populate_ipeds_charges_multi_year.py
-
-echo
-echo 'POPULATE IPEDS FALL ENROLLMENT'
-python populate_ipeds_fall_enrollment_multi_year.py
-
-echo
-echo 'POPULATE IPEDS FALL ENROLLMENT BY AGE'
-python populate_ipeds_fall_enrollment_by_age_multi_year.py
-
-echo
-echo 'POPULATE IPEDS FALL STAFF'
-python populate_ipeds_fall_staff_multi_year.py
-
-echo
-echo 'POPULATE IPEDS FASB FINANCE'
-python populate_ipeds_fasb_finance_multi_year.py
-
-echo
-echo 'POPULATE IPEDS SUBMISSIONS'
-python populate_ipeds_submissions_multi_year.py
