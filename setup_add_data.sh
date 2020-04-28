@@ -9,6 +9,10 @@
 # fi
 
 echo
+echo 'POPULATE GDP TABLE'
+python populate_gdp.py
+
+echo
 echo 'POPULATE IPEDS ATHLETIC CONFERENCES'
 python populate_ipeds_athletic_conferences.py --last=$1
 
@@ -39,6 +43,10 @@ python populate_ipeds_fall_enrollment.py --last=$1
 echo
 echo 'POPULATE IPEDS FALL ENROLLMENT BY AGE'
 python populate_ipeds_fall_enrollment_by_age.py --last=$1
+
+echo
+echo 'POPULATE IPEDS FALL ENROLLMENT BY RESIDENCY'
+python populate_ipeds_fall_enrollment_by_residency.py --last=$1
 
 echo
 echo 'POPULATE IPEDS FALL STAFF'
