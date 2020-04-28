@@ -128,3 +128,5 @@ dmypy.json
 scraps.*
 logfile.txt
 test*
+.vscode
+settings.json
