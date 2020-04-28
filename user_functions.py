@@ -5,9 +5,7 @@
 Created on Sat Mar 23 19:42:57 2019
 @author: jasoncasey
 """
-import keyring
-from sqlalchemy import create_engine, Table, MetaData
-import psycopg2
+
 from io import BytesIO, StringIO
 from zipfile import ZipFile
 from urllib.request import urlopen
@@ -74,73 +72,13 @@ def net_load_data(url, types = "object"):
 
     return(answer)
 
-def get_engine(db_name):
-    answer = create_engine(r"postgres+psycopg2://{}:{}@localhost:5432/{}".format("jason",
-                                                             keyring.get_password("localhost", "jason"),
-                                                             db_name)
-                           )
+
+
+
+def item_recode(col, codings, default_value = None):
+    """ recode values in column col using codings and default_value for unmatched codings """
+    if default_value == None:
+        answer = col.map(codings, na_action = 'ignore')
+    else:
+        answer = col.map(codings, na_action = 'ignore').fillna(default_value)
     return(answer)
-
-
-
-
-
-
-
-def insert_to_db(df, db, table):
-    username = input("User ID: ")
-    
-    sio = StringIO()
-    sio.write(df.to_csv(index=None, header=None))  # Write the Pandas DataFrame as a csv to the buffer
-    sio.seek(0)  # Be sure to reset the position to the start of the stream
-    
-    try:
-        con = psycopg2.connect(user = username,
-                         password = keyring.get_password(db, username),
-                         host = "127.0.0.1",
-                         port = "5432",
-                         database = db)
-        # Copy the string buffer to the database, as if it were an actual file
-        with con.cursor() as c:
-            c.copy_from(sio, table, columns = df.columns, sep=',')
-        con.commit()
-    except (Exception, psycopg2.Error) as error :
-        print ("Error while connecting to PostgreSQL", error)
-    finally:
-        #closing database connection.
-        if(con):
-            # cursor.close()
-            con.close()
-
-
-
-def read_from_db(db, query):
-    username = input("User ID: ")
-    # dat = sqlio.read_sql_query(sql, conn)
-    
-    try:
-        con = psycopg2.connect(user = username,
-                         password = keyring.get_password(db, username),
-                         host = "127.0.0.1",
-                         port = "5432",
-                         database = db)
-        # cursor = con.cursor()
-        # cursor.execute(query)
-        df = pd.read_sql(query, con)
-    except (Exception, psycopg2.Error) as error :
-        print ("Error while connecting to PostgreSQL", error)
-    finally:
-        #closing database connection.
-        if(con):
-            # cursor.close()
-            con.close()
-    
-    return(df)
-
-# def get_engine(db_name):
-#     answer = create_engine(r"mssql+pyodbc://{}:{}@{}".format(keyring.get_password("nu_warehouse_id", "token"),
-#                                                              keyring.get_password("nu_warehouse_secret", "token"),
-#                                                              db_name),
-#                            legacy_schema_aliasing = True
-#                            )
-#     return answer
