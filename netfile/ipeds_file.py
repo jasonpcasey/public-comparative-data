@@ -75,7 +75,7 @@ class IpedsFile:
                                     index_col = False,
                                     low_memory = False,
                                     encoding = "iso-8859-1")
-        answer.columns = answer.columns.str.lower()
+        answer.columns = answer.columns.str.strip().str.lower()
         return answer
     
     @staticmethod
