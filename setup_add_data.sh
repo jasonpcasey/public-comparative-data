@@ -65,6 +65,10 @@ echo 'POPULATE IPEDS SUBMISSIONS'
 python populate_ipeds_submissions.py --last=$1
 
 echo
+echo 'POPULATE IPEDS DEGREE COMPLETIONS'
+python populate_ipeds_degree_completions.py --last=$1
+
+echo
 echo 'POPULATE NSF HERD INSTITUTIONAL DATA'
 python populate_nsf_herd_institutional_data.py --last=$1
 
