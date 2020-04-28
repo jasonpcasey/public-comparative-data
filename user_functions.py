@@ -10,6 +10,7 @@ from io import BytesIO, StringIO
 from zipfile import ZipFile
 from urllib.request import urlopen
 import pandas as pd
+import pickle
 
 
 # item_recode maps labels on to coded columns
@@ -82,3 +83,15 @@ def item_recode(col, codings, default_value = None):
     else:
         answer = col.map(codings, na_action = 'ignore').fillna(default_value)
     return(answer)
+
+
+def read_pickle(filespec):
+    """ read pickle file at filespec """
+    try:
+        with open(filespec, 'rb') as f:
+            answer = pickle.load(f)
+    except Exception as e:
+        print('File not loaded properly.\n\n{}'.format(str(e)))
+        raise
+
+    return answer
