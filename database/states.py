@@ -9,14 +9,14 @@ class State(Base):
     __tablename__ = "states"
 
     """ create columns """
-    fips = Column(Integer, primary_key = True)
+    state_fips = Column(Integer, primary_key = True)
     state_abbreviation = Column(String(2), nullable = False)
     state = Column(String(32), nullable = False)
     region = Column(String(32), nullable=False)
 
-    def __init__(self, fips, state_abbreviation, state, region):
+    def __init__(self, state_fips, state_abbreviation, state, region):
         """ method for instantiating object """
-        self.fips = fips
+        self.state_fips = state_fips
         self.state_abbreviation = state_abbreviation
         self.state = state
         self.region = region
@@ -25,7 +25,7 @@ class State(Base):
         """ produces human-readable object call """
         return (
             f'{self.__class__.__name__}('
-            f'fips={self.fips!r}, '
+            f'state_fips={self.state_fips!r}, '
             f'state_abbreviation={self.state_abbreviation!r}, '
             f'state={self.state!r}, '
             f'region={self.region!r})'
