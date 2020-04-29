@@ -14,10 +14,10 @@ class IpedsTestScore(Base):
     date_key = Column(Date, ForeignKey('date_dimension.date_key'), nullable = False)
     test_type = Column(String(32), nullable = False)
     subject = Column(String(64), nullable = False)
-    count = Column(Integer, nullable = False, default = 0)
-    percentage = Column(Numeric, nullable = False, default = 0)
-    percentile_25 = Column(Integer, nullable = False, default = 0)
-    percentile_75 = Column(Integer, nullable = False, default = 0)
+    count = Column(Integer, nullable = True)
+    percentage = Column(Numeric(6, 2), nullable = True)
+    percentile_25 = Column(Integer, nullable = True)
+    percentile_75 = Column(Integer, nullable = True)
 
     """ Unique index constraint """
     __table_args__ = (Index('idx_ipeds_test_scores_keys',
