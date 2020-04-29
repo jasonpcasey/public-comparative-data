@@ -13,7 +13,7 @@ from database.date_dimension import DateRow
 from database.ipeds_average_tuition import IpedsAverageTuition
 
 # get command line arguments
-parser = argparse.ArgumentParser(description='A tutorial of argparse!')
+parser = argparse.ArgumentParser(description='Transfers IPEDS Average Tuition for specified years to database.')
 parser.add_argument("--first", default=2002, type=int, help="First year of sequence.")
 parser.add_argument("--last", default=2018, type=int, help="Last year of sequence.")
 args = parser.parse_args()
