@@ -31,6 +31,7 @@ class IpedsFile:
             except Exception as e:
                 print(f'An error occurred:\n{str(e)}.')
                 session.rollback()
+                print('No changes were made to the database due to error.')
             else:
                 print('Rows successfully written to database.')
         else:
