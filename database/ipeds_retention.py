@@ -25,7 +25,7 @@ class IpedsRetention(Base):
                             'time_status',
                             unique = True), )
 
-    def __init__(self, unitid, date_key, cohort_date_key, time_status, aid_type, adjusted_cohort, enrolled):
+    def __init__(self, unitid, date_key, cohort_date_key, time_status, adjusted_cohort, enrolled):
         """ method for instantiating object """
         self.unitid = unitid
         self.date_key = date_key
