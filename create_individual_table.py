@@ -2,15 +2,14 @@
 
 from database.base import Session, engine, Base
 from database.date_dimension import DateRow
-from database.states import State
-from database.ipeds_fall_enrollment_by_residency import IpedsFallEnrollmentByResidency
+from database.ipeds_test_scores import IpedsTestScore
 
 table_names = [
-    IpedsFallEnrollmentByResidency.__tablename__,
+    IpedsTestScore.__tablename__,
     ]
 
 tables = [
-    IpedsFallEnrollmentByResidency.__table__,
+    IpedsTestScore.__table__,
     ]
 
 names = '\n\t'.join(table_names)

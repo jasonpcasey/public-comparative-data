@@ -10,7 +10,7 @@ class IpedsFile:
 
     def __init__(self, year):
         self.year = year
-        self.date_key = f'{self.year}-10-15'
+        self.date_key = f'{year}-10-15'
         self.rows = list()
     
     def get_url(self, predicate):
@@ -25,12 +25,13 @@ class IpedsFile:
 
         if len(self.rows) > 0:
             try:
-                _ = session.query(__class__).filter(__class__.date_key==date_key).delete(synchronize_session=False)
+                _ = session.query(self.rows[0].__class__).filter(self.rows[0].__class__.date_key==self.date_key).delete(synchronize_session=False)
                 session.bulk_save_objects(self.rows)
                 session.commit()
-            except:
+            except Exception as e:
+                print(f'An error occurred:\n{str(e)}.')
                 session.rollback()
-            finally:
+            else:
                 print('Rows successfully written to database.')
         else:
             print('No rows were available to insert.')
