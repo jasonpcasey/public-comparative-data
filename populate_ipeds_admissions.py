@@ -2,12 +2,8 @@ from netfile.admissions_file import AdmissionsFile
 
 import argparse
 
-# from database.date_dimension import DateRow
-# from database.ipeds_demographic_dimension import IpedsDemographicDimension
-from database.ipeds_admissions import IpedsAdmissions
-
 # get command line arguments
-parser = argparse.ArgumentParser(description='A tutorial of argparse!')
+parser = argparse.ArgumentParser(description='Transfers IPEDS Admissions for specified years to database.')
 parser.add_argument("--first", default=2001, type=int, help="First year of sequence.")
 parser.add_argument("--last", default=2018, type=int, help="Last year of sequence.")
 args = parser.parse_args()

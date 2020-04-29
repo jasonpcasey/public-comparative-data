@@ -2,10 +2,8 @@ from netfile.degree_completions_file import DegreeCompletionFile
 
 import argparse
 
-from database.ipeds_degree_completions import IpedsDegreeCompletion
-
 # get command line arguments
-parser = argparse.ArgumentParser(description='A tutorial of argparse!')
+parser = argparse.ArgumentParser(description='Transfers IPEDS Degree Completions for specified years to database.')
 parser.add_argument("--first", default=1990, type=int, help="First year of sequence.")
 parser.add_argument("--last", default=2018, type=int, help="Last year of sequence.")
 args = parser.parse_args()

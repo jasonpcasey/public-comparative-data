@@ -14,7 +14,7 @@ from database.ipeds_survey_dimension import IpedsSurveyDimension
 from database.ipeds_submission_status import IpedsSubmissionStatus
 
 # get command line arguments
-parser = argparse.ArgumentParser(description='A tutorial of argparse!')
+parser = argparse.ArgumentParser(description='Transfers IPEDS Survey Submissions (FLAGS) for specified years to database.')
 parser.add_argument("--first", default=2004, type=int, help="First year of sequence.")
 parser.add_argument("--last", default=2018, type=int, help="Last year of sequence.")
 args = parser.parse_args()

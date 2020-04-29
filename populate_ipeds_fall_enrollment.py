@@ -5,7 +5,7 @@ import argparse
 from database.ipeds_fall_enrollment import IpedsFallEnrollment
 
 # get command line arguments
-parser = argparse.ArgumentParser(description='A tutorial of argparse!')
+parser = argparse.ArgumentParser(description='Transfers IPEDS Fall Enrollment for specified years to database.')
 parser.add_argument("--first", default=1990, type=int, help="First year of sequence.")
 parser.add_argument("--last", default=2018, type=int, help="Last year of sequence.")
 args = parser.parse_args()

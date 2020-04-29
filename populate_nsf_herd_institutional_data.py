@@ -15,7 +15,7 @@ from database.nsf_herd_institution_data import NsfHerdInstitution
 from database.nsf_herd_detail_data import NsfHerdDetail
 
 # get command line arguments
-parser = argparse.ArgumentParser(description='A tutorial of argparse!')
+parser = argparse.ArgumentParser(description='Transfers NSF HERD institutional data for specified years to database.')
 parser.add_argument("--first", default=2010, type=int, help="First year of sequence.")
 parser.add_argument("--last", default=2018, type=int, help="Last year of sequence.")
 args = parser.parse_args()
