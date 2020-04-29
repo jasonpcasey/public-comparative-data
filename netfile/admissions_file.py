@@ -6,6 +6,8 @@ import pandas as pd
 
 from netfile.ipeds_file import IpedsFile
 from database.ipeds_admissions import IpedsAdmissions
+from database.date_dimension import DateRow
+from database.ipeds_demographic_dimension import IpedsDemographicDimension
 
 class AdmissionsFile(IpedsFile):
     def __init__(self, year):
@@ -92,12 +94,15 @@ class AdmissionsFile(IpedsFile):
         df = df.loc[df.applications > 0]
 
         for row in df.itertuples(index=False):
-            self.rows.append(IpedsAdmissions(row.unitid,
-                                             row.date_key,
-                                             row.demographic_key,
-                                             row.applications,
-                                             row.admissions,
-                                             row.enrolled))
+            self.rows.append(
+                IpedsAdmissions(
+                    unitid = row.unitid,
+                    date_key = row.date_key,
+                    demographic_key = row.demographic_key,
+                    applications = row.applications,
+                    admissions = row.admissions,
+                    enrolled = row.enrolled,
+                    ))
 
     def __repr__(self):
         return('{self.__class__.__name__}={})'.format(self.year))

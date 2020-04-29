@@ -6,6 +6,10 @@ import pandas as pd
 
 from netfile.ipeds_file import IpedsFile
 from database.ipeds_new_hires import IpedsNewHire
+from database.date_dimension import DateRow
+from database.ipeds_demographic_dimension import IpedsDemographicDimension
+from database.ipeds_employee_dimension import IpedsEmployeeDimension
+from database.ipeds_faculty_dimension import IpedsFacultyDimension
 
 class NewHireFile(IpedsFile):
     def __init__(self, year):

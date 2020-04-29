@@ -6,6 +6,10 @@ import pandas as pd
 
 from netfile.ipeds_file import IpedsFile
 from database.ipeds_degree_completions import IpedsDegreeCompletion
+from database.date_dimension import DateRow
+from database.ipeds_demographic_dimension import IpedsDemographicDimension
+from database.ipeds_degree_types import IpedsDegreeType
+from database.cip_hierarchy import Cip
 
 class DegreeCompletionFile(IpedsFile):
     def __init__(self, year):
@@ -28,7 +32,7 @@ class DegreeCompletionFile(IpedsFile):
         df = self.read(url,
         {
             'UNITID': np.int32,
-            'CIPCODE': object,
+            'CIPCODE': str,
             'AWLEVEL': np.int32,
             'MAJORNUM': np.float32,
             'CRACE01' : np.float32,
@@ -158,10 +162,28 @@ class DegreeCompletionFile(IpedsFile):
             df['cwhitw'] = df['dvcwhw']
         
         # filter out unused rows
-        df = df[df.awlevel.isin([1,2,3,4,5,6,7,8,17,18,19])]
+        df = df[df.awlevel.isin(
+            [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                17,
+                18,
+                19,
+            ])]
         
+        # cast to string
+        df.awlevel = df.awlevel.map('{:.0f}'.format)
+        df.majornum = df.majornum.map('{:.0f}'.format)
+        # df.cipcode = df.cipcode.map('{:07.4f}'.format)
+
         # create degree_key
-        df['degree_key'] = str(df.awlevel) + str(df.majornum)
+        df['degree_key'] = df.awlevel.str.strip() + df.majornum.str.strip()
 
         keepers = [
             'unitid', 'date_key', 'degree_key', 'cipcode',
