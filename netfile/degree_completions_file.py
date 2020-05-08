@@ -206,6 +206,16 @@ class DegreeCompletionFile(IpedsFile):
             ],
             value_name = 'awards')
 
+        def cipformat(num):
+            ans = f'{num:07.4f}'
+            return ans
+
+        # fix cipcode formatting
+        df['cipnum'] = pd.to_numeric(df.cipcode, errors='coerce')
+        df['cipcode'] = df.cipnum.map(cipformat)
+        # df['cipcode'] = df.cipnum.astype(str).str.zfill(7)
+        # lambda x: x + 1
+
         # demographic dimension
         df['demographic_key'] = df.variable.str.slice(1, 6).str.lower()
         id_columns.append('demographic_key')
