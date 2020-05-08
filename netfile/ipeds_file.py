@@ -4,7 +4,7 @@ from io import BytesIO #, StringIO
 from zipfile import ZipFile
 from urllib.request import urlopen
 from database.base import Session, engine, Base
-#
+
 class IpedsFile:
     __url_base = 'https://nces.ed.gov/ipeds/datacenter/data/'
 
