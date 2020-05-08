@@ -1,15 +1,15 @@
 # coding=utf-8
 
 from database.base import Session, engine, Base
-from database.date_dimension import DateRow
-from database.ipeds_test_scores import IpedsTestScore
+# from database.date_dimension import DateRow
+from database.cip_history import CipCode
 
 table_names = [
-    IpedsTestScore.__tablename__,
+    CipCode.__tablename__,
     ]
 
 tables = [
-    IpedsTestScore.__table__,
+    CipCode.__table__,
     ]
 
 names = '\n\t'.join(table_names)
