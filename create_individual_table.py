@@ -2,14 +2,14 @@
 
 from database.base import Session, engine, Base
 # from database.date_dimension import DateRow
-from database.cip_history import CipCode
+from database.cip_hierarchy import Cip
 
 table_names = [
-    CipCode.__tablename__,
+    Cip.__tablename__,
     ]
 
 tables = [
-    CipCode.__table__,
+    Cip.__table__,
     ]
 
 names = '\n\t'.join(table_names)
