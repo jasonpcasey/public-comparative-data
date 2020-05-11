@@ -3,6 +3,8 @@ from netfile.institutions_file import InstitutionsFile
 import argparse
 
 from database.ipeds_institutions import IpedsInstitution
+from database.date_dimension import DateRow
+from database.states import State
 
 # get command line arguments
 parser = argparse.ArgumentParser(description='Transfers IPEDS Institutions (HD/IC) for specified years to database.')
