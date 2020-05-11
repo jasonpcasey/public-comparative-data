@@ -22,6 +22,7 @@ from database.carnegie_classes import CarnegieClass
 from database.cbsa import Cbsa
 from database.csa import Csa
 from database.cip_hierarchy import Cip
+from database.cip_history import CipCode
 from database.ipeds_custom_peer_lists import IpedsCustomPeerList
 from database.ipeds_admissions import IpedsAdmissions
 from database.ipeds_average_tuition import IpedsAverageTuition
@@ -89,6 +90,7 @@ table_names = [
     PeerGroup.__tablename__,
     IpedsDegreeType.__tablename__,
     Cip.__tablename__,
+    CipCode.__tablename__,
     IpedsFacultyDimension.__tablename__,
     IpedsSurveyDimension.__tablename__,
     IpedsSubmissionStatus.__tablename__,
@@ -135,6 +137,7 @@ tables = [
     IpedsEmployeeDimension.__table__,
     IpedsDegreeType.__table__,
     Cip.__table__,
+    CipCode.__table__,
     IpedsSubmissionStatus.__table__,
     IpedsSurveyDimension.__table__
     ]
