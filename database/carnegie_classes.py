@@ -10,13 +10,17 @@ class CarnegieClass(Base):
 
     """ create columns """
     unitid = Column(Integer, primary_key = True)
-    basic_code = Column(Integer, nullable = False)
-    carnegie_class = Column(String(255), nullable = False)
+    classification_id = Column(String(64), primary_key = True)
+    classification = Column(String(500), nullable = False)
+    class_code = Column(Integer, nullable = False)
+    carnegie_class = Column(String(500), nullable = False)
 
-    def __init__(self, unitid, basic_code, carnegie_class):
+    def __init__(self, unitid, classification_id, classification, class_code, carnegie_class):
         """ method for instantiating object """
         self.unitid = unitid
-        self.basic_code = basic_code
+        self.classification_id = classification_id
+        self.classification = classification_id
+        self.class_code = class_code
         self.carnegie_class = carnegie_class
 
     def __repr__(self):
@@ -24,6 +28,8 @@ class CarnegieClass(Base):
         return (
             f'{self.__class__.__name__}('
             f'unitid={self.unitid!r}, '
-            f'basic_code={self.basic_code!r}, '
+            f'classification_id={self.classification_id!r}, '
+            f'classification={self.classification!r}, '
+            f'class_code={self.class_code!r}, '
             f'carnegie_class={self.carnegie_class!r})'
             )
