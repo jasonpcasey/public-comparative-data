@@ -1,4 +1,4 @@
-fips,state_abbreviation,state,region
+state_fips,state_abbreviation,state,region
 0,XX,Unknown,Unknown
 1,AL,Alabama,Southeast
 2,AK,Alaska,Far West
