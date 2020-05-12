@@ -6,6 +6,8 @@ import pandas as pd
 
 from netfile.ipeds_file import IpedsFile
 from database.ipeds_fall_enrollment_by_age import IpedsFallEnrollmentByAge
+from database.date_dimension import DateRow
+from database.ipeds_demographic_dimension import IpedsDemographicDimension
 
 class FallEnrollmentByAgeFile(IpedsFile):
     def __init__(self, year):

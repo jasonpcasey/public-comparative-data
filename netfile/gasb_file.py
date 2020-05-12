@@ -6,6 +6,7 @@ import pandas as pd
 
 from netfile.ipeds_file import IpedsFile
 from database.ipeds_finance import IpedsFinance
+from database.date_dimension import DateRow
 
 class GasbFinanceFile(IpedsFile):
     def __init__(self, year):

@@ -34,6 +34,10 @@ echo 'POPULATE ATHLETIC CONFERENCES DIMENSION TABLE'
 python populate_athletic_conferences.py
 
 echo
+echo 'POPULATE CIP HISTORY TABLE'
+python populate_cip_history.py
+
+echo
 echo 'POPULATE CIP HIERARCHY DIMENSION TABLE'
 python populate_cip_hierarchy.py
 

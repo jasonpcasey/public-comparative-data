@@ -2,8 +2,6 @@ from netfile.fall_enrollment_file import FallEnrollmentFile
 
 import argparse
 
-from database.ipeds_fall_enrollment import IpedsFallEnrollment
-
 # get command line arguments
 parser = argparse.ArgumentParser(description='Transfers IPEDS Fall Enrollment for specified years to database.')
 parser.add_argument("--first", default=1990, type=int, help="First year of sequence.")

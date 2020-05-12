@@ -10,7 +10,7 @@ class County(Base):
 
     """ create columns """
     fips_code = Column(Numeric(5, 3), primary_key = True)
-    state_fips = Column(Integer, ForeignKey('states.fips'), nullable = False)
+    state_fips = Column(Integer, ForeignKey('states.state_fips'), nullable = False)
     county_fips = Column(Integer, nullable = False)
     county_name = Column(String(255), nullable = False)
  

@@ -15,7 +15,7 @@ class NsfHerdInstitution(Base):
     unitid = Column(Integer, nullable = True)
     ncses_inst_id = Column(String(10), nullable = True)
     institution_name = Column(String(255), nullable = False)
-    state_fips = Column(Integer, ForeignKey('states.fips'), nullable = False)
+    state_fips = Column(Integer, ForeignKey('states.state_fips'), nullable = False)
     control = Column(String(32), nullable = False)
     academic_institution = Column(Boolean, nullable = False, default=0)
     medical_school_flag = Column(Boolean, nullable = False, default=0)

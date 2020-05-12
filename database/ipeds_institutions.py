@@ -15,7 +15,7 @@ class IpedsInstitution(Base):
     institution_name = Column(String(255), nullable = False)
     address = Column(String(255), nullable = True)
     city = Column(String(255), nullable = True)
-    zip_code = Column(String(10), nullable = True)
+    zip_code = Column(String(32), nullable = True)
     web_address = Column(String(255), nullable = True)
     state_fips = Column(Integer, ForeignKey('states.state_fips'), nullable = False, default = 0)
     county_fips = Column(Numeric(5, 3), nullable = False, default = 0)
