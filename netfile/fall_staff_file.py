@@ -67,7 +67,7 @@ class FallStaffFile(IpedsFile):
         df['time_status_id'] = np.where(df.ftpt == 2, 'FT', 'PT')
 
         # assign career level
-        df['employee_key'] = df.occupcat.astype(str) + df.time_status_id
+        df['employee_key'] = df.occupcat.astype(str) + df.time_status_id + 'U'
                                         
         # reshape from wide to long format
         df = pd.melt(
