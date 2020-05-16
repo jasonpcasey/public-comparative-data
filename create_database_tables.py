@@ -28,6 +28,7 @@ from database.ipeds_admissions import IpedsAdmissions
 from database.ipeds_average_tuition import IpedsAverageTuition
 from database.ipeds_charges import IpedsCharge
 from database.ipeds_degree_completions import IpedsDegreeCompletion
+from database.ipeds_employees_by_assigned_position import IpedsEap
 from database.ipeds_fall_enrollment_by_age import IpedsFallEnrollmentByAge
 from database.ipeds_fall_enrollment_by_residency import IpedsFallEnrollmentByResidency
 from database.ipeds_fall_staff import IpedsFallStaff
@@ -52,6 +53,7 @@ from sqlalchemy import sql
 
 table_names = [
     Gdp.__tablename__,
+    IpedsEap.__tablename__,
     IpedsNewHire.__tablename__,
     IpedsFinance.__tablename__,
     IpedsFinanceFieldDimension.__tablename__,
@@ -98,6 +100,7 @@ table_names = [
 
 tables = [
     Gdp.__table__,
+    IpedsEap.__table__,
     IpedsFallEnrollment.__table__,
     IpedsFinance.__table__,
     IpedsNewHire.__table__,
