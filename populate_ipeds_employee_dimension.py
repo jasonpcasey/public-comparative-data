@@ -14,7 +14,7 @@ df = pd.read_csv('data/ipeds_employee_dimension.csv')
 session = Session()
 
 try:
-    print('\nPopulating dimension tables.')
+    print('Populating dimension tables.')
     # insert state data
     record_deletes = session.query(IpedsEmployeeDimension).delete(synchronize_session=False)
     df_inserts = session.bulk_insert_mappings(mapper = IpedsEmployeeDimension,
@@ -23,11 +23,12 @@ try:
 
 except Exception as e:
     session.rollback()
-    print("\nAn error occurred and no data were changed in the database.\n\nError:\n{}".format(str(e)))
+    print("\tAn error occurred and no data were changed in the database.\n\nError:\n{}".format(str(e)))
+    print('\tNo changes made to database due to error.\n')
 else:
     session.commit()
-    print('\nChanges committed to database.')
+    print('\tChanges committed to database.\n')
 
 session.close()
 
-print("\nAll Done.")
+print("All Done.")

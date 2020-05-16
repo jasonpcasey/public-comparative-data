@@ -1,46 +1,178 @@
-﻿employee_key,occupational_category,time_status
-211FT,"Instructional staff, primarily instruction",Full-time
-211PT,"Instructional staff, primarily instruction",Part-time
-220FT,Research,Full-time
-220PT,Research,Part-time
-230FT,Public service,Full-time
-230PT,Public service,Part-time
-261FT,"Archivists, Curators, and Museum Technicians",Full-time
-261PT,"Archivists, Curators, and Museum Technicians",Part-time
-262FT,Librarians,Full-time
-262PT,Librarians,Part-time
-263FT,Library Technicians,Full-time
-263PT,Library Technicians,Part-time
-264FT,Detailed library occupations not available for non-degree-granting institutions,Full-time
-264PT,Detailed library occupations not available for non-degree-granting institutions,Part-time
-270FT,Other teaching and Instructional Support,Full-time
-270PT,Other teaching and Instructional Support,Part-time
-300FT,Management,Full-time
-300PT,Management,Part-time
-310FT,Business and Financial Operations,Full-time
-310PT,Business and Financial Operations,Part-time
-320FT,"Computer, Engineering, and Science",Full-time
-320PT,"Computer, Engineering, and Science",Part-time
-330FT,"Community Service, Legal, Arts, and Media",Full-time
-330PT,"Community Service, Legal, Arts, and Media",Part-time
-340FT,Healthcare Practioners and Technical,Full-time
-340PT,Healthcare Practioners and Technical,Part-time
-350FT,Service Occupations,Full-time
-350PT,Service Occupations,Part-time
-360FT,Sales and Related Occupations,Full-time
-360PT,Sales and Related Occupations,Part-time
-370FT,Office and Administrative Support,Full-time
-370PT,Office and Administrative Support,Part-time
-380FT,"Natural Resources, Construction, and Maintenance",Full-time
-380PT,"Natural Resources, Construction, and Maintenance",Part-time
-390FT,"Production, Transportation, and Material Moving",Full-time
-390PT,"Production, Transportation, and Material Moving",Part-time
-410PT,Graduate Assistants Teaching,Part-time
-420PT,Graduate Assistants Research,Part-time
-430PT,Graduate Assistants Management Occupations,Part-time
-440PT,Graduate Assistants Business and Financial Operations Occupations,Part-time
-450PT,"Graduate Assistants Computer, Engineering, and Science Occupations",Part-time
-460PT,"Graduate Assistants Community Service, Legal, Arts, and Media",Part-time
-470PT,Graduate Assistants Library and Instructional support,Part-time
-480PT,Graduate Assistants Healthcare Practioners and Technical,Part-time
-490PT,Unknown,Part-time
+﻿employee_key,occupational_group,occupational_category,time_status,medical_school
+210FTM,"Instructional, research and public service staff","Instructional staff, total",Full-time,Medical School Employee
+210PTM,"Instructional, research and public service staff","Instructional staff, total",Part-time,Medical School Employee
+211FTM,"Instructional, research and public service staff","Instructional staff, primarily instruction",Full-time,Medical School Employee
+211PTM,"Instructional, research and public service staff","Instructional staff, primarily instruction",Part-time,Medical School Employee
+212FTM,"Instructional, research and public service staff","Instructional staff, primarily instruction, exclusively credit",Full-time,Medical School Employee
+212PTM,"Instructional, research and public service staff","Instructional staff, primarily instruction, exclusively credit",Part-time,Medical School Employee
+213FTM,"Instructional, research and public service staff","Instructional staff, primarily instruction, exclusively not-for-credit",Full-time,Medical School Employee
+213PTM,"Instructional, research and public service staff","Instructional staff, primarily instruction, exclusively not-for-credit",Part-time,Medical School Employee
+214FTM,"Instructional, research and public service staff","Instructional staff, primarily instruction, combined credit/not-for-credit",Full-time,Medical School Employee
+214PTM,"Instructional, research and public service staff","Instructional staff, primarily instruction, combined credit/not-for-credit",Part-time,Medical School Employee
+215FTM,"Instructional, research and public service staff",Instructional staff - Instruction/research/public service,Full-time,Medical School Employee
+215PTM,"Instructional, research and public service staff",Instructional staff - Instruction/research/public service,Part-time,Medical School Employee
+220FTM,"Instructional, research and public service staff",Research,Full-time,Medical School Employee
+220PTM,"Instructional, research and public service staff",Research,Part-time,Medical School Employee
+230FTM,"Instructional, research and public service staff",Public service,Full-time,Medical School Employee
+230PTM,"Instructional, research and public service staff",Public service,Part-time,Medical School Employee
+250FTM,"Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services","Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services",Full-time,Medical School Employee
+250PTM,"Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services","Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services",Part-time,Medical School Employee
+260FTM,"Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services","Librarians, Curators, and Archivists",Full-time,Medical School Employee
+260PTM,"Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services","Librarians, Curators, and Archivists",Part-time,Medical School Employee
+261FTM,"Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services","Archivists, Curators, and Museum Technicians",Full-time,Medical School Employee
+261PTM,"Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services","Archivists, Curators, and Museum Technicians",Part-time,Medical School Employee
+262FTM,"Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services",Librarians,Full-time,Medical School Employee
+262PTM,"Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services",Librarians,Part-time,Medical School Employee
+263FTM,"Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services",Library Technicians,Full-time,Medical School Employee
+263PTM,"Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services",Library Technicians,Part-time,Medical School Employee
+264FTM,"Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services",Detailed library occupations not available for non-degree-granting institutions,Full-time,Medical School Employee
+264PTM,"Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services",Detailed library occupations not available for non-degree-granting institutions,Part-time,Medical School Employee
+270FTM,"Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services",Student and Academic Affairs and Other Education Services,Full-time,Medical School Employee
+270PTM,"Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services",Student and Academic Affairs and Other Education Services,Part-time,Medical School Employee
+300FTM,Non-instructional Staff,Management,Full-time,Medical School Employee
+300PTM,Non-instructional Staff,Management,Part-time,Medical School Employee
+310FTM,Non-instructional Staff,Business and Financial Operations,Full-time,Medical School Employee
+310PTM,Non-instructional Staff,Business and Financial Operations,Part-time,Medical School Employee
+320FTM,Non-instructional Staff,"Computer, Engineering, and Science",Full-time,Medical School Employee
+320PTM,Non-instructional Staff,"Computer, Engineering, and Science",Part-time,Medical School Employee
+330FTM,Non-instructional Staff,"Community Service, Legal, Arts, and Media",Full-time,Medical School Employee
+330PTM,Non-instructional Staff,"Community Service, Legal, Arts, and Media",Part-time,Medical School Employee
+340FTM,Non-instructional Staff,Healthcare Practioners and Technical,Full-time,Medical School Employee
+340PTM,Non-instructional Staff,Healthcare Practioners and Technical,Part-time,Medical School Employee
+350FTM,Non-instructional Staff,Service Occupations,Full-time,Medical School Employee
+350PTM,Non-instructional Staff,Service Occupations,Part-time,Medical School Employee
+360FTM,Non-instructional Staff,Sales and Related Occupations,Full-time,Medical School Employee
+360PTM,Non-instructional Staff,Sales and Related Occupations,Part-time,Medical School Employee
+370FTM,Non-instructional Staff,Office and Administrative Support,Full-time,Medical School Employee
+370PTM,Non-instructional Staff,Office and Administrative Support,Part-time,Medical School Employee
+380FTM,Non-instructional Staff,"Natural Resources, Construction, and Maintenance",Full-time,Medical School Employee
+380PTM,Non-instructional Staff,"Natural Resources, Construction, and Maintenance",Part-time,Medical School Employee
+390FTM,Non-instructional Staff,"Production, Transportation, and Material Moving",Full-time,Medical School Employee
+390PTM,Non-instructional Staff,"Production, Transportation, and Material Moving",Part-time,Medical School Employee
+410PTM,Graduate Assistants,Graduate Assistants Teaching,Part-time,Medical School Employee
+420PTM,Graduate Assistants,Graduate Assistants Research,Part-time,Medical School Employee
+430PTM,Graduate Assistants,Graduate Assistants Management Occupations,Part-time,Medical School Employee
+440PTM,Graduate Assistants,Graduate Assistants Business and Financial Operations Occupations,Part-time,Medical School Employee
+450PTM,Graduate Assistants,"Graduate Assistants Computer, Engineering, and Science Occupations",Part-time,Medical School Employee
+460PTM,Graduate Assistants,"Graduate Assistants Community Service, Legal, Arts, and Media",Part-time,Medical School Employee
+470PTM,Graduate Assistants,Graduate Assistants Library and Instructional support,Part-time,Medical School Employee
+480PTM,Graduate Assistants,Graduate Assistants Healthcare Practioners and Technical,Part-time,Medical School Employee
+490PTM,Graduate Assistants,Graduate Assistants  other,Part-time,Medical School Employee
+210FTN,"Instructional, research and public service staff","Instructional staff, total",Full-time,Non-medical School Employee
+210PTN,"Instructional, research and public service staff","Instructional staff, total",Part-time,Non-medical School Employee
+211FTN,"Instructional, research and public service staff","Instructional staff, primarily instruction",Full-time,Non-medical School Employee
+211PTN,"Instructional, research and public service staff","Instructional staff, primarily instruction",Part-time,Non-medical School Employee
+212FTN,"Instructional, research and public service staff","Instructional staff, primarily instruction, exclusively credit",Full-time,Non-medical School Employee
+212PTN,"Instructional, research and public service staff","Instructional staff, primarily instruction, exclusively credit",Part-time,Non-medical School Employee
+213FTN,"Instructional, research and public service staff","Instructional staff, primarily instruction, exclusively not-for-credit",Full-time,Non-medical School Employee
+213PTN,"Instructional, research and public service staff","Instructional staff, primarily instruction, exclusively not-for-credit",Part-time,Non-medical School Employee
+214FTN,"Instructional, research and public service staff","Instructional staff, primarily instruction, combined credit/not-for-credit",Full-time,Non-medical School Employee
+214PTN,"Instructional, research and public service staff","Instructional staff, primarily instruction, combined credit/not-for-credit",Part-time,Non-medical School Employee
+215FTN,"Instructional, research and public service staff",Instructional staff - Instruction/research/public service,Full-time,Non-medical School Employee
+215PTN,"Instructional, research and public service staff",Instructional staff - Instruction/research/public service,Part-time,Non-medical School Employee
+220FTN,"Instructional, research and public service staff",Research,Full-time,Non-medical School Employee
+220PTN,"Instructional, research and public service staff",Research,Part-time,Non-medical School Employee
+230FTN,"Instructional, research and public service staff",Public service,Full-time,Non-medical School Employee
+230PTN,"Instructional, research and public service staff",Public service,Part-time,Non-medical School Employee
+250FTN,"Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services","Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services",Full-time,Non-medical School Employee
+250PTN,"Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services","Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services",Part-time,Non-medical School Employee
+260FTN,"Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services","Librarians, Curators, and Archivists",Full-time,Non-medical School Employee
+260PTN,"Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services","Librarians, Curators, and Archivists",Part-time,Non-medical School Employee
+261FTN,"Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services","Archivists, Curators, and Museum Technicians",Full-time,Non-medical School Employee
+261PTN,"Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services","Archivists, Curators, and Museum Technicians",Part-time,Non-medical School Employee
+262FTN,"Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services",Librarians,Full-time,Non-medical School Employee
+262PTN,"Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services",Librarians,Part-time,Non-medical School Employee
+263FTN,"Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services",Library Technicians,Full-time,Non-medical School Employee
+263PTN,"Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services",Library Technicians,Part-time,Non-medical School Employee
+264FTN,"Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services",Detailed library occupations not available for non-degree-granting institutions,Full-time,Non-medical School Employee
+264PTN,"Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services",Detailed library occupations not available for non-degree-granting institutions,Part-time,Non-medical School Employee
+270FTN,"Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services",Student and Academic Affairs and Other Education Services,Full-time,Non-medical School Employee
+270PTN,"Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services",Student and Academic Affairs and Other Education Services,Part-time,Non-medical School Employee
+300FTN,Non-instructional Staff,Management,Full-time,Non-medical School Employee
+300PTN,Non-instructional Staff,Management,Part-time,Non-medical School Employee
+310FTN,Non-instructional Staff,Business and Financial Operations,Full-time,Non-medical School Employee
+310PTN,Non-instructional Staff,Business and Financial Operations,Part-time,Non-medical School Employee
+320FTN,Non-instructional Staff,"Computer, Engineering, and Science",Full-time,Non-medical School Employee
+320PTN,Non-instructional Staff,"Computer, Engineering, and Science",Part-time,Non-medical School Employee
+330FTN,Non-instructional Staff,"Community Service, Legal, Arts, and Media",Full-time,Non-medical School Employee
+330PTN,Non-instructional Staff,"Community Service, Legal, Arts, and Media",Part-time,Non-medical School Employee
+340FTN,Non-instructional Staff,Healthcare Practioners and Technical,Full-time,Non-medical School Employee
+340PTN,Non-instructional Staff,Healthcare Practioners and Technical,Part-time,Non-medical School Employee
+350FTN,Non-instructional Staff,Service Occupations,Full-time,Non-medical School Employee
+350PTN,Non-instructional Staff,Service Occupations,Part-time,Non-medical School Employee
+360FTN,Non-instructional Staff,Sales and Related Occupations,Full-time,Non-medical School Employee
+360PTN,Non-instructional Staff,Sales and Related Occupations,Part-time,Non-medical School Employee
+370FTN,Non-instructional Staff,Office and Administrative Support,Full-time,Non-medical School Employee
+370PTN,Non-instructional Staff,Office and Administrative Support,Part-time,Non-medical School Employee
+380FTN,Non-instructional Staff,"Natural Resources, Construction, and Maintenance",Full-time,Non-medical School Employee
+380PTN,Non-instructional Staff,"Natural Resources, Construction, and Maintenance",Part-time,Non-medical School Employee
+390FTN,Non-instructional Staff,"Production, Transportation, and Material Moving",Full-time,Non-medical School Employee
+390PTN,Non-instructional Staff,"Production, Transportation, and Material Moving",Part-time,Non-medical School Employee
+410PTN,Graduate Assistants,Graduate Assistants Teaching,Part-time,Non-medical School Employee
+420PTN,Graduate Assistants,Graduate Assistants Research,Part-time,Non-medical School Employee
+430PTN,Graduate Assistants,Graduate Assistants Management Occupations,Part-time,Non-medical School Employee
+440PTN,Graduate Assistants,Graduate Assistants Business and Financial Operations Occupations,Part-time,Non-medical School Employee
+450PTN,Graduate Assistants,"Graduate Assistants Computer, Engineering, and Science Occupations",Part-time,Non-medical School Employee
+460PTN,Graduate Assistants,"Graduate Assistants Community Service, Legal, Arts, and Media",Part-time,Non-medical School Employee
+470PTN,Graduate Assistants,Graduate Assistants Library and Instructional support,Part-time,Non-medical School Employee
+480PTN,Graduate Assistants,Graduate Assistants Healthcare Practioners and Technical,Part-time,Non-medical School Employee
+490PTN,Graduate Assistants,Graduate Assistants  other,Part-time,Non-medical School Employee
+210FTU,"Instructional, research and public service staff","Instructional staff, total",Full-time,Unknown
+210PTU,"Instructional, research and public service staff","Instructional staff, total",Part-time,Unknown
+211FTU,"Instructional, research and public service staff","Instructional staff, primarily instruction",Full-time,Unknown
+211PTU,"Instructional, research and public service staff","Instructional staff, primarily instruction",Part-time,Unknown
+212FTU,"Instructional, research and public service staff","Instructional staff, primarily instruction, exclusively credit",Full-time,Unknown
+212PTU,"Instructional, research and public service staff","Instructional staff, primarily instruction, exclusively credit",Part-time,Unknown
+213FTU,"Instructional, research and public service staff","Instructional staff, primarily instruction, exclusively not-for-credit",Full-time,Unknown
+213PTU,"Instructional, research and public service staff","Instructional staff, primarily instruction, exclusively not-for-credit",Part-time,Unknown
+214FTU,"Instructional, research and public service staff","Instructional staff, primarily instruction, combined credit/not-for-credit",Full-time,Unknown
+214PTU,"Instructional, research and public service staff","Instructional staff, primarily instruction, combined credit/not-for-credit",Part-time,Unknown
+215FTU,"Instructional, research and public service staff",Instructional staff - Instruction/research/public service,Full-time,Unknown
+215PTU,"Instructional, research and public service staff",Instructional staff - Instruction/research/public service,Part-time,Unknown
+220FTU,"Instructional, research and public service staff",Research,Full-time,Unknown
+220PTU,"Instructional, research and public service staff",Research,Part-time,Unknown
+230FTU,"Instructional, research and public service staff",Public service,Full-time,Unknown
+230PTU,"Instructional, research and public service staff",Public service,Part-time,Unknown
+250FTU,"Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services","Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services",Full-time,Unknown
+250PTU,"Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services","Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services",Part-time,Unknown
+260FTU,"Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services","Librarians, Curators, and Archivists",Full-time,Unknown
+260PTU,"Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services","Librarians, Curators, and Archivists",Part-time,Unknown
+261FTU,"Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services","Archivists, Curators, and Museum Technicians",Full-time,Unknown
+261PTU,"Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services","Archivists, Curators, and Museum Technicians",Part-time,Unknown
+262FTU,"Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services",Librarians,Full-time,Unknown
+262PTU,"Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services",Librarians,Part-time,Unknown
+263FTU,"Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services",Library Technicians,Full-time,Unknown
+263PTU,"Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services",Library Technicians,Part-time,Unknown
+264FTU,"Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services",Detailed library occupations not available for non-degree-granting institutions,Full-time,Unknown
+264PTU,"Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services",Detailed library occupations not available for non-degree-granting institutions,Part-time,Unknown
+270FTU,"Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services",Student and Academic Affairs and Other Education Services,Full-time,Unknown
+270PTU,"Librarians/Library Technicians/Archivists and Curators, and Museum technicians/Student and Academic Affairs and Other Education Services",Student and Academic Affairs and Other Education Services,Part-time,Unknown
+300FTU,Non-instructional Staff,Management,Full-time,Unknown
+300PTU,Non-instructional Staff,Management,Part-time,Unknown
+310FTU,Non-instructional Staff,Business and Financial Operations,Full-time,Unknown
+310PTU,Non-instructional Staff,Business and Financial Operations,Part-time,Unknown
+320FTU,Non-instructional Staff,"Computer, Engineering, and Science",Full-time,Unknown
+320PTU,Non-instructional Staff,"Computer, Engineering, and Science",Part-time,Unknown
+330FTU,Non-instructional Staff,"Community Service, Legal, Arts, and Media",Full-time,Unknown
+330PTU,Non-instructional Staff,"Community Service, Legal, Arts, and Media",Part-time,Unknown
+340FTU,Non-instructional Staff,Healthcare Practioners and Technical,Full-time,Unknown
+340PTU,Non-instructional Staff,Healthcare Practioners and Technical,Part-time,Unknown
+350FTU,Non-instructional Staff,Service Occupations,Full-time,Unknown
+350PTU,Non-instructional Staff,Service Occupations,Part-time,Unknown
+360FTU,Non-instructional Staff,Sales and Related Occupations,Full-time,Unknown
+360PTU,Non-instructional Staff,Sales and Related Occupations,Part-time,Unknown
+370FTU,Non-instructional Staff,Office and Administrative Support,Full-time,Unknown
+370PTU,Non-instructional Staff,Office and Administrative Support,Part-time,Unknown
+380FTU,Non-instructional Staff,"Natural Resources, Construction, and Maintenance",Full-time,Unknown
+380PTU,Non-instructional Staff,"Natural Resources, Construction, and Maintenance",Part-time,Unknown
+390FTU,Non-instructional Staff,"Production, Transportation, and Material Moving",Full-time,Unknown
+390PTU,Non-instructional Staff,"Production, Transportation, and Material Moving",Part-time,Unknown
+410PTU,Graduate Assistants,Graduate Assistants Teaching,Part-time,Unknown
+420PTU,Graduate Assistants,Graduate Assistants Research,Part-time,Unknown
+430PTU,Graduate Assistants,Graduate Assistants Management Occupations,Part-time,Unknown
+440PTU,Graduate Assistants,Graduate Assistants Business and Financial Operations Occupations,Part-time,Unknown
+450PTU,Graduate Assistants,"Graduate Assistants Computer, Engineering, and Science Occupations",Part-time,Unknown
+460PTU,Graduate Assistants,"Graduate Assistants Community Service, Legal, Arts, and Media",Part-time,Unknown
+470PTU,Graduate Assistants,Graduate Assistants Library and Instructional support,Part-time,Unknown
+480PTU,Graduate Assistants,Graduate Assistants Healthcare Practioners and Technical,Part-time,Unknown
+490PTU,Graduate Assistants,Graduate Assistants  other,Part-time,Unknown

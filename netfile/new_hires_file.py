@@ -76,15 +76,12 @@ class NewHireFile(IpedsFile):
                 39000,
                 ])]
 
-        df = df[
-            df.facstat.isin([
-                20,
-                30,
-                41,
-                42,
-                43,
-                50,
-                ])]
+        if self.year < 2016:
+            fac_codes = [20, 30, 41, 42, 43, 50, 60]
+        else:
+            fac_codes = [20, 30, 44, 45, 42, 43, 50, 60]
+
+        df = df[df.facstat.isin(fac_codes)]
 
         # fix occupation code
         df['occupcat'] = np.where(df.occupcat == 210, 211, df.occupcat)
@@ -93,7 +90,7 @@ class NewHireFile(IpedsFile):
         df['time_status_id'] = 'FT'
 
         # assign career level
-        df['employee_key'] = df.occupcat.astype(str) + df.time_status_id
+        df['employee_key'] = df.occupcat.astype(str) + df.time_status_id + 'U'
 
         # assign faculty key
         df['faculty_key'] = self.item_recode(
@@ -104,6 +101,8 @@ class NewHireFile(IpedsFile):
                 41: 3031,
                 42: 3032,
                 43: 3033,
+                44: 3034,
+                45: 3035,
             },
             4039)
 

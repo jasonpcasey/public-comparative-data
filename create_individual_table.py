@@ -1,15 +1,17 @@
 # coding=utf-8
 
 from database.base import Session, engine, Base
-# from database.date_dimension import DateRow
-from database.cip_hierarchy import Cip
+from database.date_dimension import DateRow
+from database.ipeds_employee_dimension import IpedsEmployeeDimension
+from database.ipeds_employees_by_assigned_position import IpedsEap
+from database.ipeds_faculty_dimension import IpedsFacultyDimension
 
 table_names = [
-    Cip.__tablename__,
+    IpedsEap.__tablename__,
     ]
 
 tables = [
-    Cip.__table__,
+    IpedsEap.__table__,
     ]
 
 names = '\n\t'.join(table_names)
