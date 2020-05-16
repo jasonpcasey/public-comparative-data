@@ -37,6 +37,10 @@ echo 'POPULATE IPEDS CHARGES'
 python populate_ipeds_charges.py --last=$1
 
 echo
+echo 'POPULATE IPEDS EMPLOYEES BY ASSIGNED POSITION TABLE'
+python populate_ipeds_employees_by_assigned_position.py --last=$1
+
+echo
 echo 'POPULATE IPEDS FALL ENROLLMENT'
 python populate_ipeds_fall_enrollment.py --last=$1
 
