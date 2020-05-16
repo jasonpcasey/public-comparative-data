@@ -12,7 +12,7 @@ class IpedsNewHire(Base):
     id = Column(Integer, primary_key = True)
     unitid = Column(Integer, nullable = False)
     date_key = Column(Date, ForeignKey('date_dimension.date_key'), nullable = False)
-    employee_key = Column(String(5), ForeignKey('ipeds_employee_dimension.employee_key'), nullable = False)
+    employee_key = Column(String(6), ForeignKey('ipeds_employee_dimension.employee_key'), nullable = False)
     demographic_key = Column(String(5), ForeignKey('ipeds_demographic_dimension.demographic_key'), nullable = False)
     faculty_key = Column(Integer, ForeignKey('ipeds_faculty_dimension.faculty_key'), nullable = False)
     headcount = Column(Integer, nullable = False, default = 0)
