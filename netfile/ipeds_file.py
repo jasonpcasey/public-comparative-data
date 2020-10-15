@@ -23,7 +23,7 @@ class IpedsFile:
     def write(self):
         session = Session()
 
-        if len(self.rows) > 0:
+        if self.rows:
             try:
                 _ = session.query(self.rows[0].__class__).filter(self.rows[0].__class__.date_key==self.date_key).delete(synchronize_session=False)
                 session.bulk_save_objects(self.rows)
