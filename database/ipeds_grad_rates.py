@@ -14,6 +14,7 @@ class IpedsGraduationRate(Base):
     date_key = Column(Date, ForeignKey('date_dimension.date_key'), nullable = False)
     cohort_date_key = Column(Date, ForeignKey('date_dimension.date_key'), nullable = False)
     demographic_key = Column(String(5), ForeignKey('ipeds_demographic_dimension.demographic_key'), nullable = False)
+    subcohort = Column(String(64), nullable = False)
     entering_cohort = Column(Integer, nullable = False, default = 0)
     exclusions = Column(Integer, nullable = False, default = 0)
     adjusted_cohort = Column(Integer, nullable = False, default = 0)
@@ -30,9 +31,10 @@ class IpedsGraduationRate(Base):
                             'date_key',
                             'cohort_date_key',
                             'demographic_key',
+                            'subcohort',
                             unique = True), )
 
-    def __init__(self, unitid, date_key, cohort_date_key, demographic_key, entering_cohort, exclusions,
+    def __init__(self, unitid, date_key, cohort_date_key, demographic_key, subcohort, entering_cohort, exclusions,
                  adjusted_cohort, completers_4_years, completers_5_years, completers_6_years,
                  enrolled, transfers, no_longer_enrolled):
         """ method for instantiating object """
@@ -40,6 +42,7 @@ class IpedsGraduationRate(Base):
         self.date_key = date_key
         self.cohort_date_key = cohort_date_key
         self.demographic_key = demographic_key
+        self.subcohort = subcohort
         self.entering_cohort = entering_cohort
         self.exclusions = exclusions
         self.adjusted_cohort = adjusted_cohort
@@ -58,6 +61,7 @@ class IpedsGraduationRate(Base):
             f'date_key={self.date_key!r}, '
             f'cohort_date_key={self.cohort_date_key!r}, '
             f'demographic_key={self.demographic_key!r}, '
+            f'subcohort={self.subcohort!r}, '
             f'entering_cohort={self.entering_cohort!r}, '
             f'exclusions={self.exclusions!r}, '
             f'adjusted_cohort={self.adjusted_cohort!r}, '
