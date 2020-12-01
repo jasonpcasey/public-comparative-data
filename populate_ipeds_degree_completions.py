@@ -4,8 +4,8 @@ import argparse
 
 # get command line arguments
 parser = argparse.ArgumentParser(description='Transfers IPEDS Degree Completions for specified years to database.')
-parser.add_argument("--first", default=1995, type=int, help="First year of sequence.")
-parser.add_argument("--last", default=2018, type=int, help="Last year of sequence.")
+parser.add_argument("--first", default=2018, type=int, help="First year of sequence.") #1995
+parser.add_argument("--last", default=2019, type=int, help="Last year of sequence.") #2019
 args = parser.parse_args()
 
 def main():
