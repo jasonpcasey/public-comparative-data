@@ -8,6 +8,7 @@ parser.add_argument("--first", default=2012, type=int, help="First year of seque
 parser.add_argument("--last", default=2018, type=int, help="Last year of sequence.")
 args = parser.parse_args()
 
+
 def main():
     for year in range(args.first, args.last + 1):
         _file = FallStaffFile(year)
@@ -16,6 +17,7 @@ def main():
         print('\n')
 
     print('All done.')
+
 
 if __name__ == '__main__':
     main()
